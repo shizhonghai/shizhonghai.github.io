@@ -1,0 +1,1112 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="typescript">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="我是瘦子" type="application/atom+xml">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="注释文件顶部的注释，包括描述、作者、日期12345/** * @description xxxxxx * @author chengfeng * @since 19/05/21 */ 模块的注释123456/** * 拷贝数据 * @param  &amp;#123;*&amp;#125;  data   要拷贝的源数据 * @param  &amp;#123;boolean&amp;#125; [isDeep=false] 是">
+<meta name="keywords" content="typescript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="可能是你需要的 react + typescript 50条规范和经验">
+<meta property="og:url" content="https://shizhonghai.github.io/2019/07/11/react-typescript/index.html">
+<meta property="og:site_name" content="我是瘦子">
+<meta property="og:description" content="注释文件顶部的注释，包括描述、作者、日期12345/** * @description xxxxxx * @author chengfeng * @since 19/05/21 */ 模块的注释123456/** * 拷贝数据 * @param  &amp;#123;*&amp;#125;  data   要拷贝的源数据 * @param  &amp;#123;boolean&amp;#125; [isDeep=false] 是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-11T09:48:48.532Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="可能是你需要的 react + typescript 50条规范和经验">
+<meta name="twitter:description" content="注释文件顶部的注释，包括描述、作者、日期12345/** * @description xxxxxx * @author chengfeng * @since 19/05/21 */ 模块的注释123456/** * 拷贝数据 * @param  &amp;#123;*&amp;#125;  data   要拷贝的源数据 * @param  &amp;#123;boolean&amp;#125; [isDeep=false] 是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shizhonghai.github.io/2019/07/11/react-typescript/">
+
+
+
+
+
+  <title> 可能是你需要的 react + typescript 50条规范和经验 | 我是瘦子 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="//s95.cnzz.com/z_stat.php?id=1260961313&web_id=1260961313" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">我是瘦子</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/07/11/react-typescript/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="I am a thin man">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我是瘦子">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                可能是你需要的 react + typescript 50条规范和经验
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-11T00:00:00+08:00">
+                2019-07-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2019/07/11/react-typescript/" class="leancloud_visitors" data-flag-title="可能是你需要的 react + typescript 50条规范和经验">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="文件顶部的注释，包括描述、作者、日期"><a href="#文件顶部的注释，包括描述、作者、日期" class="headerlink" title="文件顶部的注释，包括描述、作者、日期"></a>文件顶部的注释，包括描述、作者、日期</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @description xxxxxx</span></span><br><span class="line"><span class="comment"> * @author chengfeng</span></span><br><span class="line"><span class="comment"> * @since 19/05/21</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="模块的注释"><a href="#模块的注释" class="headerlink" title="模块的注释"></a>模块的注释</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 拷贝数据</span></span><br><span class="line"><span class="comment"> * @param  &#123;*&#125;  data   要拷贝的源数据</span></span><br><span class="line"><span class="comment"> * @param  &#123;boolean&#125; [isDeep=false] 是否深拷贝，默认浅拷贝</span></span><br><span class="line"><span class="comment"> * @return &#123;*&#125;         返回拷贝后的数据</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="业务代码注释"><a href="#业务代码注释" class="headerlink" title="业务代码注释"></a>业务代码注释</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*业务代码注释*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="变量注释"><a href="#变量注释" class="headerlink" title="变量注释"></a>变量注释</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">interface IState &#123;</span><br><span class="line">  <span class="comment">// 名字</span></span><br><span class="line">  name: string;</span><br><span class="line">  <span class="comment">// 电话</span></span><br><span class="line">  phone: number;</span><br><span class="line">  <span class="comment">// 地址</span></span><br><span class="line">  address: string;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="引用组件顺序"><a href="#引用组件顺序" class="headerlink" title="引用组件顺序"></a>引用组件顺序</h2><ul>
+<li>先引用外部组件库,,再引用当前组件块级组件, 然后是 common 里的公共函数库最后是 css 样式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Dropdown, Menu, Icon &#125; <span class="keyword">from</span> <span class="string">'antd'</span>;</span><br><span class="line"><span class="keyword">import</span> Header <span class="keyword">from</span> <span class="string">'./Header'</span>;</span><br><span class="line"><span class="keyword">import</span> toast <span class="keyword">from</span> <span class="string">'common/toast'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'./index.less'</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h2><ul>
+<li>使用单引号,或者 es6 的反引号</li>
+</ul>
+<h2 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h2><ul>
+<li>使用两个空格</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> handleCheck = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  onCancel &amp;&amp; onCancel();</span><br><span class="line">  onClose &amp;&amp; onClose();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="分号"><a href="#分号" class="headerlink" title="分号"></a>分号</h2><ul>
+<li>每行末尾都要加分号。</li>
+</ul>
+<h2 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h2><p>下列关键字后必须有大括号（即使代码块的内容只有一行）：<code>if</code>, <code>else</code>, <code>for</code>, <code>while</code>, <code>do</code>, <code>switch</code>, <code>try</code>, <code>catch</code>, <code>finally</code>, <code>with</code>。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// not good</span></span><br><span class="line"><span class="keyword">if</span> (condition) doSomething();</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">  doSomething();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><ul>
+<li>二元和三元运算符两侧必须有一个空格，一元运算符与操作对象之间不允许有空格。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">++ x;</span><br><span class="line">y ++;</span><br><span class="line">z = x?<span class="number">1</span>:<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">++x;</span><br><span class="line">y++;</span><br><span class="line">z = x ? <span class="number">1</span> : <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用作代码块起始的左花括号 { 前必须有一个空格。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (condition)&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (condition)&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>if</code> / <code>else</code> / <code>for</code> / <code>while</code> / <code>function</code> / <code>switch</code> / <code>do</code> / <code>try</code> / <code>catch</code> / <code>finally</code> 关键字后，必须有一个空格。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span>(condition) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(condition) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在对象创建时，属性中的 <code>:</code> 之后必须有空格，<code>:</code> 之前不允许有空格。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a : <span class="number">1</span>,</span><br><span class="line">    b:<span class="number">2</span>,</span><br><span class="line">    c :<span class="number">3</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: <span class="number">3</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><ul>
+<li>每个独立语句结束后必须换行。</li>
+<li>在函数声明、函数表达式、函数调用、对象创建、数组创建、for 语句等场景中，不允许在 , 或 ; 前换行</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">    , <span class="attr">b</span>: <span class="number">2</span></span><br><span class="line">    , <span class="attr">c</span>: <span class="number">3</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> object)</span><br><span class="line"> &#123;</span><br><span class="line">  <span class="keyword">if</span> (object.hasOwnProperty(key)) &#123;</span><br><span class="line">    <span class="keyword">const</span> element = object[key];</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: <span class="number">3</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> object) &#123;</span><br><span class="line">  <span class="keyword">if</span> (object.hasOwnProperty(key)) &#123;</span><br><span class="line">    <span class="keyword">const</span> element = object[key];</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>下列关键字后：else, catch, finally 不需要换行</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">finally</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数组、对象"><a href="#数组、对象" class="headerlink" title="数组、对象"></a>数组、对象</h2><ul>
+<li>对象属性名不需要加引号；</li>
+<li>对象以缩进的形式书写，不要写在一行；</li>
+<li>数组最后不要有逗号。</li>
+<li>对象最后要有逗号。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">    <span class="string">'b'</span>: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = &#123;<span class="attr">b</span>: <span class="number">1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">    b: <span class="number">1</span>,</span><br><span class="line">    c: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>,];</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> a = &#123;</span><br><span class="line">    b: <span class="number">1</span>,</span><br><span class="line">    c: <span class="number">2</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+<h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><ul>
+<li>类名: 大驼峰式风格，字母和数字，例如：AbcTest。禁止汉字、特殊符号，禁止非大驼峰式风格。</li>
+<li>函数名: 小驼峰式风格，字母和数字，例如：abcTest。禁止汉字、特殊符号，禁止非小驼峰式风格，例如snake_case等。</li>
+<li>变量名: 同函数名。</li>
+<li>常量: 全大写风格，大写字母、数字和下划线，单词之间以下划线分隔，例如：ABC_TEST。禁止汉字、特殊符号、小写字母。</li>
+<li>使用 onXxx 形式作为 props 中用于回调的属性名称。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface IProps &#123;</span><br><span class="line">  onClose?: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">void</span>;</span><br><span class="line">  onOk?: <span class="function">(<span class="params">item: Record&lt;string, any&gt;</span>) =&gt;</span> <span class="keyword">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>组件内的事件函数使用 handle 开头尾,handleCheckBtn。</li>
+<li>使用 withXxx 形式的词作为高阶组件的名称。</li>
+<li>接口命名前面带上 I 表示 interface</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">interface IProps &#123;&#125;</span><br><span class="line">interface IState &#123;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="类型断言"><a href="#类型断言" class="headerlink" title="类型断言"></a>类型断言</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> something.length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// index.ts(2,22): error TS2339: Property 'length' does not exist on type 'string | number'.</span></span><br><span class="line"><span class="comment">//   Property 'length' does not exist on type 'number'.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bad </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ((&lt;<span class="built_in">string</span>&gt;something).length) &#123;</span><br><span class="line">        <span class="keyword">return</span> (&lt;<span class="built_in">string</span>&gt;something).length;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> something.toString().length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span>(<span class="params">something: <span class="built_in">string</span> | <span class="built_in">number</span></span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (something.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> something.length;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> something.toString().length;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="interface声明顺序"><a href="#interface声明顺序" class="headerlink" title="interface声明顺序"></a>interface声明顺序</h2><p>日常用到比较多的是四种，只读参数放第一位，必选参数第二位，可选参数次之，不确定参数放最后<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> iProps &#123;</span><br><span class="line">  readonly x: <span class="built_in">number</span>;</span><br><span class="line">  readonly y: <span class="built_in">number</span>;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span>;</span><br><span class="line">  height?: <span class="built_in">number</span>;</span><br><span class="line">  [propName: <span class="built_in">string</span>]: <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="ts好用的相关工具泛型"><a href="#ts好用的相关工具泛型" class="headerlink" title="ts好用的相关工具泛型"></a>ts好用的相关工具泛型</h2><ul>
+<li><code>Record&lt;string,any&gt;</code> 用这个来声明对象结构的类型</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用于定义一个javascript的对象，key是字符串，value是任意类型</span></span><br><span class="line"><span class="keyword">const</span> people:Record&lt;<span class="built_in">string</span>,<span class="built_in">any</span>&gt; = &#123;</span><br><span class="line">    name: <span class="string">'chengfeng'</span>,</span><br><span class="line">    age: <span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Partial</code> 作用是将传入的属性变为可选项.</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> iPeople &#123;</span><br><span class="line">    title: <span class="built_in">string</span>;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> people: Partial&lt;Todo&gt; = &#123;</span><br><span class="line">    title: <span class="string">'Delete inactive users'</span>,</span><br><span class="line">&#125;;</span><br><span class="line">定义的结构可以是接口iPeople的任意key</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Readonly</code> 作用是将传入的属性变为变成只读</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> iPeople &#123;</span><br><span class="line">    title: <span class="built_in">string</span>;</span><br><span class="line">    name: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> people: Readonly&lt;Todo&gt; = &#123;</span><br><span class="line">    title: <span class="string">'todo list'</span>,</span><br><span class="line">    name: <span class="string">'chenfeng'</span>;</span><br><span class="line">&#125;;</span><br><span class="line">title name属性就是只读的了</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Required</code> 的作用是将传入的属性变为必选项</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> iPeople &#123;</span><br><span class="line">    title?: <span class="built_in">string</span>;</span><br><span class="line">    name?: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> people1: Props = &#123; title: <span class="string">'ts'</span> &#125;; <span class="comment">// OK</span></span><br><span class="line"><span class="keyword">const</span> people22: Required&lt;iPeople&gt; = &#123; title: <span class="string">'ts'</span> &#125;; <span class="comment">// Error: property 'name' missing</span></span><br></pre></td></tr></table></figure>
+<h2 id="ts一些好用的小tips"><a href="#ts一些好用的小tips" class="headerlink" title="ts一些好用的小tips"></a>ts一些好用的小tips</h2><ul>
+<li><code>keyof</code></li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> iPeople &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  age: <span class="built_in">number</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> T = keyof iPeople <span class="comment">// -&gt; "name" | "age"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>in</code></li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Keys = <span class="string">"a"</span> | <span class="string">"b"</span></span><br><span class="line"><span class="keyword">type</span> Obj =  &#123;</span><br><span class="line">  [p <span class="keyword">in</span> Keys]: <span class="built_in">any</span></span><br><span class="line">&#125; <span class="comment">// -&gt; &#123; a: any, b: any &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="规范其他"><a href="#规范其他" class="headerlink" title="规范其他"></a>规范其他</h2><ul>
+<li>不要使用 var 声明变量</li>
+<li>不会被修改的变量使用 const 声明</li>
+<li>去除声明但未被引用的代码</li>
+<li>禁止在代码里使用 debug</li>
+<li>不允许有空的代码块</li>
+</ul>
+<h2 id="仅当初始-state-需要从-props-计算得到的时候，才将-state-的声明放在构造函数中，其它情况下使用静态属性声明-state-并且一般情况下不要将-prop-传给-state，"><a href="#仅当初始-state-需要从-props-计算得到的时候，才将-state-的声明放在构造函数中，其它情况下使用静态属性声明-state-并且一般情况下不要将-prop-传给-state，" class="headerlink" title="仅当初始 state 需要从 props 计算得到的时候，才将 state 的声明放在构造函数中，其它情况下使用静态属性声明 state,并且一般情况下不要将 prop 传给 state，"></a>仅当初始 state 需要从 props 计算得到的时候，才将 state 的声明放在构造函数中，其它情况下使用静态属性声明 state,并且一般情况下不要将 prop 传给 state，</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">constructor</span> ()&#123;</span><br><span class="line">  <span class="keyword">this</span>.setState(&#123; people: <span class="keyword">this</span>.props.people &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">state: IState = &#123;</span><br><span class="line">  people: &#123;&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="渲染默认值"><a href="#渲染默认值" class="headerlink" title="渲染默认值"></a>渲染默认值</h2><ul>
+<li>添加非空判断可以提高代码的稳健性,例如后端返回的一些值,可能会出现不存在的情况，应该要给默认值.</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">render()&#123;</span><br><span class="line">  &#123;name&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">render()&#123;</span><br><span class="line">  &#123;name || <span class="string">''</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>还有一种情况，就是本来后端应该返回一个数组给你，但是数据库取不到数据，可能后端给你返回了null,然后前端null.length。这样就gg了</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> &#123; list, totalCount &#125; = await getPeopleList(keyword, page, pageSize);</span><br><span class="line">list 可能是<span class="literal">null</span>或者<span class="literal">undefined</span></span><br><span class="line">list.length将直接导致前端报错</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">  status: STATUS.READY,</span><br><span class="line">  apps: list,</span><br><span class="line">  total: totalCount,</span><br><span class="line">  page: page,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// good </span></span><br><span class="line"><span class="keyword">const</span> &#123; list, totalCount &#125; = await getPeopleList(keyword, page, pageSize);</span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">  status: STATUS.READY,</span><br><span class="line">  apps: list || [],</span><br><span class="line">  total: totalCount || <span class="number">0</span>,</span><br><span class="line">  page: page,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="不确定的属性，最后却疯狂的用…访问不存在的属性"><a href="#不确定的属性，最后却疯狂的用…访问不存在的属性" class="headerlink" title="不确定的属性，最后却疯狂的用…访问不存在的属性"></a>不确定的属性，最后却疯狂的用…访问不存在的属性</h2><p>例如一些地方，不确定这个变量里面到底有什么，但自己觉得有，就疯狂的…,最明显的就是后端返回了一个对象给你，前端拿到之后判断都不判断直接 <code>data.dataList.forEach()</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> getPeopleList(keyword, page, pageSize);</span><br><span class="line">data.dataList.forEach() <span class="comment">// 直接挂了</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="keyword">await</span> getPeopleList(keyword, page, pageSize);</span><br><span class="line"><span class="keyword">if</span> (data &amp;&amp; data.dataList &amp;&amp; <span class="built_in">Array</span>.isArray(data.dataList) &#123;</span><br><span class="line">    data.dataList.forEach() </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="数据格式转换"><a href="#数据格式转换" class="headerlink" title="数据格式转换"></a>数据格式转换</h2><h3 id="把字符串转整型可以使用-号"><a href="#把字符串转整型可以使用-号" class="headerlink" title="把字符串转整型可以使用 + 号"></a>把字符串转整型可以使用 <code>+</code> 号</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> maxPrice = +form.maxPrice.value;</span><br><span class="line"><span class="keyword">let</span> maxPrice = <span class="built_in">Number</span>(form.maxPrice.value);</span><br></pre></td></tr></table></figure>
+<h3 id="转成-boolean-值用"><a href="#转成-boolean-值用" class="headerlink" title="转成 boolean 值用 !!"></a>转成 <code>boolean</code> 值用 <code>!!</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> mobile = !!ua.match(<span class="regexp">/iPhone|iPad|Android|iPod|Windows Phone/</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="判断条件真假"><a href="#判断条件真假" class="headerlink" title="判断条件真假"></a>判断条件真假</h2><p>js 中以下为假,其他情况为真</p>
+<ul>
+<li>false</li>
+<li>null</li>
+<li>undefined</li>
+<li>0</li>
+<li>‘’ (空字符串)</li>
+<li>NaN</li>
+</ul>
+<h2 id="简单组件可以使用函数代替"><a href="#简单组件可以使用函数代替" class="headerlink" title="简单组件可以使用函数代替"></a>简单组件可以使用函数代替</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Listing</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;&#123;this.props.hello&#125;&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Listing</span>(<span class="params">&#123; hello &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;div&gt;&#123;hello&#125;&lt;/div&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="对于常用的属性进行缓存"><a href="#对于常用的属性进行缓存" class="headerlink" title="对于常用的属性进行缓存"></a>对于常用的属性进行缓存</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">this</span>.props.app.openid;</span><br><span class="line"><span class="keyword">this</span>.state.time</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> &#123; app &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"><span class="keyword">const</span> &#123; time &#125; = <span class="keyword">this</span>.state;</span><br><span class="line"><span class="built_in">console</span>.log(app.openid)</span><br></pre></td></tr></table></figure>
+<h2 id="input-输入框使用-trim"><a href="#input-输入框使用-trim" class="headerlink" title="input 输入框使用 trim()"></a>input 输入框使用 trim()</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">this</span>.props.app.openid;</span><br><span class="line"><span class="keyword">this</span>.state.time</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> &#123; app &#125; = <span class="keyword">this</span>.props;</span><br><span class="line"><span class="keyword">const</span> &#123; time &#125; = <span class="keyword">this</span>.state;</span><br><span class="line"><span class="built_in">console</span>.log(app.openid)</span><br></pre></td></tr></table></figure>
+<h2 id="使用-location-跳转前需要先转义"><a href="#使用-location-跳转前需要先转义" class="headerlink" title="使用 location 跳转前需要先转义"></a>使用 location 跳转前需要先转义</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="built_in">window</span>.location.href = redirectUrl + <span class="string">'?a=10&amp;b=20'</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="built_in">window</span>.location.href = redirectUrl + <span class="built_in">encodeURIComponent</span>(<span class="string">'?a=10&amp;b=20'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="同时开发，数据请求-api-目录-git-冲突目录方案"><a href="#同时开发，数据请求-api-目录-git-冲突目录方案" class="headerlink" title="同时开发，数据请求 api 目录 git 冲突目录方案"></a>同时开发，数据请求 api 目录 git 冲突目录方案</h2><p>在 api 目录下新建一个目录，目录对应一级 tab,这个目录内放置一个 index.js ，最后把二级 tab 组件所使用的 api 请求都在这个 index.js 内引入。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 目前</span></span><br><span class="line"></span><br><span class="line">|- api</span><br><span class="line">  |- pageA.ts</span><br><span class="line">  |- pageB.ts</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建议</span></span><br><span class="line"></span><br><span class="line">|- api</span><br><span class="line">  |- pageA</span><br><span class="line">    |- index.js</span><br><span class="line">    |- aaa.js</span><br><span class="line">    |- bbb.js</span><br><span class="line">  |- pageB</span><br><span class="line">    |- index.js</span><br><span class="line">    |- aaa.js</span><br><span class="line">    |- bbb.js</span><br><span class="line">    |- ccc.js</span><br></pre></td></tr></table></figure></p>
+<h2 id="组件嵌套过深"><a href="#组件嵌套过深" class="headerlink" title="组件嵌套过深"></a>组件嵌套过深</h2><p>组件一般不要超过三层,最多四层,层级过深可能会导致数据传递过深，在做一些颗粒度比较细的操作的时候，处理起来较为繁琐，可以使用 redux 等状态管理工具替代。</p>
+<h2 id="代码过滤掉你没考虑到的情况"><a href="#代码过滤掉你没考虑到的情况" class="headerlink" title="代码过滤掉你没考虑到的情况"></a>代码过滤掉你没考虑到的情况</h2><p>例如一个函数，你只想操作字符串，那你必须在函数开头就只允许参数是字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parse</span> (<span class="params">str:string</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span>(str) === <span class="string">'string'</span> ) &#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="业务代码里面的异步请求需要-try-catch"><a href="#业务代码里面的异步请求需要-try-catch" class="headerlink" title="业务代码里面的异步请求需要 try catch"></a>业务代码里面的异步请求需要 try catch</h2><p>ajax 请求，使用 try catch，错误提示后端返回,并且做一些失败后的状态操作例如进入列表页，我们需要一个 loading 状态，然后去请求数据,可是失败之后，也需要把 loading 状态去掉,把 loading 隐藏的代码就写在 finally 里面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">getStudentList = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      loading: <span class="literal">true</span>,</span><br><span class="line">      isEmpty: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">await</span> getStudentList(&#123;&#125;);</span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      loading: <span class="literal">false</span>,</span><br><span class="line">      isEmpty: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="comment">// TODO</span></span><br><span class="line">    <span class="built_in">console</span>.log(e)</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">//  失败之后的一些兜底操作</span></span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">      loading: <span class="literal">false</span>,</span><br><span class="line">      isEmpty: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="setState有三种用法"><a href="#setState有三种用法" class="headerlink" title="setState有三种用法"></a>setState有三种用法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数，一般是用于在setState之前做一些操作</span></span><br><span class="line"><span class="keyword">this</span>.setState(</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    <span class="comment">// TODO</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">''</span>)</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      a:<span class="number">300</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二个参数，一般是用于在setState之后做一些操作</span></span><br><span class="line"><span class="keyword">this</span>.setState(&#123;</span><br><span class="line">  a:<span class="number">300</span></span><br><span class="line">&#125;, () =&gt; &#123;</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="setState可能是同步的"><a href="#setState可能是同步的" class="headerlink" title="setState可能是同步的"></a>setState可能是同步的</h2><ul>
+<li>setState 在react里的合成事件和钩子函数中是“异步”的。</li>
+<li>setState 在原生事件和 setTimeout 中是同步的。</li>
+</ul>
+<h2 id="不要在-setState-前面加-await"><a href="#不要在-setState-前面加-await" class="headerlink" title="不要在 setState 前面加 await"></a>不要在 setState 前面加 await</h2><p>setState 前面也是可以带 await 的，会变成同步设置状态,但这是一种巧合，不确定未来哪个版本就不支持了，为了遵循 react 框架的设计原则，我们使用回掉函数的形式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">func = <span class="keyword">async</span> (name, value, status) =&gt; &#123;</span><br><span class="line">  <span class="keyword">await</span> <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">    name</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">func = <span class="function">(<span class="params">name, value, status</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">this</span>.setState(</span><br><span class="line">    &#123;</span><br><span class="line">      name</span><br><span class="line">    &#125;,</span><br><span class="line">    () =&gt; &#123;</span><br><span class="line">      <span class="comment">// TODO</span></span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="阻止事件默认行为"><a href="#阻止事件默认行为" class="headerlink" title="阻止事件默认行为"></a>阻止事件默认行为</h2><p>在 React 中你不能通过返回 false 来阻止默认行为。必须明确调用 preventDefault 。</p>
+<h2 id="在-componentWillUnmount-里面去除副作用的函数"><a href="#在-componentWillUnmount-里面去除副作用的函数" class="headerlink" title="在 componentWillUnmount 里面去除副作用的函数"></a>在 componentWillUnmount 里面去除副作用的函数</h2><ul>
+<li>清除 EventListener</li>
+<li>中止数据请求</li>
+<li>清除定时器</li>
+</ul>
+<h2 id="key"><a href="#key" class="headerlink" title="key"></a>key</h2><p>对于组件中的 key 优化，起到最大化重用 dom</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//bad</span></span><br><span class="line"><span class="keyword">this</span>.state.dataAry.map(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;span key=&#123;index&#125; /&gt;;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//good</span><br><span class="line">this.state.dataAry.map(item =&gt; &lt;span key=&#123;item.id&#125; /&gt;);</span><br></pre></td></tr></table></figure>
+<h2 id="for-in-中一定要有-hasOwnProperty-的判断（即禁止直接读取原型对象的属性）"><a href="#for-in-中一定要有-hasOwnProperty-的判断（即禁止直接读取原型对象的属性）" class="headerlink" title="for-in 中一定要有 hasOwnProperty 的判断（即禁止直接读取原型对象的属性）"></a>for-in 中一定要有 hasOwnProperty 的判断（即禁止直接读取原型对象的属性）</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//bad</span></span><br><span class="line"><span class="keyword">const</span> arr = [];</span><br><span class="line"><span class="keyword">const</span> key = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  arr.push(obj[key]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//good</span></span><br><span class="line"><span class="keyword">const</span> arr = [];</span><br><span class="line"><span class="keyword">const</span> key = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">  <span class="keyword">if</span> (obj.hasOwnProperty(key)) &#123;</span><br><span class="line">    arr.push(obj[key]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="第三方库函数的使用"><a href="#第三方库函数的使用" class="headerlink" title="第三方库函数的使用"></a>第三方库函数的使用</h2><p>用 try catch 包裹，防止第三方库的出现错误，导致整个程序崩溃</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Echart 用于代绘制图表，但当其自身发生错误时，可能影响到业务代码的执行</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">const</span> iniDom = <span class="built_in">document</span>.getElementById(<span class="string">'init-container'</span>);</span><br><span class="line"><span class="keyword">const</span> echartObj = echarts.init(iniDom);</span><br><span class="line"><span class="keyword">this</span>.setState(</span><br><span class="line">  &#123;</span><br><span class="line">    echartObj</span><br><span class="line">  &#125;,</span><br><span class="line">  () =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123; echartObj &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">    <span class="comment">// 更新图表</span></span><br><span class="line">    echartObj.setOption(CHART_CONFIG, <span class="literal">true</span>);</span><br><span class="line">  &#125;</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> iniDom = <span class="built_in">document</span>.getElementById(<span class="string">'init-container'</span>);</span><br><span class="line">  <span class="keyword">const</span> echartObj = echarts.init(iniDom);</span><br><span class="line">  <span class="keyword">this</span>.setState(</span><br><span class="line">    &#123;</span><br><span class="line">      echartObj</span><br><span class="line">    &#125;,</span><br><span class="line">    () =&gt; &#123;</span><br><span class="line">      <span class="keyword">const</span> &#123; echartObj &#125; = <span class="keyword">this</span>.state;</span><br><span class="line">      <span class="comment">// 更新图表</span></span><br><span class="line">      echartObj.setOption(CHART_CONFIG, <span class="literal">true</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  );</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="防止-xss-攻击"><a href="#防止-xss-攻击" class="headerlink" title="防止 xss 攻击"></a>防止 xss 攻击</h2><p>input，textarea 等标签，不要直接把 html 文本直接渲染在页面上,使用 xssb 等过滤之后再输出到标签上;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; html2text &#125; <span class="keyword">from</span> <span class="string">'xss'</span>;</span><br><span class="line">render()&#123;</span><br><span class="line">  &lt;div</span><br><span class="line">  dangerouslySetInnerHTML=&#123;&#123;</span><br><span class="line">    __html: html2text(htmlContent)</span><br><span class="line">  &#125;&#125;</span><br><span class="line">/&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="在组件中获取真实-dom"><a href="#在组件中获取真实-dom" class="headerlink" title="在组件中获取真实 dom"></a>在组件中获取真实 dom</h2><p>使用 16 版本后的 createRef()函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyComponent</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span>&lt;<span class="title">iProps</span>, <span class="title">iState</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">    <span class="keyword">super</span>(props);</span><br><span class="line">    <span class="keyword">this</span>.inputRef = React.createRef();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;input type="text" ref=&#123;this.inputRef&#125; /&gt;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    this.inputRef.current.focus();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="减少魔法数字"><a href="#减少魔法数字" class="headerlink" title="减少魔法数字"></a>减少魔法数字</h2><p>写代码的时候尽量减少一些未知含义的数字，尽量用英文单词。例如type === 0的时候做了一些操作，让人不知所以然。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="keyword">if</span> (type !== <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="keyword">const</span> STATUS: Record&lt;string, any&gt; = &#123;</span><br><span class="line">  READY: <span class="number">0</span>,</span><br><span class="line">  FETCHING: <span class="number">1</span>,</span><br><span class="line">  FAILED: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (type === STATUS.READY) &#123;</span><br><span class="line">  <span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// best</span></span><br><span class="line">enum STATUS &#123;</span><br><span class="line">  <span class="comment">// 就绪</span></span><br><span class="line">  READY = <span class="number">0</span>,</span><br><span class="line">  <span class="comment">// 请求中</span></span><br><span class="line">  FETCHING = <span class="number">1</span>,</span><br><span class="line">  <span class="comment">// 请求失败</span></span><br><span class="line">  FAILED = <span class="number">2</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="如果需要优化-react-性能（一般用不到）"><a href="#如果需要优化-react-性能（一般用不到）" class="headerlink" title="如果需要优化 react 性能（一般用不到）"></a>如果需要优化 react 性能（一般用不到）</h2><p>如果组件的 state 和 props 都是简单类型，可以继承 PureComponent 而不是 Component</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component, PureComponent &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;span&gt;&#123;this.state.message&#125;&lt;/span&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span> <span class="keyword">extends</span> <span class="title">PureComponent</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;span&gt;&#123;this.state.message&#125;&lt;/span&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Event-事件对象类型"><a href="#Event-事件对象类型" class="headerlink" title="Event 事件对象类型"></a>Event 事件对象类型</h2><p>很多小伙伴用了很久的ts,都不知道常用 Event 事件对象类型：<br>ClipboardEvent<t = element> 剪贴板事件对象<br>DragEvent<t = element> 拖拽事件对象<br>ChangeEvent<t = element> Change 事件对象<br>KeyboardEvent<t = element> 键盘事件对象<br>MouseEvent<t = element> 鼠标事件对象<br>TouchEvent<t = element> 触摸事件对象<br>WheelEvent<t = element> 滚轮事件对象<br>AnimationEvent<t = element> 动画事件对象<br>TransitionEvent<t = element> 过渡事件对象</t></t></t></t></t></t></t></t></t></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; MouseEvent &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"></span><br><span class="line">interface IProps &#123;</span><br><span class="line">  onClick(event: MouseEvent&lt;HTMLDivElement&gt;): <span class="keyword">void</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用私有属性取代state状态"><a href="#使用私有属性取代state状态" class="headerlink" title="使用私有属性取代state状态"></a>使用私有属性取代state状态</h2><p>对于一些不需要控制ui的状态属性，我们可以直接绑到this上， 即私有属性，没有必要弄到this.state上，不然会触发渲染机制，造成性能浪费 例如请求翻页数据的时候,我们都会有个变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">state: IState = &#123;</span><br><span class="line">  pageNo:<span class="number">1</span>,</span><br><span class="line">  pageSize:<span class="number">10</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good </span></span><br><span class="line">queryParams:Record&lt;string,any&gt; = &#123;</span><br><span class="line">  pageNo:<span class="number">1</span>,</span><br><span class="line">  pageSize:<span class="number">10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码细粒度的思考"><a href="#代码细粒度的思考" class="headerlink" title="代码细粒度的思考"></a>代码细粒度的思考</h2><p>总结四句话。我们在写组件或者函数的的时候，工具函数和业务逻辑抽离，表单校验和业务抽离、事件函数和业务抽离，ajax和业务抽离。<br>例如有些页面是通过location.href跳转的，我们有些业务逻辑等都是放到didmountMount,但是后期改需求，可能要用react-router进行跳转，可能要改的逻辑就会很多了，所以函数抽离出来，需求更新就少改一点代码。<br>如果还不确定如何划分函数的细粒度，我有个建议。使用过两次以上的代码，要抽离组件或者函数，两次的可以不用</p>
+<h2 id="if-else-等判断太多了，后期难以维护。"><a href="#if-else-等判断太多了，后期难以维护。" class="headerlink" title="if else 等判断太多了，后期难以维护。"></a>if else 等判断太多了，后期难以维护。</h2><p>个人觉得if else 嵌套深看起来也不会太难受，难受的是，项目迭代久之后，自己都忘记曾经写过这些代码，而且类型多或者不确定有什么类型，是否后期还会加的情况下，改起来就非常复杂了，而且很容易踩坑和背锅。<br>用配置取代if嵌套，大概就是抽离一个config.ts出来，里面放一些配置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">例如你的业务代码里面，会根据不同url参数，代码会执行不同的逻辑.</span><br><span class="line">/info?type=wechat&amp;uid=<span class="number">123456</span>&amp;</span><br><span class="line"><span class="keyword">const</span> qsObj = qs(<span class="built_in">window</span>.location.url)</span><br><span class="line"><span class="keyword">const</span> urlType = qsObj.type</span><br><span class="line"><span class="comment">// bad </span></span><br><span class="line"><span class="keyword">if</span> (urlType === <span class="string">'wechat'</span>) &#123;</span><br><span class="line">    doSomeThing()</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> () &#123;</span><br><span class="line">    doSomeThing()</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> () &#123;</span><br><span class="line">    doSomeThing()</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> () &#123;</span><br><span class="line">    doSomeThing()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// good </span></span><br><span class="line">config.t</span><br><span class="line"><span class="keyword">const</span> urlTypeConfig: Record&lt;string, typeItem&gt; = [</span><br><span class="line">  <span class="string">'wechat'</span>: &#123; <span class="comment">// key 就是对应的type</span></span><br><span class="line">    name: <span class="string">'wechat'</span>, </span><br><span class="line">    show: [<span class="string">'header'</span>, <span class="string">'footer'</span>, <span class="string">'wechat'</span>] <span class="comment">// 展示什么，可能是异步的</span></span><br><span class="line">    pession: [<span class="string">'admin'</span>], <span class="comment">// 权限是什么，可能是异步的</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">'zhifubao'</span>: &#123; <span class="comment">// key 就是对应的type</span></span><br><span class="line">    name: <span class="string">'zhifubao'</span>, </span><br><span class="line">    show: [<span class="string">'header'</span>, <span class="string">'footer'</span>, <span class="string">'zhifubao'</span>] <span class="comment">// 展示什么，可能是异步的</span></span><br><span class="line">    pession: [<span class="string">'admin'</span>], <span class="comment">// 权限是什么，可能是异步的</span></span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 业务逻辑</span></span><br><span class="line"><span class="keyword">const</span> qsObj = qs(<span class="built_in">window</span>.location.url)</span><br><span class="line"><span class="keyword">const</span> urlType = qsObj.type</span><br><span class="line">urlTypeConfig.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span>(urlType === item.type) &#123;</span><br><span class="line">    doSomeThing(item.show)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="不要使用renderXXX-要使用函数式组件"><a href="#不要使用renderXXX-要使用函数式组件" class="headerlink" title="不要使用renderXXX,要使用函数式组件"></a>不要使用renderXXX,要使用函数式组件</h2><p>发现团队一些小伙伴为了减少render函数里面的代码量，会把一些元素拆分到函数里面。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bad</span></span><br><span class="line">  renderHeader = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (&lt;div /&gt;)</span><br><span class="line">  &#125;</span><br><span class="line">  renderBody = () =&gt; &#123;</span><br><span class="line">    return (&lt;div /&gt;)</span><br><span class="line">  &#125;</span><br><span class="line">  renderFooter = () =&gt; &#123;</span><br><span class="line">    return (&lt;div /&gt;)</span><br><span class="line">  &#125;</span><br><span class="line">  render()&#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        renderHeader()</span><br><span class="line">        renderBody()</span><br><span class="line">        renderFooter()</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>更好的办法，是用函数式组件取代在当前组件里面写方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// good</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">RenderHeader</span>(<span class="params">props</span>) =  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (&lt;div /&gt;)</span><br><span class="line">  &#125;</span><br><span class="line"> function RenderBody(props) =  &#123;</span><br><span class="line">    return (&lt;div /&gt;)</span><br><span class="line">  &#125;</span><br><span class="line"> function RenderFooter(props) =  &#123;</span><br><span class="line">    return (&lt;div /&gt;)</span><br><span class="line">  &#125;</span><br><span class="line">class Component extends React.Component&lt;iProps, iState&gt;&#123;  </span><br><span class="line">  render () &#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;RenderHeader /&gt;</span><br><span class="line">        &lt;RenderBody /&gt;</span><br><span class="line">        &lt;RenderFooter /&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="a标签安全问题"><a href="#a标签安全问题" class="headerlink" title="a标签安全问题"></a>a标签安全问题</h2><p>使用a标签打开一个新窗口过程中的安全问题。新页面中可以使用window.opener来控制原始页面。如果新老页面同域，那么在新页面中可以任意操作原始页面。如果是不同域，新页面中依然可以通过window.opener.location，访问到原始页面的location对象<br>在带有target=”_blank”的a标签中，加上rel=”noopener”属性。如果使用window.open的方式打开页面，将opener对象置为空。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newWindow = <span class="built_in">window</span>.open();</span><br><span class="line">newWindow.opener = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="void-0-替代undefined"><a href="#void-0-替代undefined" class="headerlink" title="void 0 替代undefined"></a>void 0 替代undefined</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">clearSessioin = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">	</span><br><span class="line">  req.session.userName = <span class="literal">undefined</span>;</span><br><span class="line">  </span><br><span class="line">  req.session.userName = <span class="keyword">void</span> <span class="number">0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="前端不要操作cookie"><a href="#前端不要操作cookie" class="headerlink" title="前端不要操作cookie"></a>前端不要操作cookie</h2><p>在做一些前后端鉴权的时候，后端应该开启domain,secure,httponly严格模式，禁止前端操作cookie，防止csrf攻击。</p>
+<blockquote>
+<p>转载自：<a href="https://juejin.im/post/5ce24f8ae51d45106477bd45" target="_blank" rel="noopener">https://juejin.im/post/5ce24f8ae51d45106477bd45</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/typescript/" rel="tag"># typescript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/06/hexo-next-des/" rel="next" title="About Hexo NexT.Pisces">
+                <i class="fa fa-chevron-left"></i> About Hexo NexT.Pisces
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/18/javascript-glossary/" rel="prev" title="JavaScript 名词解释">
+                JavaScript 名词解释 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+     <div id="gitalk-container"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="I am a thin man">
+          <p class="site-author-name" itemprop="name">I am a thin man</p>
+          <p class="site-description motion-element" itemprop="description">那些玩笑话中，总掺杂着真心话。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">1.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文件顶部的注释，包括描述、作者、日期"><span class="nav-number">1.1.</span> <span class="nav-text">文件顶部的注释，包括描述、作者、日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模块的注释"><span class="nav-number">1.2.</span> <span class="nav-text">模块的注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#业务代码注释"><span class="nav-number">1.3.</span> <span class="nav-text">业务代码注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量注释"><span class="nav-number">1.4.</span> <span class="nav-text">变量注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用组件顺序"><span class="nav-number">2.</span> <span class="nav-text">引用组件顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引号"><span class="nav-number">3.</span> <span class="nav-text">引号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缩进"><span class="nav-number">4.</span> <span class="nav-text">缩进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分号"><span class="nav-number">5.</span> <span class="nav-text">分号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#括号"><span class="nav-number">6.</span> <span class="nav-text">括号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#空格"><span class="nav-number">7.</span> <span class="nav-text">空格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换行"><span class="nav-number">8.</span> <span class="nav-text">换行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组、对象"><span class="nav-number">9.</span> <span class="nav-text">数组、对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名"><span class="nav-number">10.</span> <span class="nav-text">命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型断言"><span class="nav-number">11.</span> <span class="nav-text">类型断言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#interface声明顺序"><span class="nav-number">12.</span> <span class="nav-text">interface声明顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ts好用的相关工具泛型"><span class="nav-number">13.</span> <span class="nav-text">ts好用的相关工具泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ts一些好用的小tips"><span class="nav-number">14.</span> <span class="nav-text">ts一些好用的小tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规范其他"><span class="nav-number">15.</span> <span class="nav-text">规范其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仅当初始-state-需要从-props-计算得到的时候，才将-state-的声明放在构造函数中，其它情况下使用静态属性声明-state-并且一般情况下不要将-prop-传给-state，"><span class="nav-number">16.</span> <span class="nav-text">仅当初始 state 需要从 props 计算得到的时候，才将 state 的声明放在构造函数中，其它情况下使用静态属性声明 state,并且一般情况下不要将 prop 传给 state，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#渲染默认值"><span class="nav-number">17.</span> <span class="nav-text">渲染默认值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不确定的属性，最后却疯狂的用…访问不存在的属性"><span class="nav-number">18.</span> <span class="nav-text">不确定的属性，最后却疯狂的用…访问不存在的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据格式转换"><span class="nav-number">19.</span> <span class="nav-text">数据格式转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#把字符串转整型可以使用-号"><span class="nav-number">19.1.</span> <span class="nav-text">把字符串转整型可以使用 + 号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#转成-boolean-值用"><span class="nav-number">19.2.</span> <span class="nav-text">转成 boolean 值用 !!</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断条件真假"><span class="nav-number">20.</span> <span class="nav-text">判断条件真假</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单组件可以使用函数代替"><span class="nav-number">21.</span> <span class="nav-text">简单组件可以使用函数代替</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于常用的属性进行缓存"><span class="nav-number">22.</span> <span class="nav-text">对于常用的属性进行缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#input-输入框使用-trim"><span class="nav-number">23.</span> <span class="nav-text">input 输入框使用 trim()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-location-跳转前需要先转义"><span class="nav-number">24.</span> <span class="nav-text">使用 location 跳转前需要先转义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同时开发，数据请求-api-目录-git-冲突目录方案"><span class="nav-number">25.</span> <span class="nav-text">同时开发，数据请求 api 目录 git 冲突目录方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组件嵌套过深"><span class="nav-number">26.</span> <span class="nav-text">组件嵌套过深</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码过滤掉你没考虑到的情况"><span class="nav-number">27.</span> <span class="nav-text">代码过滤掉你没考虑到的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#业务代码里面的异步请求需要-try-catch"><span class="nav-number">28.</span> <span class="nav-text">业务代码里面的异步请求需要 try catch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setState有三种用法"><span class="nav-number">29.</span> <span class="nav-text">setState有三种用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#setState可能是同步的"><span class="nav-number">30.</span> <span class="nav-text">setState可能是同步的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要在-setState-前面加-await"><span class="nav-number">31.</span> <span class="nav-text">不要在 setState 前面加 await</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阻止事件默认行为"><span class="nav-number">32.</span> <span class="nav-text">阻止事件默认行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-componentWillUnmount-里面去除副作用的函数"><span class="nav-number">33.</span> <span class="nav-text">在 componentWillUnmount 里面去除副作用的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#key"><span class="nav-number">34.</span> <span class="nav-text">key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for-in-中一定要有-hasOwnProperty-的判断（即禁止直接读取原型对象的属性）"><span class="nav-number">35.</span> <span class="nav-text">for-in 中一定要有 hasOwnProperty 的判断（即禁止直接读取原型对象的属性）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方库函数的使用"><span class="nav-number">36.</span> <span class="nav-text">第三方库函数的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防止-xss-攻击"><span class="nav-number">37.</span> <span class="nav-text">防止 xss 攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在组件中获取真实-dom"><span class="nav-number">38.</span> <span class="nav-text">在组件中获取真实 dom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#减少魔法数字"><span class="nav-number">39.</span> <span class="nav-text">减少魔法数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果需要优化-react-性能（一般用不到）"><span class="nav-number">40.</span> <span class="nav-text">如果需要优化 react 性能（一般用不到）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-事件对象类型"><span class="nav-number">41.</span> <span class="nav-text">Event 事件对象类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用私有属性取代state状态"><span class="nav-number">42.</span> <span class="nav-text">使用私有属性取代state状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码细粒度的思考"><span class="nav-number">43.</span> <span class="nav-text">代码细粒度的思考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if-else-等判断太多了，后期难以维护。"><span class="nav-number">44.</span> <span class="nav-text">if else 等判断太多了，后期难以维护。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不要使用renderXXX-要使用函数式组件"><span class="nav-number">45.</span> <span class="nav-text">不要使用renderXXX,要使用函数式组件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#a标签安全问题"><span class="nav-number">46.</span> <span class="nav-text">a标签安全问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#void-0-替代undefined"><span class="nav-number">47.</span> <span class="nav-text">void 0 替代undefined</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端不要操作cookie"><span class="nav-number">48.</span> <span class="nav-text">前端不要操作cookie</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">I am a thin man</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
+        var gitalk = new Gitalk({
+          clientID: '013ac5744967572e2355',
+          clientSecret: '5dec8b013098ab59c8080c94981b69ca9dfef7f5',
+          repo: 'shizhonghai.github.io',
+          owner: 'shizhonghai',
+          admin: ['shizhonghai'],
+          id: location.pathname,
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("AuDYP9vufS6q23nPqxlvMAVI-gzGzoHsz", "hc0s7cEgMU5v6LdMUjpC6Jwa");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
