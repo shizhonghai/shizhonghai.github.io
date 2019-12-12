@@ -170,6 +170,28 @@
   </entry>
   
   <entry>
+    <title>JavaScript 名词解释</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/</id>
+    <published>2019-07-17T16:00:00.000Z</published>
+    <updated>2019-07-18T02:19:20.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每日一题（2019-07-18）</title>
     <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/"/>
     <id>https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/</id>
@@ -193,28 +215,6 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 名词解释</title>
-    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/"/>
-    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/</id>
-    <published>2019-07-17T16:00:00.000Z</published>
-    <updated>2019-07-18T02:19:20.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
-<a id="more"></a>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
     
   </entry>
   

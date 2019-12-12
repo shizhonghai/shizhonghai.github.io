@@ -31,16 +31,16 @@
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-07-18）]]></title>
-      <url>%2Fblog-daily%2F2019%2F07%2F18%2FDaily-Interview-Question-1%2F</url>
-      <content type="text"><![CDATA[第 0001 题：请写出如下代码的打印结果123456789var name = 'Tom';(function() &#123; if (typeof name == 'undefined') &#123; var name = 'Jack'; console.log('Goodbye ' + name); &#125; else &#123; console.log('Hello ' + name); &#125;&#125;)(); 公司：京东 【答案】：Goodbye Jack 【解析】：var 关键字有变量提升，它定义的变量会提升到函数的顶部。题目中立即执行函数的中的变量 name 的定义被提升到了顶部，并在初始化赋值之前是 undefined，所以 typeof name == &#39;undefined。]]></content>
+      <title><![CDATA[JavaScript 名词解释]]></title>
+      <url>%2Fblog-daily%2F2019%2F07%2F18%2Fjavascript-glossary%2F</url>
+      <content type="text"><![CDATA[变量提升（hoisting）var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[JavaScript 名词解释]]></title>
-      <url>%2Fblog-daily%2F2019%2F07%2F18%2Fjavascript-glossary%2F</url>
-      <content type="text"><![CDATA[变量提升（hoisting）var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined]]></content>
+      <title><![CDATA[每日一题（2019-07-18）]]></title>
+      <url>%2Fblog-daily%2F2019%2F07%2F18%2FDaily-Interview-Question-1%2F</url>
+      <content type="text"><![CDATA[第 0001 题：请写出如下代码的打印结果123456789var name = 'Tom';(function() &#123; if (typeof name == 'undefined') &#123; var name = 'Jack'; console.log('Goodbye ' + name); &#125; else &#123; console.log('Hello ' + name); &#125;&#125;)(); 公司：京东 【答案】：Goodbye Jack 【解析】：var 关键字有变量提升，它定义的变量会提升到函数的顶部。题目中立即执行函数的中的变量 name 的定义被提升到了顶部，并在初始化赋值之前是 undefined，所以 typeof name == &#39;undefined。]]></content>
     </entry>
 
     
