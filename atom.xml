@@ -38,6 +38,35 @@
   </entry>
   
   <entry>
+    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/12/12/hexo-error-DTraceProviderBindings/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/12/12/hexo-error-DTraceProviderBindings/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:59:06.403Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
+<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>再来执行 hexo 命令果然没有报错信息了:D</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://shizhonghai.github.io/blog-daily/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每日一题（2019-10-29）</title>
     <link href="https://shizhonghai.github.io/blog-daily/2019/12/12/Daily-Interview-Question-2/"/>
     <id>https://shizhonghai.github.io/blog-daily/2019/12/12/Daily-Interview-Question-2/</id>
@@ -76,35 +105,6 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
-    <link href="https://shizhonghai.github.io/blog-daily/2019/12/12/hexo-error-DTraceProviderBindings/"/>
-    <id>https://shizhonghai.github.io/blog-daily/2019/12/12/hexo-error-DTraceProviderBindings/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:59:06.403Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
-<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>再来执行 hexo 命令果然没有报错信息了:D</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://shizhonghai.github.io/blog-daily/tags/hexo/"/>
     
   </entry>
   
@@ -221,28 +221,6 @@
   </entry>
   
   <entry>
-    <title>JavaScript 名词解释</title>
-    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/"/>
-    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/</id>
-    <published>2019-07-17T16:00:00.000Z</published>
-    <updated>2019-07-18T02:19:20.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
-<a id="more"></a>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>每日一题（2019-07-18）</title>
     <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/"/>
     <id>https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/</id>
@@ -266,6 +244,28 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 名词解释</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/</id>
+    <published>2019-07-17T16:00:00.000Z</published>
+    <updated>2019-07-18T02:19:20.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
     
   </entry>
   
@@ -466,6 +466,29 @@
   </entry>
   
   <entry>
+    <title>About Hexo NexT.Pisces</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/05/06/hexo-next-des/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/05/06/hexo-next-des/</id>
+    <published>2019-05-05T16:00:00.000Z</published>
+    <updated>2019-05-06T09:26:20.625Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题官网</a></p>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 博客官网</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Next 主题官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hexo.io
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://shizhonghai.github.io/blog-daily/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Markdown 的常用语法</title>
     <link href="https://shizhonghai.github.io/blog-daily/2019/05/06/markdown/"/>
     <id>https://shizhonghai.github.io/blog-daily/2019/05/06/markdown/</id>
@@ -589,29 +612,6 @@
     
     
       <category term="Markdown" scheme="https://shizhonghai.github.io/blog-daily/tags/Markdown/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About Hexo NexT.Pisces</title>
-    <link href="https://shizhonghai.github.io/blog-daily/2019/05/06/hexo-next-des/"/>
-    <id>https://shizhonghai.github.io/blog-daily/2019/05/06/hexo-next-des/</id>
-    <published>2019-05-05T16:00:00.000Z</published>
-    <updated>2019-05-06T09:26:20.625Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题官网</a></p>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 博客官网</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Next 主题官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://hexo.io
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://shizhonghai.github.io/blog-daily/tags/Hexo/"/>
     
   </entry>
   
