@@ -5,7 +5,7 @@
   <link href="/blog-daily/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/blog-daily/"/>
-  <updated>2019-12-12T02:06:34.331Z</updated>
+  <updated>2019-12-12T06:35:13.082Z</updated>
   <id>https://shizhonghai.github.io/blog-daily/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一题（2019-11-01）</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/12/12/Daily-Interview-Question-3/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/12/12/Daily-Interview-Question-3/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:35:13.082Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
+<p>公司：平安</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一题（2019-10-29）</title>
@@ -54,6 +76,35 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/12/12/hexo-error-DTraceProviderBindings/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/12/12/hexo-error-DTraceProviderBindings/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:59:06.403Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
+<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>再来执行 hexo 命令果然没有报错信息了:D</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://shizhonghai.github.io/blog-daily/tags/hexo/"/>
     
   </entry>
   
@@ -170,28 +221,6 @@
   </entry>
   
   <entry>
-    <title>JavaScript 名词解释</title>
-    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/"/>
-    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/</id>
-    <published>2019-07-17T16:00:00.000Z</published>
-    <updated>2019-07-18T02:19:20.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
-<a id="more"></a>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>每日一题（2019-07-18）</title>
     <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/"/>
     <id>https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/</id>
@@ -215,6 +244,28 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 名词解释</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/</id>
+    <published>2019-07-17T16:00:00.000Z</published>
+    <updated>2019-07-18T02:19:20.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
     
   </entry>
   
@@ -565,36 +616,6 @@
   </entry>
   
   <entry>
-    <title>JavaScript 相同的正则多次调用 test() 返回的值却不同的问题</title>
-    <link href="https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp-test-g/"/>
-    <id>https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp-test-g/</id>
-    <published>2019-04-24T16:00:00.000Z</published>
-    <updated>2019-05-06T09:35:16.711Z</updated>
-    
-    <content type="html"><![CDATA[<p>代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^1[345678][0-9]&#123;9&#125;$/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="number">15328044636</span>));     <span class="comment">//  =&gt; true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="number">15328044636</span>));     <span class="comment">//  =&gt; false</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>这是因为正则 <code>reg</code> 的 g 属性，设置的全局匹配。<code>RegExp</code> 有一个 <code>lastIndex</code> 属性，来保存索引开始位置。上面的问题，第一次调用的 <code>lastIndex</code> 值为0，到了第二次调用，值变成了11。如果正则匹配失败，<code>lastIndex</code> 会被重置为 0。</p>
-<a id="more"></a>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^1[345678][0-9]&#123;9&#125;$/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 0 true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 11 false</span></span><br></pre></td></tr></table></figure>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>第一种方案是将 <code>g</code> 去掉，关闭全局匹配。<br>第二种就是在每次匹配之前将 <code>lastIndex</code> 的值设置为0。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^1[345678][0-9]&#123;9&#125;$/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 0 true</span></span><br><span class="line">reg.lastIndex = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 0 true</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>本文转载自：<a href="https://www.jianshu.com/p/a9840a5bc6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/a9840a5bc6cc</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;代码如下：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reg = &lt;span class=&quot;regexp&quot;&gt;/^1[345678][0-9]&amp;#123;9&amp;#125;$/g&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(reg.test(&lt;span class=&quot;number&quot;&gt;15328044636&lt;/span&gt;));     &lt;span class=&quot;comment&quot;&gt;//  =&amp;gt; true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(reg.test(&lt;span class=&quot;number&quot;&gt;15328044636&lt;/span&gt;));     &lt;span class=&quot;comment&quot;&gt;//  =&amp;gt; false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;问题原因&quot;&gt;&lt;a href=&quot;#问题原因&quot; class=&quot;headerlink&quot; title=&quot;问题原因&quot;&gt;&lt;/a&gt;问题原因&lt;/h3&gt;&lt;p&gt;这是因为正则 &lt;code&gt;reg&lt;/code&gt; 的 g 属性，设置的全局匹配。&lt;code&gt;RegExp&lt;/code&gt; 有一个 &lt;code&gt;lastIndex&lt;/code&gt; 属性，来保存索引开始位置。上面的问题，第一次调用的 &lt;code&gt;lastIndex&lt;/code&gt; 值为0，到了第二次调用，值变成了11。如果正则匹配失败，&lt;code&gt;lastIndex&lt;/code&gt; 会被重置为 0。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Test" scheme="https://shizhonghai.github.io/blog-daily/tags/Test/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript 正则表达式</title>
     <link href="https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp/"/>
     <id>https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp/</id>
@@ -785,6 +806,36 @@
     
     
       <category term="RegExp" scheme="https://shizhonghai.github.io/blog-daily/tags/RegExp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 相同的正则多次调用 test() 返回的值却不同的问题</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp-test-g/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp-test-g/</id>
+    <published>2019-04-24T16:00:00.000Z</published>
+    <updated>2019-05-06T09:35:16.711Z</updated>
+    
+    <content type="html"><![CDATA[<p>代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^1[345678][0-9]&#123;9&#125;$/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="number">15328044636</span>));     <span class="comment">//  =&gt; true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="number">15328044636</span>));     <span class="comment">//  =&gt; false</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>这是因为正则 <code>reg</code> 的 g 属性，设置的全局匹配。<code>RegExp</code> 有一个 <code>lastIndex</code> 属性，来保存索引开始位置。上面的问题，第一次调用的 <code>lastIndex</code> 值为0，到了第二次调用，值变成了11。如果正则匹配失败，<code>lastIndex</code> 会被重置为 0。</p>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^1[345678][0-9]&#123;9&#125;$/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 0 true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 11 false</span></span><br></pre></td></tr></table></figure>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>第一种方案是将 <code>g</code> 去掉，关闭全局匹配。<br>第二种就是在每次匹配之前将 <code>lastIndex</code> 的值设置为0。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^1[345678][0-9]&#123;9&#125;$/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 0 true</span></span><br><span class="line">reg.lastIndex = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.lastIndex, reg.test(<span class="number">15328044636</span>));      <span class="comment">//  =&gt; 0 true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>本文转载自：<a href="https://www.jianshu.com/p/a9840a5bc6cc" target="_blank" rel="noopener">https://www.jianshu.com/p/a9840a5bc6cc</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;代码如下：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; reg = &lt;span class=&quot;regexp&quot;&gt;/^1[345678][0-9]&amp;#123;9&amp;#125;$/g&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(reg.test(&lt;span class=&quot;number&quot;&gt;15328044636&lt;/span&gt;));     &lt;span class=&quot;comment&quot;&gt;//  =&amp;gt; true&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(reg.test(&lt;span class=&quot;number&quot;&gt;15328044636&lt;/span&gt;));     &lt;span class=&quot;comment&quot;&gt;//  =&amp;gt; false&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;问题原因&quot;&gt;&lt;a href=&quot;#问题原因&quot; class=&quot;headerlink&quot; title=&quot;问题原因&quot;&gt;&lt;/a&gt;问题原因&lt;/h3&gt;&lt;p&gt;这是因为正则 &lt;code&gt;reg&lt;/code&gt; 的 g 属性，设置的全局匹配。&lt;code&gt;RegExp&lt;/code&gt; 有一个 &lt;code&gt;lastIndex&lt;/code&gt; 属性，来保存索引开始位置。上面的问题，第一次调用的 &lt;code&gt;lastIndex&lt;/code&gt; 值为0，到了第二次调用，值变成了11。如果正则匹配失败，&lt;code&gt;lastIndex&lt;/code&gt; 会被重置为 0。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Test" scheme="https://shizhonghai.github.io/blog-daily/tags/Test/"/>
     
   </entry>
   
