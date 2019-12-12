@@ -1491,7 +1491,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/blog-daily/blog-daily/2019/04/25/javascript-regexp/">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/blog-daily/blog-daily/2019/04/25/javascript-regexp-test-g/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="I am a thin man">
@@ -1516,8 +1516,8 @@
             
               
                 
-                <a class="post-title-link" href="/blog-daily/2019/04/25/javascript-regexp/" itemprop="url">
-                  JavaScript 正则表达式
+                <a class="post-title-link" href="/blog-daily/2019/04/25/javascript-regexp-test-g/" itemprop="url">
+                  JavaScript 相同的正则多次调用 test() 返回的值却不同的问题
                 </a>
               
             
@@ -1551,7 +1551,7 @@
 
           
           
-             <span id="/blog-daily/2019/04/25/javascript-regexp/" class="leancloud_visitors" data-flag-title="JavaScript 正则表达式">
+             <span id="/blog-daily/2019/04/25/javascript-regexp-test-g/" class="leancloud_visitors" data-flag-title="JavaScript 相同的正则多次调用 test() 返回的值却不同的问题">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1577,15 +1577,11 @@
 
       
         
-          <div class="note info"><p>在 <code>JavaScript</code> 中，正则表达式(Regular Expressions)也是对象。这些模式被用于 <code>RegExp</code> 的 <code>exec</code> 和 <code>test</code> 方法, 以及 <code>String</code> 的 <code>match</code>、<code>replace</code>、<code>search</code> 和 <code>split</code> 方法。</p>
-</div>
-<h2 id="创建一个正则表达式"><a href="#创建一个正则表达式" class="headerlink" title="创建一个正则表达式"></a>创建一个正则表达式</h2><p>你可以使用以下两种方法之一构建一个正则表达式：<br>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab+c/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab+c/gi</span>;</span><br></pre></td></tr></table></figure>
-<p>或者调用 <code>RegExp</code> 对象的构造函数，如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"ab+c"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[a-zA-Z]+[0-9]*\W?_$/</span>, <span class="string">"gi"</span>);</span><br></pre></td></tr></table></figure>
+          <p>代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^1[345678][0-9]&#123;9&#125;$/g</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="number">15328044636</span>));     <span class="comment">//  =&gt; true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="number">15328044636</span>));     <span class="comment">//  =&gt; false</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>这是因为正则 <code>reg</code> 的 g 属性，设置的全局匹配。<code>RegExp</code> 有一个 <code>lastIndex</code> 属性，来保存索引开始位置。上面的问题，第一次调用的 <code>lastIndex</code> 值为0，到了第二次调用，值变成了11。如果正则匹配失败，<code>lastIndex</code> 会被重置为 0。</p>
           <!--noindex-->
           <div class="post-more-link text-center">
-            <a class="btn" href="/blog-daily/2019/04/25/javascript-regexp/#more" rel="contents">
+            <a class="btn" href="/blog-daily/2019/04/25/javascript-regexp-test-g/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
