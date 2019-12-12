@@ -271,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/blog-daily/blog-daily/2019/05/06/hexo-next-des/">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/blog-daily/blog-daily/2019/05/06/markdown/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="I am a thin man">
@@ -296,8 +296,8 @@
             
               
                 
-                <a class="post-title-link" href="/blog-daily/2019/05/06/hexo-next-des/" itemprop="url">
-                  About Hexo NexT.Pisces
+                <a class="post-title-link" href="/blog-daily/2019/05/06/markdown/" itemprop="url">
+                  Markdown 的常用语法
                 </a>
               
             
@@ -331,7 +331,7 @@
 
           
           
-             <span id="/blog-daily/2019/05/06/hexo-next-des/" class="leancloud_visitors" data-flag-title="About Hexo NexT.Pisces">
+             <span id="/blog-daily/2019/05/06/markdown/" class="leancloud_visitors" data-flag-title="Markdown 的常用语法">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -357,142 +357,10 @@
 
       
         
-          
-            <p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题官网</a></p>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 博客官网</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/blog-daily/blog-daily/2019/04/25/javascript-regexp/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="I am a thin man">
-    <meta itemprop="description" content>
-    <meta itemprop="image" content="/blog-daily/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我是瘦子">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/blog-daily/2019/04/25/javascript-regexp/" itemprop="url">
-                  JavaScript 正则表达式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T00:00:00+08:00">
-                2019-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/blog-daily/2019/04/25/javascript-regexp/" class="leancloud_visitors" data-flag-title="JavaScript 正则表达式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <div class="note info"><p>在 <code>JavaScript</code> 中，正则表达式(Regular Expressions)也是对象。这些模式被用于 <code>RegExp</code> 的 <code>exec</code> 和 <code>test</code> 方法, 以及 <code>String</code> 的 <code>match</code>、<code>replace</code>、<code>search</code> 和 <code>split</code> 方法。</p>
-</div>
-<h2 id="创建一个正则表达式"><a href="#创建一个正则表达式" class="headerlink" title="创建一个正则表达式"></a>创建一个正则表达式</h2><p>你可以使用以下两种方法之一构建一个正则表达式：<br>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab+c/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab+c/gi</span>;</span><br></pre></td></tr></table></figure>
-<p>或者调用 <code>RegExp</code> 对象的构造函数，如下所示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"ab+c"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[a-zA-Z]+[0-9]*\W?_$/</span>, <span class="string">"gi"</span>);</span><br></pre></td></tr></table></figure>
+          <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown 支持嵌入 <code>html</code> 标签。<br><b>注意：Markdown 使用 <code>#</code>、<code>+</code>、<code>*</code> 等符号来标记， 符号后面必须跟上至少1个空格才有效！</b></p>
           <!--noindex-->
           <div class="post-more-link text-center">
-            <a class="btn" href="/blog-daily/2019/04/25/javascript-regexp/#more" rel="contents">
+            <a class="btn" href="/blog-daily/2019/05/06/markdown/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -624,6 +492,141 @@
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/blog-daily/2019/04/25/javascript-regexp-test-g/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/blog-daily/blog-daily/2019/04/25/javascript-regexp/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="I am a thin man">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/blog-daily/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我是瘦子">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog-daily/2019/04/25/javascript-regexp/" itemprop="url">
+                  JavaScript 正则表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-25T00:00:00+08:00">
+                2019-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/blog-daily/2019/04/25/javascript-regexp/" class="leancloud_visitors" data-flag-title="JavaScript 正则表达式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <div class="note info"><p>在 <code>JavaScript</code> 中，正则表达式(Regular Expressions)也是对象。这些模式被用于 <code>RegExp</code> 的 <code>exec</code> 和 <code>test</code> 方法, 以及 <code>String</code> 的 <code>match</code>、<code>replace</code>、<code>search</code> 和 <code>split</code> 方法。</p>
+</div>
+<h2 id="创建一个正则表达式"><a href="#创建一个正则表达式" class="headerlink" title="创建一个正则表达式"></a>创建一个正则表达式</h2><p>你可以使用以下两种方法之一构建一个正则表达式：<br>使用一个正则表达式字面量，其由包含在斜杠之间的模式组成，如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab+c/</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> regex = <span class="regexp">/ab+c/gi</span>;</span><br></pre></td></tr></table></figure>
+<p>或者调用 <code>RegExp</code> 对象的构造函数，如下所示：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"ab+c"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> regex = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="regexp">/^[a-zA-Z]+[0-9]*\W?_$/</span>, <span class="string">"gi"</span>);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/blog-daily/2019/04/25/javascript-regexp/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
