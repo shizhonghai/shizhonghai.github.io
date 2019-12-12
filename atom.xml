@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>我是瘦子</title>
   
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog-daily/atom.xml" rel="self"/>
   
-  <link href="https://shizhonghai.github.io/"/>
+  <link href="https://shizhonghai.github.io/blog-daily/"/>
   <updated>2019-12-12T02:06:34.331Z</updated>
-  <id>https://shizhonghai.github.io/</id>
+  <id>https://shizhonghai.github.io/blog-daily/</id>
   
   <author>
     <name>I am a thin man</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>每日一题（2019-10-29）</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/12/12/Daily-Interview-Question-2/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/12/12/Daily-Interview-Question-2/</id>
     <published>2019-12-11T16:00:00.000Z</published>
     <updated>2019-12-12T02:06:34.331Z</updated>
     
@@ -53,14 +53,14 @@
     </summary>
     
     
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>自定义 Echarts 图表悬浮框的位置</title>
-    <link href="https://shizhonghai.github.io/2019/08/12/echarts-tooltip/"/>
-    <id>https://shizhonghai.github.io/2019/08/12/echarts-tooltip/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/08/12/echarts-tooltip/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/08/12/echarts-tooltip/</id>
     <published>2019-08-11T16:00:00.000Z</published>
     <updated>2019-08-12T09:54:08.811Z</updated>
     
@@ -86,14 +86,14 @@
     </summary>
     
     
-      <category term="Echarts" scheme="https://shizhonghai.github.io/tags/Echarts/"/>
+      <category term="Echarts" scheme="https://shizhonghai.github.io/blog-daily/tags/Echarts/"/>
     
   </entry>
   
   <entry>
     <title>React 生命周期</title>
-    <link href="https://shizhonghai.github.io/2019/08/02/react-component/"/>
-    <id>https://shizhonghai.github.io/2019/08/02/react-component/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/08/02/react-component/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/08/02/react-component/</id>
     <published>2019-08-01T16:00:00.000Z</published>
     <updated>2019-08-02T03:05:34.171Z</updated>
     
@@ -115,14 +115,14 @@
     </summary>
     
     
-      <category term="React" scheme="https://shizhonghai.github.io/tags/React/"/>
+      <category term="React" scheme="https://shizhonghai.github.io/blog-daily/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>CSS 技巧</title>
-    <link href="https://shizhonghai.github.io/2019/07/26/CSS-skill/"/>
-    <id>https://shizhonghai.github.io/2019/07/26/CSS-skill/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/07/26/CSS-skill/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/07/26/CSS-skill/</id>
     <published>2019-07-25T16:00:00.000Z</published>
     <updated>2019-08-02T02:59:15.566Z</updated>
     
@@ -165,14 +165,14 @@
     </summary>
     
     
-      <category term="CSS" scheme="https://shizhonghai.github.io/tags/CSS/"/>
+      <category term="CSS" scheme="https://shizhonghai.github.io/blog-daily/tags/CSS/"/>
     
   </entry>
   
   <entry>
     <title>每日一题（2019-07-18）</title>
-    <link href="https://shizhonghai.github.io/2019/07/18/Daily-Interview-Question-1/"/>
-    <id>https://shizhonghai.github.io/2019/07/18/Daily-Interview-Question-1/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/Daily-Interview-Question-1/</id>
     <published>2019-07-17T16:00:00.000Z</published>
     <updated>2019-12-12T01:57:24.647Z</updated>
     
@@ -192,14 +192,14 @@
     </summary>
     
     
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+      <category term="每日一题" scheme="https://shizhonghai.github.io/blog-daily/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript 名词解释</title>
-    <link href="https://shizhonghai.github.io/2019/07/18/javascript-glossary/"/>
-    <id>https://shizhonghai.github.io/2019/07/18/javascript-glossary/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/07/18/javascript-glossary/</id>
     <published>2019-07-17T16:00:00.000Z</published>
     <updated>2019-07-18T02:19:20.544Z</updated>
     
@@ -214,14 +214,14 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>可能是你需要的 react + typescript 50条规范和经验</title>
-    <link href="https://shizhonghai.github.io/2019/07/11/react-typescript/"/>
-    <id>https://shizhonghai.github.io/2019/07/11/react-typescript/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/07/11/react-typescript/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/07/11/react-typescript/</id>
     <published>2019-07-10T16:00:00.000Z</published>
     <updated>2019-07-11T09:48:48.532Z</updated>
     
@@ -410,37 +410,14 @@
     </summary>
     
     
-      <category term="typescript" scheme="https://shizhonghai.github.io/tags/typescript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About Hexo NexT.Pisces</title>
-    <link href="https://shizhonghai.github.io/2019/05/06/hexo-next-des/"/>
-    <id>https://shizhonghai.github.io/2019/05/06/hexo-next-des/</id>
-    <published>2019-05-05T16:00:00.000Z</published>
-    <updated>2019-05-06T09:26:20.625Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题官网</a></p>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 博客官网</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Next 主题官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://hexo.io
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://shizhonghai.github.io/tags/Hexo/"/>
+      <category term="typescript" scheme="https://shizhonghai.github.io/blog-daily/tags/typescript/"/>
     
   </entry>
   
   <entry>
     <title>Markdown 的常用语法</title>
-    <link href="https://shizhonghai.github.io/2019/05/06/markdown/"/>
-    <id>https://shizhonghai.github.io/2019/05/06/markdown/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/05/06/markdown/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/05/06/markdown/</id>
     <published>2019-05-05T16:00:00.000Z</published>
     <updated>2019-05-06T09:35:44.872Z</updated>
     
@@ -560,14 +537,37 @@
     </summary>
     
     
-      <category term="Markdown" scheme="https://shizhonghai.github.io/tags/Markdown/"/>
+      <category term="Markdown" scheme="https://shizhonghai.github.io/blog-daily/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About Hexo NexT.Pisces</title>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/05/06/hexo-next-des/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/05/06/hexo-next-des/</id>
+    <published>2019-05-05T16:00:00.000Z</published>
+    <updated>2019-05-06T09:26:20.625Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题官网</a></p>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 博客官网</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Next 主题官网&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hexo.io
+    
+    </summary>
+    
+    
+      <category term="Hexo" scheme="https://shizhonghai.github.io/blog-daily/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript 正则表达式</title>
-    <link href="https://shizhonghai.github.io/2019/04/25/javascript-regexp/"/>
-    <id>https://shizhonghai.github.io/2019/04/25/javascript-regexp/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp/</id>
     <published>2019-04-24T16:00:00.000Z</published>
     <updated>2019-05-08T03:25:06.270Z</updated>
     
@@ -754,14 +754,14 @@
     </summary>
     
     
-      <category term="RegExp" scheme="https://shizhonghai.github.io/tags/RegExp/"/>
+      <category term="RegExp" scheme="https://shizhonghai.github.io/blog-daily/tags/RegExp/"/>
     
   </entry>
   
   <entry>
     <title>JavaScript 相同的正则多次调用 test() 返回的值却不同的问题</title>
-    <link href="https://shizhonghai.github.io/2019/04/25/javascript-regexp-test-g/"/>
-    <id>https://shizhonghai.github.io/2019/04/25/javascript-regexp-test-g/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp-test-g/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/04/25/javascript-regexp-test-g/</id>
     <published>2019-04-24T16:00:00.000Z</published>
     <updated>2019-05-06T09:35:16.711Z</updated>
     
@@ -784,14 +784,14 @@
     </summary>
     
     
-      <category term="Test" scheme="https://shizhonghai.github.io/tags/Test/"/>
+      <category term="Test" scheme="https://shizhonghai.github.io/blog-daily/tags/Test/"/>
     
   </entry>
   
   <entry>
     <title>灵活运用 JavaScript 开发技巧</title>
-    <link href="https://shizhonghai.github.io/2019/03/01/javascript-skill/"/>
-    <id>https://shizhonghai.github.io/2019/03/01/javascript-skill/</id>
+    <link href="https://shizhonghai.github.io/blog-daily/2019/03/01/javascript-skill/"/>
+    <id>https://shizhonghai.github.io/blog-daily/2019/03/01/javascript-skill/</id>
     <published>2019-02-28T16:00:00.000Z</published>
     <updated>2019-05-07T09:31:19.043Z</updated>
     
@@ -848,7 +848,7 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/blog-daily/tags/JavaScript/"/>
     
   </entry>
   
