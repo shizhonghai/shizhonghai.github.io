@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[git 忽略规则以及 .gitignore 文件不生效解决办法]]></title>
+      <url>%2F2020%2F01%2F07%2Fgitignore%2F</url>
+      <content type="text"><![CDATA[Git 忽略规则#此为注释 – 内容被 Git 忽略 .sample # 忽略所有 .sample 结尾的文件 !lib.sample # 但 lib.sample 除外 /TODO # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO build/ # 忽略 build/ 目录下的所有文件 doc/.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt .gitignore 规则不生效的解决办法把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交 123git rm -rf --cached .git add .git commit -m &apos;update .gitignore&apos;]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[每日一题（2019-10-29）]]></title>
       <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-2%2F</url>
       <content type="text"><![CDATA[第 0002 题：Vue 中的 computed 和 watch 的区别在哪里computed：计算属性 计算属性是由 data 中的已知值，得到的一个新值。 这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。 计算属性不在 data 中，计算属性新值的相关已知值在 data 中。 具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。 别人变化影响我自己。 watch：监听数据的变化 监听data中数据的变化。 监听的数据就是data中的已知值。 无缓存性，页面重新渲染时值不变化也会执行。 我的变化影响别人。 公司：虾皮 watch 擅长处理的场景：一个数据影响多个数据 computed 擅长处理的场景：一个数据受多个数据影响]]></content>
@@ -10,16 +17,16 @@
 
     
     <entry>
-      <title><![CDATA[解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误]]></title>
-      <url>%2F2019%2F12%2F12%2Fhexo-error-DTraceProviderBindings%2F</url>
-      <content type="text"><![CDATA[hexo 报错1Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos; 解决办法 on googlegoogle之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是： 1$ npm install hexo --no-optional 的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式： 12$ npm uninstall hexo$ npm install hexo --no-optional 可是依旧没有效果。其实 hexo 暂时并没有用到 dtrace-prodider ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。 我的解决办法一番折腾之后，我找到了适合我的解决办法，重装 hexo-cli，如果命令行报没权限错误，请记得前面加 sudo : 12$ npm uninstall hexo-cli -g$ npm install hexo-cli -g 再来执行 hexo 命令果然没有报错信息了:D]]></content>
+      <title><![CDATA[每日一题（2019-11-01）]]></title>
+      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
+      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-11-01）]]></title>
-      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
-      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
+      <title><![CDATA[解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误]]></title>
+      <url>%2F2019%2F12%2F12%2Fhexo-error-DTraceProviderBindings%2F</url>
+      <content type="text"><![CDATA[hexo 报错1Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos; 解决办法 on googlegoogle之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是： 1$ npm install hexo --no-optional 的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式： 12$ npm uninstall hexo$ npm install hexo --no-optional 可是依旧没有效果。其实 hexo 暂时并没有用到 dtrace-prodider ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。 我的解决办法一番折腾之后，我找到了适合我的解决办法，重装 hexo-cli，如果命令行报没权限错误，请记得前面加 sudo : 12$ npm uninstall hexo-cli -g$ npm install hexo-cli -g 再来执行 hexo 命令果然没有报错信息了:D]]></content>
     </entry>
 
     
