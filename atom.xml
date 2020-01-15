@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/"/>
-  <updated>2020-01-07T07:50:49.369Z</updated>
+  <updated>2020-01-15T08:59:50.405Z</updated>
   <id>https://shizhonghai.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于 GitHub 相关技巧</title>
+    <link href="https://shizhonghai.github.io/2020/01/15/github/"/>
+    <id>https://shizhonghai.github.io/2020/01/15/github/</id>
+    <published>2020-01-14T16:00:00.000Z</published>
+    <updated>2020-01-15T08:59:50.405Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="显示-GitHub-Stars-数量-官方文档地址：https-shields-io"><a href="#显示-GitHub-Stars-数量-官方文档地址：https-shields-io" class="headerlink" title="显示 GitHub Stars 数量 (官方文档地址：https://shields.io/)"></a>显示 GitHub Stars 数量 (官方文档地址：<a href="https://shields.io/" target="_blank" rel="noopener">https://shields.io/</a>)</h2><p><a href="https://github.com/louzhedong/blog/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/louzhedong/blog.svg?style=social" alt="GitHub stars"></a></p>
+<p><a href="https://github.com/shizhonghai/shizhonghai.github.io/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/shizhonghai/shizhonghai.github.io?style=social" alt="GitHub stars"></a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;显示-GitHub-Stars-数量-官方文档地址：https-shields-io&quot;&gt;&lt;a href=&quot;#显示-GitHub-Stars-数量-官方文档地址：https-shields-io&quot; class=&quot;headerlink&quot; title=&quot;显示 GitHu
+    
+    </summary>
+    
+    
+      <category term="Github" scheme="https://shizhonghai.github.io/tags/Github/"/>
+    
+  </entry>
   
   <entry>
     <title>git 忽略规则以及 .gitignore 文件不生效解决办法</title>
@@ -44,6 +66,28 @@
     
     
       <category term="git" scheme="https://shizhonghai.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一题（2019-11-01）</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:35:13.082Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
+<p>公司：平安</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
@@ -81,28 +125,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot;&gt;&lt;a href=&quot;#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot; class=&quot;headerlink&quot; title=&quot;第 0002 题：Vue 中
-    
-    </summary>
-    
-    
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题（2019-11-01）</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:35:13.082Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
-<p>公司：平安</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
     
     </summary>
     
