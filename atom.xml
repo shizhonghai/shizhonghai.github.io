@@ -62,10 +62,11 @@
     <link href="https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/"/>
     <id>https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/</id>
     <published>2020-04-01T16:00:00.000Z</published>
-    <updated>2020-04-02T09:46:50.616Z</updated>
+    <updated>2020-04-02T09:51:56.889Z</updated>
     
     <content type="html"><![CDATA[<p>例如：在webpack.base.config.js 文件中的别名配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span> (<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.join(__dirname, <span class="string">'.'</span>, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./'</span>),</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">            <span class="string">'@views'</span>: resolve(<span class="string">'src/views'</span>),</span><br><span class="line">            <span class="string">'@components'</span>: resolve(<span class="string">'src/components'</span>),</span><br><span class="line">            <span class="string">'@core'</span>: resolve(<span class="string">'src/core'</span>),</span><br><span class="line">            <span class="string">'@utils'</span>: resolve(<span class="string">'src/utils'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>WebStorm Windows setting：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">WebStorm MacOS setting：</span><br></pre></td></tr></table></figure></p>
+<p>WebStorm Windows setting：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">WebStorm MacOS setting：</span><br></pre></td></tr></table></figure>
 <p>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack<br>```</p>
 <p>配置如下图：<br><img src="/images/webstorm-webpack-config.png" alt="WebStorm 配置" title="WebStorm 配置"></p>
 ]]></content>
@@ -428,6 +429,48 @@
   </entry>
   
   <entry>
+    <title>每日一题（2019-10-29）</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T02:06:34.331Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0002-题：Vue-中的-computed-和-watch-的区别在哪里"><a href="#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里" class="headerlink" title="第 0002 题：Vue 中的 computed 和 watch 的区别在哪里"></a>第 0002 题：Vue 中的 computed 和 watch 的区别在哪里</h2><p><code>computed</code>：计算属性</p>
+<ul>
+<li>计算属性是由 <code>data</code> 中的已知值，得到的一个新值。</li>
+<li>这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。</li>
+<li>计算属性不在 <code>data</code> 中，计算属性新值的相关已知值在 <code>data</code> 中。</li>
+<li>具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。</li>
+<li>别人变化影响我自己。</li>
+</ul>
+<p><code>watch</code>：监听数据的变化</p>
+<ul>
+<li>监听data中数据的变化。</li>
+<li>监听的数据就是data中的已知值。</li>
+<li>无缓存性，页面重新渲染时值不变化也会执行。</li>
+<li>我的变化影响别人。</li>
+</ul>
+<p>公司：虾皮</p>
+<blockquote>
+<ol>
+<li><code>watch</code> 擅长处理的场景：一个数据影响多个数据</li>
+<li><code>computed</code> 擅长处理的场景：一个数据受多个数据影响</li>
+</ol>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot;&gt;&lt;a href=&quot;#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot; class=&quot;headerlink&quot; title=&quot;第 0002 题：Vue 中
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每日一题（2019-11-01）</title>
     <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
     <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
@@ -475,48 +518,6 @@
     
     
       <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题（2019-10-29）</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T02:06:34.331Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第-0002-题：Vue-中的-computed-和-watch-的区别在哪里"><a href="#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里" class="headerlink" title="第 0002 题：Vue 中的 computed 和 watch 的区别在哪里"></a>第 0002 题：Vue 中的 computed 和 watch 的区别在哪里</h2><p><code>computed</code>：计算属性</p>
-<ul>
-<li>计算属性是由 <code>data</code> 中的已知值，得到的一个新值。</li>
-<li>这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。</li>
-<li>计算属性不在 <code>data</code> 中，计算属性新值的相关已知值在 <code>data</code> 中。</li>
-<li>具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。</li>
-<li>别人变化影响我自己。</li>
-</ul>
-<p><code>watch</code>：监听数据的变化</p>
-<ul>
-<li>监听data中数据的变化。</li>
-<li>监听的数据就是data中的已知值。</li>
-<li>无缓存性，页面重新渲染时值不变化也会执行。</li>
-<li>我的变化影响别人。</li>
-</ul>
-<p>公司：虾皮</p>
-<blockquote>
-<ol>
-<li><code>watch</code> 擅长处理的场景：一个数据影响多个数据</li>
-<li><code>computed</code> 擅长处理的场景：一个数据受多个数据影响</li>
-</ol>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot;&gt;&lt;a href=&quot;#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot; class=&quot;headerlink&quot; title=&quot;第 0002 题：Vue 中
-    
-    </summary>
-    
-    
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
