@@ -58,6 +58,30 @@
   </entry>
   
   <entry>
+    <title>WebStorm 如何识别 Webpack 中的别名</title>
+    <link href="https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/"/>
+    <id>https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/</id>
+    <published>2020-04-01T16:00:00.000Z</published>
+    <updated>2020-04-02T09:46:50.616Z</updated>
+    
+    <content type="html"><![CDATA[<p>例如：在webpack.base.config.js 文件中的别名配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span> (<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.join(__dirname, <span class="string">'.'</span>, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./'</span>),</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">            <span class="string">'@views'</span>: resolve(<span class="string">'src/views'</span>),</span><br><span class="line">            <span class="string">'@components'</span>: resolve(<span class="string">'src/components'</span>),</span><br><span class="line">            <span class="string">'@core'</span>: resolve(<span class="string">'src/core'</span>),</span><br><span class="line">            <span class="string">'@utils'</span>: resolve(<span class="string">'src/utils'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>WebStorm Windows setting：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">WebStorm MacOS setting：</span><br></pre></td></tr></table></figure></p>
+<p>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack<br>```</p>
+<p>配置如下图：<br><img src="/images/webstorm-webpack-config.png" alt="WebStorm 配置" title="WebStorm 配置"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;例如：在webpack.base.config.js 文件中的别名配置&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span
+    
+    </summary>
+    
+    
+      <category term="WebStorm" scheme="https://shizhonghai.github.io/tags/WebStorm/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux 下安装 pm2 后找不到 pm2 命令解决方法</title>
     <link href="https://shizhonghai.github.io/2020/03/31/node-pm2/"/>
     <id>https://shizhonghai.github.io/2020/03/31/node-pm2/</id>
@@ -404,6 +428,28 @@
   </entry>
   
   <entry>
+    <title>每日一题（2019-11-01）</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:35:13.082Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
+<p>公司：平安</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
     <link href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/"/>
     <id>https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/</id>
@@ -429,28 +475,6 @@
     
     
       <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题（2019-11-01）</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:35:13.082Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
-<p>公司：平安</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
-    
-    </summary>
-    
-    
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
@@ -1224,70 +1248,6 @@
     
     
       <category term="Test" scheme="https://shizhonghai.github.io/tags/Test/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>灵活运用 JavaScript 开发技巧</title>
-    <link href="https://shizhonghai.github.io/2019/03/01/javascript-skill/"/>
-    <id>https://shizhonghai.github.io/2019/03/01/javascript-skill/</id>
-    <published>2019-02-28T16:00:00.000Z</published>
-    <updated>2019-05-07T09:31:19.043Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Array-Skill"><a href="#Array-Skill" class="headerlink" title="Array Skill"></a>Array Skill</h2><blockquote>
-<p>统计元素个数</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> count = arr.reduce(<span class="function">(<span class="params">t, c</span>) =&gt;</span> &#123;</span><br><span class="line">    t[c] = t[c] ? ++ t[c] : <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;, &#123;&#125;);</span><br><span class="line"><span class="comment">// count =&gt; &#123; 0: 1, 1: 2, 2: 3 &#125;</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<blockquote>
-<p>快速创建数据列表</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> data = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>).fill(&#123;<span class="attr">id</span>: <span class="number">1</span>&#125;);</span><br><span class="line"><span class="comment">// data =&gt; [&#123;id:1&#125;,&#123;id:1&#125;,&#123;id:1&#125;,&#123;id:1&#125;,&#123;id:1&#125;]</span></span><br></pre></td></tr></table></figure>
-<p>Tips: <code>fill()</code> 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。不包括终止索引。</p>
-<blockquote>
-<p>创建指定长度数组</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [...new <span class="built_in">Array</span>(<span class="number">5</span>).keys()];</span><br><span class="line"><span class="comment">// arr =&gt; [0, 1, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>创建指定长度且值相等的数组</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [...new <span class="built_in">Array</span>(<span class="number">3</span>).keys()].fill(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// arr =&gt; [0, 0, 0]</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Object-Skill"><a href="#Object-Skill" class="headerlink" title="Object Skill"></a>Object Skill</h2><blockquote>
-<p>删除无用属性</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">a</span>: <span class="number">0</span>, <span class="attr">b</span>: <span class="number">1</span>, <span class="attr">c</span>: <span class="number">2</span> &#125;; <span class="comment">// 只想拿b和c</span></span><br><span class="line"><span class="keyword">const</span> &#123; a, ...rest &#125; = obj;</span><br><span class="line"><span class="comment">// rest =&gt; &#123; b: 1, c: 2 &#125;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="DOM-Skill"><a href="#DOM-Skill" class="headerlink" title="DOM Skill"></a>DOM Skill</h2><blockquote>
-<p>显示全部 <code>DOM</code> 边框：<code>调试页面元素边界时使用</code></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[].forEach.call($$(<span class="string">"*"</span>), dom =&gt; &#123;</span><br><span class="line">	dom.style.outline = <span class="string">"1px solid #"</span> + (~~(<span class="built_in">Math</span>.random() * (<span class="number">1</span> &lt;&lt; <span class="number">24</span>))).toString(<span class="number">16</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Number-Skill"><a href="#Number-Skill" class="headerlink" title="Number Skill"></a>Number Skill</h2><blockquote>
-<p>取最小最大值</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">const</span> min = <span class="built_in">Math</span>.min(...arr);</span><br><span class="line"><span class="keyword">const</span> max = <span class="built_in">Math</span>.max(...arr);</span><br><span class="line"><span class="comment">// min max =&gt; 0 2</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="String-Skill"><a href="#String-Skill" class="headerlink" title="String Skill"></a>String Skill</h2><blockquote>
-<p>生成随机HEX色值</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> randomColor = <span class="function"><span class="params">()</span> =&gt;</span> <span class="string">"#"</span> + <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">0xffffff</span>).toString(<span class="number">16</span>).padEnd(<span class="number">6</span>, <span class="string">"0"</span>);</span><br><span class="line"><span class="keyword">const</span> color = randomColor();</span><br><span class="line"><span class="comment">// color =&gt; "#f03665"</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>获取查询字符串参数</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Assuming "?post=1234&amp;action=edit"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> urlParams = <span class="keyword">new</span> URLSearchParams(<span class="built_in">window</span>.location.search);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(urlParams.has(<span class="string">'post'</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(urlParams.get(<span class="string">'action'</span>)); <span class="comment">// "edit"</span></span><br><span class="line"><span class="built_in">console</span>.log(urlParams.getAll(<span class="string">'action'</span>)); <span class="comment">// ["edit"]</span></span><br><span class="line"><span class="built_in">console</span>.log(urlParams.toString()); <span class="comment">// "?post=1234&amp;action=edit"</span></span><br><span class="line"><span class="built_in">console</span>.log(urlParams.append(<span class="string">'active'</span>, <span class="string">'1'</span>)); <span class="comment">// "?post=1234&amp;action=edit&amp;active=1"</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Array-Skill&quot;&gt;&lt;a href=&quot;#Array-Skill&quot; class=&quot;headerlink&quot; title=&quot;Array Skill&quot;&gt;&lt;/a&gt;Array Skill&lt;/h2&gt;&lt;blockquote&gt;
-&lt;p&gt;统计元素个数&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; arr = [&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; count = arr.reduce(&lt;span class=&quot;function&quot;&gt;(&lt;span class=&quot;params&quot;&gt;t, c&lt;/span&gt;) =&amp;gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    t[c] = t[c] ? ++ t[c] : &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; t;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;, &amp;#123;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// count =&amp;gt; &amp;#123; 0: 1, 1: 2, 2: 3 &amp;#125;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
     
   </entry>
   

@@ -10,6 +10,13 @@
 
     
     <entry>
+      <title><![CDATA[WebStorm 如何识别 Webpack 中的别名]]></title>
+      <url>%2F2020%2F04%2F02%2Fwebstorm-webpack-config%2F</url>
+      <content type="text"><![CDATA[例如：在webpack.base.config.js 文件中的别名配置1234567891011121314151617181920'use strict'const path = require('path')function resolve (dir) &#123; return path.join(__dirname, '.', dir)&#125;module.exports = &#123; context: path.resolve(__dirname, './'), resolve: &#123; extensions: ['.js', '.vue', '.json'], alias: &#123; '@': resolve('src'), '@views': resolve('src/views'), '@components': resolve('src/components'), '@core': resolve('src/core'), '@utils': resolve('src/utils') &#125; &#125;,&#125; WebStorm Windows setting：1234File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack``` WebStorm MacOS setting： WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack``` 配置如下图：]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Linux 下安装 pm2 后找不到 pm2 命令解决方法]]></title>
       <url>%2F2020%2F03%2F31%2Fnode-pm2%2F</url>
       <content type="text"><![CDATA[今天安装pm2碰到一个问题，使用 npm install pm2 -g 安装完成时，找不到 pm2 命令： 在安装提示中可以看到 pm2 安装位置，此时我们只要使用以下命令将 pm2 放入系统路径下就可以了： 1ln -s /usr/src/node-v12.13.0-linux-x64/bin/pm2 /usr/local/bin/]]></content>
@@ -45,16 +52,16 @@
 
     
     <entry>
-      <title><![CDATA[解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误]]></title>
-      <url>%2F2019%2F12%2F12%2Fhexo-error-DTraceProviderBindings%2F</url>
-      <content type="text"><![CDATA[hexo 报错1Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos; 解决办法 on googlegoogle之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是： 1$ npm install hexo --no-optional 的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式： 12$ npm uninstall hexo$ npm install hexo --no-optional 可是依旧没有效果。其实 hexo 暂时并没有用到 dtrace-prodider ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。 我的解决办法一番折腾之后，我找到了适合我的解决办法，重装 hexo-cli，如果命令行报没权限错误，请记得前面加 sudo : 12$ npm uninstall hexo-cli -g$ npm install hexo-cli -g 再来执行 hexo 命令果然没有报错信息了:D]]></content>
+      <title><![CDATA[每日一题（2019-11-01）]]></title>
+      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
+      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-11-01）]]></title>
-      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
-      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
+      <title><![CDATA[解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误]]></title>
+      <url>%2F2019%2F12%2F12%2Fhexo-error-DTraceProviderBindings%2F</url>
+      <content type="text"><![CDATA[hexo 报错1Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos; 解决办法 on googlegoogle之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是： 1$ npm install hexo --no-optional 的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式： 12$ npm uninstall hexo$ npm install hexo --no-optional 可是依旧没有效果。其实 hexo 暂时并没有用到 dtrace-prodider ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。 我的解决办法一番折腾之后，我找到了适合我的解决办法，重装 hexo-cli，如果命令行报没权限错误，请记得前面加 sudo : 12$ npm uninstall hexo-cli -g$ npm install hexo-cli -g 再来执行 hexo 命令果然没有报错信息了:D]]></content>
     </entry>
 
     
