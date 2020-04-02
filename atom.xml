@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/"/>
-  <updated>2020-04-02T05:40:29.040Z</updated>
+  <updated>2020-04-02T09:54:36.961Z</updated>
   <id>https://shizhonghai.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>WebStorm 如何识别 Webpack 中的别名</title>
+    <link href="https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/"/>
+    <id>https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/</id>
+    <published>2020-04-01T16:00:00.000Z</published>
+    <updated>2020-04-02T09:54:36.961Z</updated>
+    
+    <content type="html"><![CDATA[<p>例如：在webpack.base.config.js 文件中的别名配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span> (<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.join(__dirname, <span class="string">'.'</span>, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./'</span>),</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">            <span class="string">'@views'</span>: resolve(<span class="string">'src/views'</span>),</span><br><span class="line">            <span class="string">'@components'</span>: resolve(<span class="string">'src/components'</span>),</span><br><span class="line">            <span class="string">'@core'</span>: resolve(<span class="string">'src/core'</span>),</span><br><span class="line">            <span class="string">'@utils'</span>: resolve(<span class="string">'src/utils'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>WebStorm Windows setting：<br><code>File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</code></p>
+<p>WebStorm MacOS setting：</p>
+<p><code>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack</code></p>
+<p>配置如下图：<br><img src="/images/webstorm-webpack-config.png" alt="WebStorm 配置" title="WebStorm 配置"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;例如：在webpack.base.config.js 文件中的别名配置&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span
+    
+    </summary>
+    
+    
+      <category term="WebStorm" scheme="https://shizhonghai.github.io/tags/WebStorm/"/>
+    
+  </entry>
   
   <entry>
     <title>Nginx 配置 https 并强制跳转 443 端口</title>
@@ -54,31 +79,6 @@
     
     
       <category term="Nginx" scheme="https://shizhonghai.github.io/tags/Nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>WebStorm 如何识别 Webpack 中的别名</title>
-    <link href="https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/"/>
-    <id>https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/</id>
-    <published>2020-04-01T16:00:00.000Z</published>
-    <updated>2020-04-02T09:51:56.889Z</updated>
-    
-    <content type="html"><![CDATA[<p>例如：在webpack.base.config.js 文件中的别名配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span> (<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.join(__dirname, <span class="string">'.'</span>, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./'</span>),</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">            <span class="string">'@views'</span>: resolve(<span class="string">'src/views'</span>),</span><br><span class="line">            <span class="string">'@components'</span>: resolve(<span class="string">'src/components'</span>),</span><br><span class="line">            <span class="string">'@core'</span>: resolve(<span class="string">'src/core'</span>),</span><br><span class="line">            <span class="string">'@utils'</span>: resolve(<span class="string">'src/utils'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>WebStorm Windows setting：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">WebStorm MacOS setting：</span><br></pre></td></tr></table></figure>
-<p>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack<br>```</p>
-<p>配置如下图：<br><img src="/images/webstorm-webpack-config.png" alt="WebStorm 配置" title="WebStorm 配置"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;例如：在webpack.base.config.js 文件中的别名配置&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span
-    
-    </summary>
-    
-    
-      <category term="WebStorm" scheme="https://shizhonghai.github.io/tags/WebStorm/"/>
     
   </entry>
   
@@ -429,6 +429,35 @@
   </entry>
   
   <entry>
+    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:59:06.403Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
+<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>再来执行 hexo 命令果然没有报错信息了:D</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每日一题（2019-10-29）</title>
     <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
     <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
@@ -489,35 +518,6 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:59:06.403Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
-<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>再来执行 hexo 命令果然没有报错信息了:D</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
     
   </entry>
   

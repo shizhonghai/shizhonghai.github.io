@@ -95,7 +95,7 @@
 <meta property="og:description" content="例如：在webpack.base.config.js 文件中的别名配置1234567891011121314151617181920&apos;use strict&apos;const path = require(&apos;path&apos;)function resolve (dir) &amp;#123;  return path.join(__dirname, &apos;.&apos;, dir)&amp;#125;module.exports = &amp;#1">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://shizhonghai.github.io/images/webstorm-webpack-config.png">
-<meta property="og:updated_time" content="2020-04-02T09:51:56.889Z">
+<meta property="og:updated_time" content="2020-04-02T09:54:36.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WebStorm 如何识别 Webpack 中的别名">
 <meta name="twitter:description" content="例如：在webpack.base.config.js 文件中的别名配置1234567891011121314151617181920&apos;use strict&apos;const path = require(&apos;path&apos;)function resolve (dir) &amp;#123;  return path.join(__dirname, &apos;.&apos;, dir)&amp;#125;module.exports = &amp;#1">
@@ -361,9 +361,9 @@
 
       
         <p>例如：在webpack.base.config.js 文件中的别名配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span> (<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.join(__dirname, <span class="string">'.'</span>, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./'</span>),</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">            <span class="string">'@views'</span>: resolve(<span class="string">'src/views'</span>),</span><br><span class="line">            <span class="string">'@components'</span>: resolve(<span class="string">'src/components'</span>),</span><br><span class="line">            <span class="string">'@core'</span>: resolve(<span class="string">'src/core'</span>),</span><br><span class="line">            <span class="string">'@utils'</span>: resolve(<span class="string">'src/utils'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>WebStorm Windows setting：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">WebStorm MacOS setting：</span><br></pre></td></tr></table></figure>
-<p>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack<br>```</p>
+<p>WebStorm Windows setting：<br><code>File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</code></p>
+<p>WebStorm MacOS setting：</p>
+<p><code>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack</code></p>
 <p>配置如下图：<br><img src="/images/webstorm-webpack-config.png" alt="WebStorm 配置" title="WebStorm 配置"></p>
 
       
@@ -397,8 +397,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/31/node-pm2/" rel="next" title="Linux 下安装 pm2 后找不到 pm2 命令解决方法">
-                <i class="fa fa-chevron-left"></i> Linux 下安装 pm2 后找不到 pm2 命令解决方法
+              <a href="/2020/04/02/nginx-config-https/" rel="next" title="Nginx 配置 https 并强制跳转 443 端口">
+                <i class="fa fa-chevron-left"></i> Nginx 配置 https 并强制跳转 443 端口
               </a>
             
           </div>
@@ -406,10 +406,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/02/nginx-config-https/" rel="prev" title="Nginx 配置 https 并强制跳转 443 端口">
-                Nginx 配置 https 并强制跳转 443 端口 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
