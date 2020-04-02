@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/"/>
-  <updated>2020-03-31T06:18:31.632Z</updated>
+  <updated>2020-04-02T05:40:29.040Z</updated>
   <id>https://shizhonghai.github.io/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nginx 配置 https 并强制跳转 443 端口</title>
+    <link href="https://shizhonghai.github.io/2020/04/02/nginx-config-https/"/>
+    <id>https://shizhonghai.github.io/2020/04/02/nginx-config-https/</id>
+    <published>2020-04-01T16:00:00.000Z</published>
+    <updated>2020-04-02T05:40:29.040Z</updated>
+    
+    <content type="html"><![CDATA[<p>在Nginx/Tengine服务器上安装证书</p>
+<h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><p>申请证书时需要选择 系统自动创建CSR。</p>
+<h2 id="操作指南"><a href="#操作指南" class="headerlink" title="操作指南"></a>操作指南</h2><p>1.登录阿里云<a href="https://yundunnext.console.aliyun.com/?p=casnext#/overview/cn-hangzhou" target="_blank" rel="noopener">SSL证书控制台</a>。</p>
+<p>2.在SSL证书页面定位到需要下载的证书(如没有证书，请先购买)，并单击下载按钮<br><img src="/images/nginx-2020-04-02_11-37-31.png" alt="nginx https 配置1" title="nginx https 配置1"></p>
+<a id="more"></a>
+<p>3.在证书下载侧页面中定位到 Nginx 服务器，并单击右侧操作栏的下载，将 Nginx 服务器证书压缩包下载到本地。<br><img src="/images/nginx-2020-04-02_11-45-45.png" alt="nginx https 配置2" title="nginx https 配置2"></p>
+<p>4.解压已下载保存到本地的 Nginx 证书压缩包文件。<br>解压后的文件夹中有2个文件：</p>
+<ul>
+<li>证书文件：以.pem为后缀或文件类型。</li>
+<li>密钥文件：以.key为后缀或文件类型。</li>
+</ul>
+<p><img src="/images/nginx-2020-04-02_11-52-32.png" alt="nginx https 配置3" title="nginx https 配置3"></p>
+<p>5.登录您的 Nginx 服务器，在Nginx安装目录（默认Nginx安装目录为/usr/local/nginx/conf）下创建cert目录，并将下载的证书文件和密钥文件拷贝到cert目录中。</p>
+<blockquote>
+<p>说明 如果您在申请证书时选择手动创建CSR文件，请将对应的密钥文件放到cert目录中，并命名为domain name.key。</p>
+</blockquote>
+<p>6.修改Nginx安装目录/conf/nginx.conf文件。<br>   按照下文中注释内容修改nginx.conf文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"># 以下属性中以ssl开头的属性代表与证书配置有关，其他属性请根据自己的需要进行配置。</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;   #SSL协议访问端口号为443。此处如未添加ssl，可能会造成Nginx无法启动。</span><br><span class="line">    server_name localhost;  #将localhost修改为您证书绑定的域名，例如：www.example.com。</span><br><span class="line">    ssl_certificate ../cert/domain name.pem;   #将domain name.pem替换成您证书的文件名。</span><br><span class="line">    ssl_certificate_key ../cert/domain name.key;   #将domain name.key替换成您证书的密钥文件名。</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;  #使用此加密套件。</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;   #使用该协议进行配置。</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    # 以下配置主要做8086端口转发，具体配置请以实际项目为准   </span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_pass_request_headers on;</span><br><span class="line">        proxy_http_version 1.1; </span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">        proxy_pass http://127.0.0.1:8086; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 80端口重定向到443端口</span><br><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name xxxx.com;   # 你的域名</span><br><span class="line">    rewrite ^(.*)$ https://$host$1 permanent;   # 把http的域名请求转成https</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name xxx.com;</span><br><span class="line">    return 301 https://www.xxx.com$request_uri;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.保存nginx.conf文件后退出。<br>8.执行以下命令重启Nginx服务器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nginx -s stop</span><br><span class="line">nginx -s start</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Nginx/Tengine服务器上安装证书&lt;/p&gt;
+&lt;h2 id=&quot;前提条件&quot;&gt;&lt;a href=&quot;#前提条件&quot; class=&quot;headerlink&quot; title=&quot;前提条件&quot;&gt;&lt;/a&gt;前提条件&lt;/h2&gt;&lt;p&gt;申请证书时需要选择 系统自动创建CSR。&lt;/p&gt;
+&lt;h2 id=&quot;操作指南&quot;&gt;&lt;a href=&quot;#操作指南&quot; class=&quot;headerlink&quot; title=&quot;操作指南&quot;&gt;&lt;/a&gt;操作指南&lt;/h2&gt;&lt;p&gt;1.登录阿里云&lt;a href=&quot;https://yundunnext.console.aliyun.com/?p=casnext#/overview/cn-hangzhou&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;SSL证书控制台&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;2.在SSL证书页面定位到需要下载的证书(如没有证书，请先购买)，并单击下载按钮&lt;br&gt;&lt;img src=&quot;/images/nginx-2020-04-02_11-37-31.png&quot; alt=&quot;nginx https 配置1&quot; title=&quot;nginx https 配置1&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Nginx" scheme="https://shizhonghai.github.io/tags/Nginx/"/>
+    
+  </entry>
   
   <entry>
     <title>Linux 下安装 pm2 后找不到 pm2 命令解决方法</title>
@@ -362,6 +404,57 @@
   </entry>
   
   <entry>
+    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:59:06.403Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
+<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>再来执行 hexo 命令果然没有报错信息了:D</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一题（2019-11-01）</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:35:13.082Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
+<p>公司：平安</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每日一题（2019-10-29）</title>
     <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
     <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
@@ -400,57 +493,6 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题（2019-11-01）</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:35:13.082Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
-<p>公司：平安</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
-    
-    </summary>
-    
-    
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:59:06.403Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
-<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>再来执行 hexo 命令果然没有报错信息了:D</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
     
   </entry>
   
