@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Js 数组扁平化]]></title>
+      <url>%2F2020%2F04%2F13%2Fjavascript-arrary%2F</url>
+      <content type="text"><![CDATA[问题：[[0, 1], [2, 3], [4, 5]] -&gt; [0, 1, 2, 3, 4, 5]？ 方法一 利用 es5 的 arr.reduce(callback[, initialValue]) 实现 123let arr1 = [[0, 1], [2, 3], [4, 5]];let arr2 = arr1.reduce( (a, b) =&gt; a.concat(b) );// arr2 [0, 1, 2, 3, 4, 5] 方法二 多维数组 1234let arr = [[1,2],3,[[[4], 5]]]let flatten = (arr) =&gt; [].concat( ...arr.map(x =&gt; Array.isArray(x) ? flatten(x) : x) ) let arr2 = flatten(arr);console.log(arr2) // arr2 [1, 2, 3, 4, 5] 方法三 利用 apply 实现 123let arr1 = [[0, 1], [2, 3], [4, 5]];let arr2 = [].concat.apply([], arr1);console.log(arr2); // arr2 [0, 1, 2, 3, 4, 5] 方法四 利用 ES 的最新语法，Array.prototype.flat()。缺点是，有兼容性问题。优点是非常简单。 flat() 方法会按照一个可指定的深度递归遍历数组(默认值为1)，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。 12345678910111213141516let arr1 = [1, 2, [3, 4]];let arr2 = arr1.flat(); // arr2 [1, 2, 3, 4]let arr3 = [1, 2, [3, 4, [5, 6]]];let arr4 = arr3.flat(); // arr4 [1, 2, 3, 4, [5, 6]]let arr5 = [1, 2, [3, 4, [5, 6]]];let arr6 = arr5.flat(2); // arr6 [1, 2, 3, 4, 5, 6]// 使用 Infinity，可展开任意深度的嵌套数组let arrInfinity = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];let arr7 = arrInfinity.flat(Infinity); // arr7 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]// flat() 方法会移除数组中的空项，但 undefined、null 仍会保留let arr8 = [1, 2, , 4, 5];let arr9 = arr8.flat(); // arr9 [1, 2, 4, 5]]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[WebStorm 如何识别 Webpack 中的别名]]></title>
       <url>%2F2020%2F04%2F02%2Fwebstorm-webpack-config%2F</url>
       <content type="text"><![CDATA[例如：在webpack.base.config.js 文件中的别名配置1234567891011121314151617181920'use strict'const path = require('path')function resolve (dir) &#123; return path.join(__dirname, '.', dir)&#125;module.exports = &#123; context: path.resolve(__dirname, './'), resolve: &#123; extensions: ['.js', '.vue', '.json'], alias: &#123; '@': resolve('src'), '@views': resolve('src/views'), '@components': resolve('src/components'), '@core': resolve('src/core'), '@utils': resolve('src/utils') &#125; &#125;,&#125; WebStorm Windows setting：File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack WebStorm MacOS setting： WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack 配置如下图：]]></content>
@@ -59,16 +66,16 @@
 
     
     <entry>
-      <title><![CDATA[解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误]]></title>
-      <url>%2F2019%2F12%2F12%2Fhexo-error-DTraceProviderBindings%2F</url>
-      <content type="text"><![CDATA[hexo 报错1Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos; 解决办法 on googlegoogle之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是： 1$ npm install hexo --no-optional 的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式： 12$ npm uninstall hexo$ npm install hexo --no-optional 可是依旧没有效果。其实 hexo 暂时并没有用到 dtrace-prodider ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。 我的解决办法一番折腾之后，我找到了适合我的解决办法，重装 hexo-cli，如果命令行报没权限错误，请记得前面加 sudo : 12$ npm uninstall hexo-cli -g$ npm install hexo-cli -g 再来执行 hexo 命令果然没有报错信息了:D]]></content>
+      <title><![CDATA[每日一题（2019-11-01）]]></title>
+      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
+      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-11-01）]]></title>
-      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
-      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
+      <title><![CDATA[解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误]]></title>
+      <url>%2F2019%2F12%2F12%2Fhexo-error-DTraceProviderBindings%2F</url>
+      <content type="text"><![CDATA[hexo 报错1Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos; 解决办法 on googlegoogle之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是： 1$ npm install hexo --no-optional 的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式： 12$ npm uninstall hexo$ npm install hexo --no-optional 可是依旧没有效果。其实 hexo 暂时并没有用到 dtrace-prodider ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。 我的解决办法一番折腾之后，我找到了适合我的解决办法，重装 hexo-cli，如果命令行报没权限错误，请记得前面加 sudo : 12$ npm uninstall hexo-cli -g$ npm install hexo-cli -g 再来执行 hexo 命令果然没有报错信息了:D]]></content>
     </entry>
 
     
@@ -94,16 +101,16 @@
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-07-18）]]></title>
-      <url>%2F2019%2F07%2F18%2FDaily-Interview-Question-1%2F</url>
-      <content type="text"><![CDATA[第 0001 题：请写出如下代码的打印结果123456789var name = 'Tom';(function() &#123; if (typeof name == 'undefined') &#123; var name = 'Jack'; console.log('Goodbye ' + name); &#125; else &#123; console.log('Hello ' + name); &#125;&#125;)(); 公司：京东 【答案】：Goodbye Jack 【解析】：var 关键字有变量提升，它定义的变量会提升到函数的顶部。题目中立即执行函数的中的变量 name 的定义被提升到了顶部，并在初始化赋值之前是 undefined，所以 typeof name == &#39;undefined。]]></content>
+      <title><![CDATA[JavaScript 名词解释]]></title>
+      <url>%2F2019%2F07%2F18%2Fjavascript-glossary%2F</url>
+      <content type="text"><![CDATA[变量提升（hoisting）var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[JavaScript 名词解释]]></title>
-      <url>%2F2019%2F07%2F18%2Fjavascript-glossary%2F</url>
-      <content type="text"><![CDATA[变量提升（hoisting）var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined]]></content>
+      <title><![CDATA[每日一题（2019-07-18）]]></title>
+      <url>%2F2019%2F07%2F18%2FDaily-Interview-Question-1%2F</url>
+      <content type="text"><![CDATA[第 0001 题：请写出如下代码的打印结果123456789var name = 'Tom';(function() &#123; if (typeof name == 'undefined') &#123; var name = 'Jack'; console.log('Goodbye ' + name); &#125; else &#123; console.log('Hello ' + name); &#125;&#125;)(); 公司：京东 【答案】：Goodbye Jack 【解析】：var 关键字有变量提升，它定义的变量会提升到函数的顶部。题目中立即执行函数的中的变量 name 的定义被提升到了顶部，并在初始化赋值之前是 undefined，所以 typeof name == &#39;undefined。]]></content>
     </entry>
 
     
