@@ -271,6 +271,138 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2020/04/14/echart-resize/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="I am a thin man">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我是瘦子">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2020/04/14/echart-resize/" itemprop="url">
+                  关于 EChart 页面多个图表，改变窗体大小图表不渲染问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-04-14T00:00:00+08:00">
+                2020-04-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2020/04/14/echart-resize/" class="leancloud_visitors" data-flag-title="关于 EChart 页面多个图表，改变窗体大小图表不渲染问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li><p>1.图表宽度需设置成 100%</p>
+</li>
+<li><p>2.同页面多图表请用 <code>addEventListener</code> 方法监听窗体大小改变</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 监听窗口变化 - 只刷新最后一个图表,后定义的会覆盖前面定义的，只有1个生效</span></span><br><span class="line"><span class="built_in">window</span>.onresize = <span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">    EChart.resize(); </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 监听窗口变化 - 多个图表同时刷新</span></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"resize"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;                </span><br><span class="line">	EChart.resize();           </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2020/04/13/javascript-arrary/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1332,7 +1464,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="I am a thin man">
@@ -1357,8 +1489,8 @@
             
               
                 
-                <a class="post-title-link" href="/2019/12/12/Daily-Interview-Question-2/" itemprop="url">
-                  每日一题（2019-10-29）
+                <a class="post-title-link" href="/2019/12/12/hexo-error-DTraceProviderBindings/" itemprop="url">
+                  解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误
                 </a>
               
             
@@ -1392,7 +1524,7 @@
 
           
           
-             <span id="/2019/12/12/Daily-Interview-Question-2/" class="leancloud_visitors" data-flag-title="每日一题（2019-10-29）">
+             <span id="/2019/12/12/hexo-error-DTraceProviderBindings/" class="leancloud_visitors" data-flag-title="解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1419,155 +1551,15 @@
       
         
           
-            <h2 id="第-0002-题：Vue-中的-computed-和-watch-的区别在哪里"><a href="#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里" class="headerlink" title="第 0002 题：Vue 中的 computed 和 watch 的区别在哪里"></a>第 0002 题：Vue 中的 computed 和 watch 的区别在哪里</h2><p><code>computed</code>：计算属性</p>
-<ul>
-<li>计算属性是由 <code>data</code> 中的已知值，得到的一个新值。</li>
-<li>这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。</li>
-<li>计算属性不在 <code>data</code> 中，计算属性新值的相关已知值在 <code>data</code> 中。</li>
-<li>具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。</li>
-<li>别人变化影响我自己。</li>
-</ul>
-<p><code>watch</code>：监听数据的变化</p>
-<ul>
-<li>监听data中数据的变化。</li>
-<li>监听的数据就是data中的已知值。</li>
-<li>无缓存性，页面重新渲染时值不变化也会执行。</li>
-<li>我的变化影响别人。</li>
-</ul>
-<p>公司：虾皮</p>
-<blockquote>
-<ol>
-<li><code>watch</code> 擅长处理的场景：一个数据影响多个数据</li>
-<li><code>computed</code> 擅长处理的场景：一个数据受多个数据影响</li>
-</ol>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="I am a thin man">
-    <meta itemprop="description" content>
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我是瘦子">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2019/12/12/Daily-Interview-Question-3/" itemprop="url">
-                  每日一题（2019-11-01）
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-12T00:00:00+08:00">
-                2019-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2019/12/12/Daily-Interview-Question-3/" class="leancloud_visitors" data-flag-title="每日一题（2019-11-01）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
-<p>公司：平安</p>
+            <h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
+<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>再来执行 hexo 命令果然没有报错信息了:D</p>
 
           
         
@@ -1640,7 +1632,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">22</span>
+              <span class="site-state-item-count">23</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1650,7 +1642,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
