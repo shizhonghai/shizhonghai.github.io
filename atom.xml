@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/"/>
-  <updated>2020-04-14T03:58:12.090Z</updated>
+  <updated>2020-05-27T03:49:42.128Z</updated>
   <id>https://shizhonghai.github.io/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Sequelize 中 Model 的数据类型</title>
+    <link href="https://shizhonghai.github.io/2020/05/27/sequelize-model-dataType/"/>
+    <id>https://shizhonghai.github.io/2020/05/27/sequelize-model-dataType/</id>
+    <published>2020-05-26T16:00:00.000Z</published>
+    <updated>2020-05-27T03:49:42.128Z</updated>
+    
+    <content type="html"><![CDATA[<p>Sequelize 中 Model 的数据类型对应MySQL中的数据类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">Sequelize.STRING                      // VARCHAR(255)                  类型：字符串 最大值： 65535个字符</span><br><span class="line">Sequelize.STRING(1234)                // VARCHAR(1234)                 类型：变长 最大值： 65535个字符</span><br><span class="line">Sequelize.TEXT                        // TEXT                          类型：字符串 最大值：65535个字符</span><br><span class="line">Sequelize.TEXT(&apos;tiny&apos;)                // TINYTEXT                      类型：字符串 最大值：255个字符</span><br><span class="line"></span><br><span class="line">Sequelize.INTEGER                     // INTEGER                       类型：整型 最大值：范围(-2147483648~2147483647)</span><br><span class="line">Sequelize.BIGINT                      // BIGINT                        类型：整型 最大值：范围(+-9.22*10的18次方)</span><br><span class="line">Sequelize.BIGINT(11)                  // BIGINT(11)                    类型：整型 最大值：范围(+-9.22*10的18次方)</span><br><span class="line"></span><br><span class="line">Sequelize.FLOAT                       // FLOAT                         类型：单精度浮点型  8位精度(4字节)</span><br><span class="line">Sequelize.FLOAT(11)                   // FLOAT(11)                     类型：单精度浮点型 8位精度(4字节)</span><br><span class="line">Sequelize.FLOAT(11, 12)               // FLOAT(11,12)                  类型：精度浮点型 8位精度(4字节) m总个数，d小数位</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Sequelize.DOUBLE                      // DOUBLE                        类型：双精度浮点型 16位精度(8字节) </span><br><span class="line">Sequelize.DOUBLE(11)                  // DOUBLE(11)                    类型：双精度浮点型 16位精度(8字节) </span><br><span class="line">Sequelize.DOUBLE(11, 12)              // DOUBLE(11,12)                 类型：双精度浮点型 16位精度(8字节) m总个数，d小数位</span><br><span class="line"></span><br><span class="line">Sequelize.DECIMAL                     // DECIMAL                       类型：定点数型</span><br><span class="line">Sequelize.DECIMAL(10, 2)              // DECIMAL(10,2)                 类型：定点数型 参数m&lt;65 是总个数，d&lt;30且 d&lt;m 是小数位</span><br><span class="line"></span><br><span class="line">Sequelize.DATE                        // DATETIME                      类型：日期时间类型 范例：&apos;2009-05-12 02:31:44&apos;</span><br><span class="line">Sequelize.DATE(6)                     // DATETIME(6)    </span><br><span class="line">Sequelize.DATEONLY                    // DATE without time.</span><br><span class="line">Sequelize.BOOLEAN                     // TINYINT(1)                    类型：整型 范围(-128~127)</span><br><span class="line"></span><br><span class="line">Sequelize.ENUM(&apos;value 1&apos;, &apos;value 2&apos;)  // ENUM                          类型：枚举</span><br><span class="line"></span><br><span class="line">Sequelize.BLOB                        // BLOB                          类型：二进制数据</span><br><span class="line">Sequelize.BLOB(&apos;tiny&apos;)                // TINYBLOB                      类型：二进制数据</span><br></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Sequelize 中 Model 的数据类型对应MySQL中的数据类型&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;b
+    
+    </summary>
+    
+    
+      <category term="Sequelize" scheme="https://shizhonghai.github.io/tags/Sequelize/"/>
+    
+  </entry>
   
   <entry>
     <title>关于 EChart 页面多个图表，改变窗体大小图表不渲染问题</title>
@@ -533,6 +556,28 @@
   </entry>
   
   <entry>
+    <title>每日一题（2019-11-01）</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:35:13.082Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
+<p>公司：平安</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>每日一题（2019-10-29）</title>
     <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
     <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
@@ -566,28 +611,6 @@
     <summary type="html">
     
       &lt;h2 id=&quot;第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot;&gt;&lt;a href=&quot;#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot; class=&quot;headerlink&quot; title=&quot;第 0002 题：Vue 中
-    
-    </summary>
-    
-    
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题（2019-11-01）</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:35:13.082Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
-<p>公司：平安</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
     
     </summary>
     
@@ -709,28 +732,6 @@
   </entry>
   
   <entry>
-    <title>JavaScript 名词解释</title>
-    <link href="https://shizhonghai.github.io/2019/07/18/javascript-glossary/"/>
-    <id>https://shizhonghai.github.io/2019/07/18/javascript-glossary/</id>
-    <published>2019-07-17T16:00:00.000Z</published>
-    <updated>2019-07-18T02:19:20.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
-<a id="more"></a>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>每日一题（2019-07-18）</title>
     <link href="https://shizhonghai.github.io/2019/07/18/Daily-Interview-Question-1/"/>
     <id>https://shizhonghai.github.io/2019/07/18/Daily-Interview-Question-1/</id>
@@ -754,6 +755,28 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 名词解释</title>
+    <link href="https://shizhonghai.github.io/2019/07/18/javascript-glossary/"/>
+    <id>https://shizhonghai.github.io/2019/07/18/javascript-glossary/</id>
+    <published>2019-07-17T16:00:00.000Z</published>
+    <updated>2019-07-18T02:19:20.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
+<a id="more"></a>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -973,133 +996,6 @@
     
     
       <category term="Hexo" scheme="https://shizhonghai.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Markdown 的常用语法</title>
-    <link href="https://shizhonghai.github.io/2019/05/06/markdown/"/>
-    <id>https://shizhonghai.github.io/2019/05/06/markdown/</id>
-    <published>2019-05-05T16:00:00.000Z</published>
-    <updated>2019-05-06T09:35:44.872Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown 支持嵌入 <code>html</code> 标签。<br><b>注意：Markdown 使用 <code>#</code>、<code>+</code>、<code>*</code> 等符号来标记， 符号后面必须跟上至少1个空格才有效！</b></p>
-<a id="more"></a>
-<h1 id="Markdown的常用语法"><a href="#Markdown的常用语法" class="headerlink" title="Markdown的常用语法"></a>Markdown的常用语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 标题支持两种形式：</p>
-<h3 id="用-标记"><a href="#用-标记" class="headerlink" title="用 # 标记"></a>用 <code>#</code> 标记</h3><p>在 <b>标题开头</b> 加上1~6个#，依次代表一级标题、二级标题….六级标题</p>
-<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题</span><br><span class="line">## 二级标题</span><br><span class="line">### 三级标题</span><br><span class="line">##### 四级标题</span><br><span class="line">###### 五级标题</span><br><span class="line">###### 六级标题</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>Markdown 支持有序列表和无序列表。<br><b>无序列表使用 <code>-</code> 、 <code>+</code> 和 <code>*</code> 作为列表标记：</b><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">- Red</span><br><span class="line">- Green</span><br><span class="line">- Blue</span><br><span class="line"></span><br><span class="line">* Red</span><br><span class="line">* Green</span><br><span class="line">* Blue</span><br><span class="line"></span><br><span class="line">+ Red</span><br><span class="line">+ Green</span><br><span class="line">+ Blue</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<ul>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ul>
-<p><b>有序列表则使用数字加英文句点.来表示：</b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. Red</span><br><span class="line">2. Green</span><br><span class="line">3. Blue</span><br></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<ol>
-<li>Red</li>
-<li>Green</li>
-<li>Blue</li>
-</ol>
-<hr>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>引用以 <code>&gt;</code> 来表示，引用中支持多级引用、标题、列表、代码块、分割线等常规语法。<br>常见的引用写法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 这是一段引用    // 在 `&gt;` 后面有 1 个空格</span><br></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<blockquote>
-<p>这是一段引用，在 <code>&gt;</code> 后面有 1 个空格</p>
-</blockquote>
-<p><b>Next 主题内置引用标签，使用方式</b></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note class_name %&#125; Content (md partial supported) &#123;% endnote %&#125;</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><div class="note default"><p>这是一段来自 Next 主题内置引用标签， <code>default</code> 样式主题的引用 </p>
-</div>
-<div class="note primary"><p>这是一段来自 Next 主题内置引用标签， <code>primary</code> 样式主题的引用 </p>
-</div><br><div class="note success"><p>这是一段来自 Next 主题内置引用标签， <code>success</code> 样式主题的引用 </p>
-</div>
-<div class="note info"><p>这是一段来自 Next 主题内置引用标签， <code>info</code> 样式主题的引用 </p>
-</div><br><div class="note warning"><p>这是一段来自 Next 主题内置引用标签， <code>warning</code> 样式主题的引用 </p>
-</div>
-<div class="note danger"><p>这是一段来自 Next 主题内置引用标签， <code>danger</code> 样式主题的引用 </p>
-</div></p>
-<hr>
-<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>两个<code>*</code>或<code>-</code>代表加粗，一个<code>*</code>或<code>-</code>代表斜体，<code>~~</code>代表删除。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**加粗文本** 或者 __加粗文本__</span><br><span class="line"></span><br><span class="line">*斜体文本*  或者_斜体文本_</span><br><span class="line"></span><br><span class="line">~~删除文本~~</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br><strong>加粗文本</strong> 或者 <strong>加粗文本</strong><br><em>斜体文本</em>  或者<em>斜体文本</em><br><del>删除文本</del></p>
-<hr>
-<h2 id="图片与链接"><a href="#图片与链接" class="headerlink" title="图片与链接"></a>图片与链接</h2><p>图片与链接的语法很像，区别在一个 ! 号。二者格式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">图片：![]()    ![图片文本(可忽略)](图片地址)</span><br><span class="line"></span><br><span class="line">链接：[]()     [链接文本](链接地址)</span><br></pre></td></tr></table></figure>
-<p>链接又分为<code>行内式</code>、<code>参考式</code>和<code>自动链接</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">这是行内式链接：[ConnorLin&apos;s Blog](http://connorlin.github.io)。</span><br><span class="line"></span><br><span class="line">这是参考式链接：[ConnorLin&apos;s Blog][url]，其中url为链接标记，可置于文中任意位置。</span><br><span class="line"></span><br><span class="line">[url]: http://connorlin.github.io/ &quot;ConnorLin&apos;s Blog&quot;</span><br><span class="line"></span><br><span class="line">链接标记格式为：[链接标记文本]:  链接地址  链接title(可忽略)</span><br><span class="line"></span><br><span class="line">这是自动链接：直接使用`&lt;&gt;`括起来&lt;http://connorlin.github.io&gt;</span><br><span class="line"></span><br><span class="line">这是图片：![][avatar]</span><br><span class="line"></span><br><span class="line">[avatar]: https://connorlin.github.io/images/avatar.jpg</span><br></pre></td></tr></table></figure>
-<p>效果如下：<br>这是行内式链接：<a href="http://connorlin.github.io" target="_blank" rel="noopener">ConnorLin’s Blog</a>。</p>
-<p>这是参考式链接：<a href="http://connorlin.github.io/" title="ConnorLin&#39;s Blog" target="_blank" rel="noopener">ConnorLin’s Blog</a>，其中url为链接标记，可置于文中任意位置。</p>
-<p>这是自动链接：直接使用<code>&lt;&gt;</code>括起来 <a href="http://connorlin.github.io" target="_blank" rel="noopener">http://connorlin.github.io</a></p>
-<p>这是图片：<img src="https://connorlin.github.io/images/avatar.jpg" alt></p>
-<hr>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>代码分为 <code>行内代码</code> 和 <code>代码块</code>。</p>
-<p>行内代码用两个反单引号(前后各一个)表示，例如：<code>code</code>。<br>代码块用三个反单引号，例如：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'....'</span>)</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>表格对齐格式</p>
-<ul>
-<li>居左：:—-</li>
-<li>居中：:—-:或—–</li>
-<li>居右：—-:</li>
-</ul>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|标题|标题|标题|</span><br><span class="line">|:---|:---:|---:|</span><br><span class="line">|居左测试文本|居中测试文本|居右测试文本|</span><br><span class="line">|居左测试文本1|居中测试文本2|居右测试文本3|</span><br><span class="line">|居左测试文本11|居中测试文本22|居右测试文本33|</span><br><span class="line">|居左测试文本111|居中测试文本222|居右测试文本333|</span><br></pre></td></tr></table></figure>
-<p>效果如下：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">标题</th>
-<th style="text-align:center">标题</th>
-<th style="text-align:right">标题</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">居左测试文本</td>
-<td style="text-align:center">居中测试文本</td>
-<td style="text-align:right">居右测试文本</td>
-</tr>
-<tr>
-<td style="text-align:left">居左测试文本1</td>
-<td style="text-align:center">居中测试文本2</td>
-<td style="text-align:right">居右测试文本3</td>
-</tr>
-<tr>
-<td style="text-align:left">居左测试文本11</td>
-<td style="text-align:center">居中测试文本22</td>
-<td style="text-align:right">居右测试文本33</td>
-</tr>
-<tr>
-<td style="text-align:left">居左测试文本111</td>
-<td style="text-align:center">居中测试文本222</td>
-<td style="text-align:right">居右测试文本333</td>
-</tr>
-</tbody>
-</table>
-<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>在一行中用三个以上的 <code>*</code>、 <code>-</code>、<code>_</code> 来建立一个分隔线，行内不能有其他东西。也可以在符号间插入空格。<br>效果均为一条分割线：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*****</span><br><span class="line"></span><br><span class="line">_____</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">* * * * *</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<hr>
-<hr>
-<hr>
-<hr>
-<blockquote>
-<p>相关内容转载自：<a href="https://www.jianshu.com/p/82e730892d42" target="_blank" rel="noopener">https://www.jianshu.com/p/82e730892d42</a><br>  参考资料1：<a href="http://www.cnblogs.com/skyhuangdan/p/5485069.html" target="_blank" rel="noopener">http://www.cnblogs.com/skyhuangdan/p/5485069.html</a><br>  参考资料2：<a href="https://www.appinn.com/markdown/" target="_blank" rel="noopener">https://www.appinn.com/markdown/</a><br>  主要是为了方便自己书写用，最起码有个留存。</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;Markdown 是一种轻量级标记语言，它用简洁的语法代替排版，使我们专心于码字。它的目标是实现易读易写，成为一种适用于网络的书写语言。同时，Markdown 支持嵌入 &lt;code&gt;html&lt;/code&gt; 标签。&lt;br&gt;&lt;b&gt;注意：Markdown 使用 &lt;code&gt;#&lt;/code&gt;、&lt;code&gt;+&lt;/code&gt;、&lt;code&gt;*&lt;/code&gt; 等符号来标记， 符号后面必须跟上至少1个空格才有效！&lt;/b&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Markdown" scheme="https://shizhonghai.github.io/tags/Markdown/"/>
     
   </entry>
   

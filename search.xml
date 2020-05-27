@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Sequelize 中 Model 的数据类型]]></title>
+      <url>%2F2020%2F05%2F27%2Fsequelize-model-dataType%2F</url>
+      <content type="text"><![CDATA[Sequelize 中 Model 的数据类型对应MySQL中的数据类型 123456789101112131415161718192021222324252627282930Sequelize.STRING // VARCHAR(255) 类型：字符串 最大值： 65535个字符Sequelize.STRING(1234) // VARCHAR(1234) 类型：变长 最大值： 65535个字符Sequelize.TEXT // TEXT 类型：字符串 最大值：65535个字符Sequelize.TEXT(&apos;tiny&apos;) // TINYTEXT 类型：字符串 最大值：255个字符Sequelize.INTEGER // INTEGER 类型：整型 最大值：范围(-2147483648~2147483647)Sequelize.BIGINT // BIGINT 类型：整型 最大值：范围(+-9.22*10的18次方)Sequelize.BIGINT(11) // BIGINT(11) 类型：整型 最大值：范围(+-9.22*10的18次方)Sequelize.FLOAT // FLOAT 类型：单精度浮点型 8位精度(4字节)Sequelize.FLOAT(11) // FLOAT(11) 类型：单精度浮点型 8位精度(4字节)Sequelize.FLOAT(11, 12) // FLOAT(11,12) 类型：精度浮点型 8位精度(4字节) m总个数，d小数位Sequelize.DOUBLE // DOUBLE 类型：双精度浮点型 16位精度(8字节) Sequelize.DOUBLE(11) // DOUBLE(11) 类型：双精度浮点型 16位精度(8字节) Sequelize.DOUBLE(11, 12) // DOUBLE(11,12) 类型：双精度浮点型 16位精度(8字节) m总个数，d小数位Sequelize.DECIMAL // DECIMAL 类型：定点数型Sequelize.DECIMAL(10, 2) // DECIMAL(10,2) 类型：定点数型 参数m&lt;65 是总个数，d&lt;30且 d&lt;m 是小数位Sequelize.DATE // DATETIME 类型：日期时间类型 范例：&apos;2009-05-12 02:31:44&apos;Sequelize.DATE(6) // DATETIME(6) Sequelize.DATEONLY // DATE without time.Sequelize.BOOLEAN // TINYINT(1) 类型：整型 范围(-128~127)Sequelize.ENUM(&apos;value 1&apos;, &apos;value 2&apos;) // ENUM 类型：枚举Sequelize.BLOB // BLOB 类型：二进制数据Sequelize.BLOB(&apos;tiny&apos;) // TINYBLOB 类型：二进制数据]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[关于 EChart 页面多个图表，改变窗体大小图表不渲染问题]]></title>
       <url>%2F2020%2F04%2F14%2Fechart-resize%2F</url>
       <content type="text"><![CDATA[1.图表宽度需设置成 100% 2.同页面多图表请用 addEventListener 方法监听窗体大小改变 123456789// 监听窗口变化 - 只刷新最后一个图表,后定义的会覆盖前面定义的，只有1个生效window.onresize = ()=&gt; &#123; EChart.resize(); &#125;;// 监听窗口变化 - 多个图表同时刷新window.addEventListener("resize", function() &#123; EChart.resize(); &#125;);]]></content>
@@ -73,16 +80,16 @@
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-10-29）]]></title>
-      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-2%2F</url>
-      <content type="text"><![CDATA[第 0002 题：Vue 中的 computed 和 watch 的区别在哪里computed：计算属性 计算属性是由 data 中的已知值，得到的一个新值。 这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。 计算属性不在 data 中，计算属性新值的相关已知值在 data 中。 具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。 别人变化影响我自己。 watch：监听数据的变化 监听data中数据的变化。 监听的数据就是data中的已知值。 无缓存性，页面重新渲染时值不变化也会执行。 我的变化影响别人。 公司：虾皮 watch 擅长处理的场景：一个数据影响多个数据 computed 擅长处理的场景：一个数据受多个数据影响]]></content>
+      <title><![CDATA[每日一题（2019-11-01）]]></title>
+      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
+      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-11-01）]]></title>
-      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-3%2F</url>
-      <content type="text"><![CDATA[第 0003 题：webpack 中 loader 和 plugin 的区别是什么loader 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。plugin 是一个扩展器，它丰富了 webpack 本身，针对是 loader 结束后，webpack 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 webpack 打包过程中的某些节点，执行广泛的任务 公司：平安]]></content>
+      <title><![CDATA[每日一题（2019-10-29）]]></title>
+      <url>%2F2019%2F12%2F12%2FDaily-Interview-Question-2%2F</url>
+      <content type="text"><![CDATA[第 0002 题：Vue 中的 computed 和 watch 的区别在哪里computed：计算属性 计算属性是由 data 中的已知值，得到的一个新值。 这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。 计算属性不在 data 中，计算属性新值的相关已知值在 data 中。 具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。 别人变化影响我自己。 watch：监听数据的变化 监听data中数据的变化。 监听的数据就是data中的已知值。 无缓存性，页面重新渲染时值不变化也会执行。 我的变化影响别人。 公司：虾皮 watch 擅长处理的场景：一个数据影响多个数据 computed 擅长处理的场景：一个数据受多个数据影响]]></content>
     </entry>
 
     
@@ -108,16 +115,16 @@
 
     
     <entry>
-      <title><![CDATA[JavaScript 名词解释]]></title>
-      <url>%2F2019%2F07%2F18%2Fjavascript-glossary%2F</url>
-      <content type="text"><![CDATA[变量提升（hoisting）var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined]]></content>
+      <title><![CDATA[每日一题（2019-07-18）]]></title>
+      <url>%2F2019%2F07%2F18%2FDaily-Interview-Question-1%2F</url>
+      <content type="text"><![CDATA[第 0001 题：请写出如下代码的打印结果123456789var name = 'Tom';(function() &#123; if (typeof name == 'undefined') &#123; var name = 'Jack'; console.log('Goodbye ' + name); &#125; else &#123; console.log('Hello ' + name); &#125;&#125;)(); 公司：京东 【答案】：Goodbye Jack 【解析】：var 关键字有变量提升，它定义的变量会提升到函数的顶部。题目中立即执行函数的中的变量 name 的定义被提升到了顶部，并在初始化赋值之前是 undefined，所以 typeof name == &#39;undefined。]]></content>
     </entry>
 
     
     <entry>
-      <title><![CDATA[每日一题（2019-07-18）]]></title>
-      <url>%2F2019%2F07%2F18%2FDaily-Interview-Question-1%2F</url>
-      <content type="text"><![CDATA[第 0001 题：请写出如下代码的打印结果123456789var name = 'Tom';(function() &#123; if (typeof name == 'undefined') &#123; var name = 'Jack'; console.log('Goodbye ' + name); &#125; else &#123; console.log('Hello ' + name); &#125;&#125;)(); 公司：京东 【答案】：Goodbye Jack 【解析】：var 关键字有变量提升，它定义的变量会提升到函数的顶部。题目中立即执行函数的中的变量 name 的定义被提升到了顶部，并在初始化赋值之前是 undefined，所以 typeof name == &#39;undefined。]]></content>
+      <title><![CDATA[JavaScript 名词解释]]></title>
+      <url>%2F2019%2F07%2F18%2Fjavascript-glossary%2F</url>
+      <content type="text"><![CDATA[变量提升（hoisting）var 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为undefined]]></content>
     </entry>
 
     
