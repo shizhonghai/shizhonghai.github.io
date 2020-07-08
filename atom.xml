@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/"/>
-  <updated>2020-05-27T03:49:42.128Z</updated>
+  <updated>2020-07-08T03:11:42.370Z</updated>
   <id>https://shizhonghai.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于 ECharts canvas 层级太高 导致 tooltip 被遮盖</title>
+    <link href="https://shizhonghai.github.io/2020/07/08/echart-tooltip/"/>
+    <id>https://shizhonghai.github.io/2020/07/08/echart-tooltip/</id>
+    <published>2020-07-07T16:00:00.000Z</published>
+    <updated>2020-07-08T03:11:42.370Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*核心代码*/</span></span><br><span class="line"><span class="selector-tag">canvas</span> &#123;</span><br><span class="line"> <span class="attribute">z-index</span>: -<span class="number">1</span>;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+    
+    </summary>
+    
+    
+      <category term="EChart" scheme="https://shizhonghai.github.io/tags/EChart/"/>
+    
+  </entry>
   
   <entry>
     <title>Sequelize 中 Model 的数据类型</title>
@@ -114,31 +135,6 @@
   </entry>
   
   <entry>
-    <title>WebStorm 如何识别 Webpack 中的别名</title>
-    <link href="https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/"/>
-    <id>https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/</id>
-    <published>2020-04-01T16:00:00.000Z</published>
-    <updated>2020-04-02T09:54:36.961Z</updated>
-    
-    <content type="html"><![CDATA[<p>例如：在webpack.base.config.js 文件中的别名配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span> (<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.join(__dirname, <span class="string">'.'</span>, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./'</span>),</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">            <span class="string">'@views'</span>: resolve(<span class="string">'src/views'</span>),</span><br><span class="line">            <span class="string">'@components'</span>: resolve(<span class="string">'src/components'</span>),</span><br><span class="line">            <span class="string">'@core'</span>: resolve(<span class="string">'src/core'</span>),</span><br><span class="line">            <span class="string">'@utils'</span>: resolve(<span class="string">'src/utils'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>WebStorm Windows setting：<br><code>File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</code></p>
-<p>WebStorm MacOS setting：</p>
-<p><code>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack</code></p>
-<p>配置如下图：<br><img src="/images/webstorm-webpack-config.png" alt="WebStorm 配置" title="WebStorm 配置"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;例如：在webpack.base.config.js 文件中的别名配置&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span
-    
-    </summary>
-    
-    
-      <category term="WebStorm" scheme="https://shizhonghai.github.io/tags/WebStorm/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Nginx 配置 https 并强制跳转 443 端口</title>
     <link href="https://shizhonghai.github.io/2020/04/02/nginx-config-https/"/>
     <id>https://shizhonghai.github.io/2020/04/02/nginx-config-https/</id>
@@ -177,6 +173,31 @@
     
     
       <category term="Nginx" scheme="https://shizhonghai.github.io/tags/Nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebStorm 如何识别 Webpack 中的别名</title>
+    <link href="https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/"/>
+    <id>https://shizhonghai.github.io/2020/04/02/webstorm-webpack-config/</id>
+    <published>2020-04-01T16:00:00.000Z</published>
+    <updated>2020-04-02T09:54:36.961Z</updated>
+    
+    <content type="html"><![CDATA[<p>例如：在webpack.base.config.js 文件中的别名配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">resolve</span> (<span class="params">dir</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> path.join(__dirname, <span class="string">'.'</span>, dir)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    context: path.resolve(__dirname, <span class="string">'./'</span>),</span><br><span class="line">    resolve: &#123;</span><br><span class="line">        extensions: [<span class="string">'.js'</span>, <span class="string">'.vue'</span>, <span class="string">'.json'</span>],</span><br><span class="line">        alias: &#123;</span><br><span class="line">            <span class="string">'@'</span>: resolve(<span class="string">'src'</span>),</span><br><span class="line">            <span class="string">'@views'</span>: resolve(<span class="string">'src/views'</span>),</span><br><span class="line">            <span class="string">'@components'</span>: resolve(<span class="string">'src/components'</span>),</span><br><span class="line">            <span class="string">'@core'</span>: resolve(<span class="string">'src/core'</span>),</span><br><span class="line">            <span class="string">'@utils'</span>: resolve(<span class="string">'src/utils'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>WebStorm Windows setting：<br><code>File &gt; Settings &gt; Languages and Frameworks &gt;JavaScript | Webpack</code></p>
+<p>WebStorm MacOS setting：</p>
+<p><code>WebStorm | Preferences | Languages and Frameworks | JavaScript | Webpack</code></p>
+<p>配置如下图：<br><img src="/images/webstorm-webpack-config.png" alt="WebStorm 配置" title="WebStorm 配置"></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;例如：在webpack.base.config.js 文件中的别名配置&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span
+    
+    </summary>
+    
+    
+      <category term="WebStorm" scheme="https://shizhonghai.github.io/tags/WebStorm/"/>
     
   </entry>
   
@@ -527,57 +548,6 @@
   </entry>
   
   <entry>
-    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:59:06.403Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
-<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>再来执行 hexo 命令果然没有报错信息了:D</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>每日一题（2019-11-01）</title>
-    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
-    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
-    <published>2019-12-11T16:00:00.000Z</published>
-    <updated>2019-12-12T06:35:13.082Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
-<p>公司：平安</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
-    
-    </summary>
-    
-    
-      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
     <title>每日一题（2019-10-29）</title>
     <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
     <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
@@ -616,6 +586,57 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一题（2019-11-01）</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-3/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:35:13.082Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0003-题：webpack-中-loader-和-plugin-的区别是什么"><a href="#第-0003-题：webpack-中-loader-和-plugin-的区别是什么" class="headerlink" title="第 0003 题：webpack 中 loader 和 plugin 的区别是什么"></a>第 0003 题：webpack 中 loader 和 plugin 的区别是什么</h2><p><code>loader</code> 它是一个转换器，将 A 文件进行编译成 B 文件，比如：将 A.less 转换为 A.css，单纯的文件转换过程。<br><code>plugin</code> 是一个扩展器，它丰富了 <code>webpack</code> 本身，针对是 <code>loader</code> 结束后，<code>webpack</code> 打包的整个过程，它并不直接操作文件，而是基于事件机制工作，会监听 <code>webpack</code> 打包过程中的某些节点，执行广泛的任务</p>
+<p>公司：平安</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot;&gt;&lt;a href=&quot;#第-0003-题：webpack-中-loader-和-plugin-的区别是什么&quot; class=&quot;headerlink&quot; title=&quot;第 0003 题：w
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决 Hexo Cannot find module &#39;./build/Release/DTraceProviderBindings&#39; 错误</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T06:59:06.403Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
+<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>再来执行 hexo 命令果然没有报错信息了:D</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;hexo-报错&quot;&gt;&lt;a href=&quot;#hexo-报错&quot; class=&quot;headerlink&quot; title=&quot;hexo 报错&quot;&gt;&lt;/a&gt;hexo 报错&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="https://shizhonghai.github.io/tags/hexo/"/>
     
   </entry>
   
@@ -973,29 +994,6 @@
     
     
       <category term="typescript" scheme="https://shizhonghai.github.io/tags/typescript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>About Hexo NexT.Pisces</title>
-    <link href="https://shizhonghai.github.io/2019/05/06/hexo-next-des/"/>
-    <id>https://shizhonghai.github.io/2019/05/06/hexo-next-des/</id>
-    <published>2019-05-05T16:00:00.000Z</published>
-    <updated>2019-05-06T09:26:20.625Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题官网</a></p>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 博客官网</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://theme-next.iissnan.com/getting-started.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Next 主题官网&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://hexo.io
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="https://shizhonghai.github.io/tags/Hexo/"/>
     
   </entry>
   

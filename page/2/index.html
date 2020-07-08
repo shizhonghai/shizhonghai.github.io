@@ -271,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2020/01/07/gitignore/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="I am a thin man">
@@ -296,8 +296,143 @@
             
               
                 
-                <a class="post-title-link" href="/2019/12/12/hexo-error-DTraceProviderBindings/" itemprop="url">
-                  解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误
+                <a class="post-title-link" href="/2020/01/07/gitignore/" itemprop="url">
+                  git 忽略规则以及 .gitignore 文件不生效解决办法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-07T00:00:00+08:00">
+                2020-01-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2020/01/07/gitignore/" class="leancloud_visitors" data-flag-title="git 忽略规则以及 .gitignore 文件不生效解决办法">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Git-忽略规则"><a href="#Git-忽略规则" class="headerlink" title="Git 忽略规则"></a>Git 忽略规则</h2><p>#此为注释 – 内容被 Git 忽略</p>
+<ul>
+<li>.sample 　　    # 忽略所有 .sample 结尾的文件</li>
+<li>!lib.sample 　　# 但 lib.sample 除外</li>
+<li>/TODO 　　      # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</li>
+<li>build/ 　　     # 忽略 build/ 目录下的所有文件</li>
+<li>doc/.txt 　　   # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</li>
+</ul>
+<h2 id="gitignore-规则不生效的解决办法"><a href="#gitignore-规则不生效的解决办法" class="headerlink" title=".gitignore 规则不生效的解决办法"></a>.gitignore 规则不生效的解决办法</h2><p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -rf --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;update .gitignore&apos;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="I am a thin man">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我是瘦子">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2019/12/12/Daily-Interview-Question-2/" itemprop="url">
+                  每日一题（2019-10-29）
                 </a>
               
             
@@ -331,7 +466,7 @@
 
           
           
-             <span id="/2019/12/12/hexo-error-DTraceProviderBindings/" class="leancloud_visitors" data-flag-title="解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误">
+             <span id="/2019/12/12/Daily-Interview-Question-2/" class="leancloud_visitors" data-flag-title="每日一题（2019-10-29）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -358,15 +493,28 @@
       
         
           
-            <h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
-<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
-<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
-<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>再来执行 hexo 命令果然没有报错信息了:D</p>
+            <h2 id="第-0002-题：Vue-中的-computed-和-watch-的区别在哪里"><a href="#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里" class="headerlink" title="第 0002 题：Vue 中的 computed 和 watch 的区别在哪里"></a>第 0002 题：Vue 中的 computed 和 watch 的区别在哪里</h2><p><code>computed</code>：计算属性</p>
+<ul>
+<li>计算属性是由 <code>data</code> 中的已知值，得到的一个新值。</li>
+<li>这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。</li>
+<li>计算属性不在 <code>data</code> 中，计算属性新值的相关已知值在 <code>data</code> 中。</li>
+<li>具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。</li>
+<li>别人变化影响我自己。</li>
+</ul>
+<p><code>watch</code>：监听数据的变化</p>
+<ul>
+<li>监听data中数据的变化。</li>
+<li>监听的数据就是data中的已知值。</li>
+<li>无缓存性，页面重新渲染时值不变化也会执行。</li>
+<li>我的变化影响别人。</li>
+</ul>
+<p>公司：虾皮</p>
+<blockquote>
+<ol>
+<li><code>watch</code> 擅长处理的场景：一个数据影响多个数据</li>
+<li><code>computed</code> 擅长处理的场景：一个数据受多个数据影响</li>
+</ol>
+</blockquote>
 
           
         
@@ -532,7 +680,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/12/12/hexo-error-DTraceProviderBindings/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="I am a thin man">
@@ -557,8 +705,8 @@
             
               
                 
-                <a class="post-title-link" href="/2019/12/12/Daily-Interview-Question-2/" itemprop="url">
-                  每日一题（2019-10-29）
+                <a class="post-title-link" href="/2019/12/12/hexo-error-DTraceProviderBindings/" itemprop="url">
+                  解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误
                 </a>
               
             
@@ -592,7 +740,7 @@
 
           
           
-             <span id="/2019/12/12/Daily-Interview-Question-2/" class="leancloud_visitors" data-flag-title="每日一题（2019-10-29）">
+             <span id="/2019/12/12/hexo-error-DTraceProviderBindings/" class="leancloud_visitors" data-flag-title="解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -619,28 +767,15 @@
       
         
           
-            <h2 id="第-0002-题：Vue-中的-computed-和-watch-的区别在哪里"><a href="#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里" class="headerlink" title="第 0002 题：Vue 中的 computed 和 watch 的区别在哪里"></a>第 0002 题：Vue 中的 computed 和 watch 的区别在哪里</h2><p><code>computed</code>：计算属性</p>
-<ul>
-<li>计算属性是由 <code>data</code> 中的已知值，得到的一个新值。</li>
-<li>这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。</li>
-<li>计算属性不在 <code>data</code> 中，计算属性新值的相关已知值在 <code>data</code> 中。</li>
-<li>具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。</li>
-<li>别人变化影响我自己。</li>
-</ul>
-<p><code>watch</code>：监听数据的变化</p>
-<ul>
-<li>监听data中数据的变化。</li>
-<li>监听的数据就是data中的已知值。</li>
-<li>无缓存性，页面重新渲染时值不变化也会执行。</li>
-<li>我的变化影响别人。</li>
-</ul>
-<p>公司：虾皮</p>
-<blockquote>
-<ol>
-<li><code>watch</code> 擅长处理的场景：一个数据影响多个数据</li>
-<li><code>computed</code> 擅长处理的场景：一个数据受多个数据影响</li>
-</ol>
-</blockquote>
+            <h2 id="hexo-报错"><a href="#hexo-报错" class="headerlink" title="hexo 报错"></a>hexo 报错</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error: Cannot find module &apos;./build/Release/DTraceProviderBindings&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="解决办法-on-google"><a href="#解决办法-on-google" class="headerlink" title="解决办法 on google"></a>解决办法 on google</h2><p>google之后发现被这个问题困扰的小伙伴还真不少，网上最靠谱的解决办法是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>的确很多小伙伴执行上面的命令之后都解决了报错的问题，但也有很多小伙伴跟我一样执行后没有任何效果，我甚至尝试了卸载后重装的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo</span><br><span class="line">$ npm install hexo --no-optional</span><br></pre></td></tr></table></figure>
+<p>可是依旧没有效果。<br>其实 hexo 暂时并没有用到 <code>dtrace-prodider</code> ，仅仅是报错而已，hexo 的命令还是能执行，但对于强迫症来说，简直无法忍受。</p>
+<p>我的解决办法<br>一番折腾之后，我找到了适合我的解决办法，重装 <code>hexo-cli</code>，如果命令行报没权限错误，请记得前面加 <code>sudo</code> :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall hexo-cli -g</span><br><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>再来执行 hexo 命令果然没有报错信息了:D</p>
 
           
         
@@ -1486,133 +1621,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/05/06/hexo-next-des/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="I am a thin man">
-    <meta itemprop="description" content>
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我是瘦子">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2019/05/06/hexo-next-des/" itemprop="url">
-                  About Hexo NexT.Pisces
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-06T00:00:00+08:00">
-                2019-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2019/05/06/hexo-next-des/" class="leancloud_visitors" data-flag-title="About Hexo NexT.Pisces">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">Next 主题官网</a></p>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo 博客官网</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1656,7 +1664,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">24</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
