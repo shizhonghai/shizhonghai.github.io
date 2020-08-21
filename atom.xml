@@ -38,6 +38,27 @@
   </entry>
   
   <entry>
+    <title>Js 根据一个多维数组查询最大深度问题</title>
+    <link href="https://shizhonghai.github.io/2020/08/14/javascript-depth-count/"/>
+    <id>https://shizhonghai.github.io/2020/08/14/javascript-depth-count/</id>
+    <published>2020-08-13T16:00:00.000Z</published>
+    <updated>2020-08-21T03:02:35.634Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deep</span>(<span class="params">arr, count = <span class="number">0</span>, ttt = []</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> index <span class="keyword">in</span> arr) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr[index])) &#123;</span><br><span class="line">            count++</span><br><span class="line">            deep(arr[index], count, ttt)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            ttt.push(count)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//return Math.max.apply(null, ttt) + 1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(...ttt) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, [<span class="string">'n'</span>, <span class="string">'i'</span>, [<span class="string">'t'</span>, [<span class="string">'nihao'</span>]]], [<span class="string">'a'</span>, <span class="string">'b'</span>]]</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(deep(arr)) <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span 
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于 ECharts canvas 层级太高 导致 tooltip 被遮盖</title>
     <link href="https://shizhonghai.github.io/2020/07/08/echart-tooltip/"/>
     <id>https://shizhonghai.github.io/2020/07/08/echart-tooltip/</id>
@@ -798,28 +819,6 @@
     
     
       <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 名词解释</title>
-    <link href="https://shizhonghai.github.io/2019/07/18/javascript-glossary/"/>
-    <id>https://shizhonghai.github.io/2019/07/18/javascript-glossary/</id>
-    <published>2019-07-17T16:00:00.000Z</published>
-    <updated>2019-07-18T02:19:20.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="变量提升（hoisting）"><a href="#变量提升（hoisting）" class="headerlink" title="变量提升（hoisting）"></a>变量提升（hoisting）</h2><p><code>var</code> 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为<code>undefined</code></p>
-<a id="more"></a>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;变量提升（hoisting）&quot;&gt;&lt;a href=&quot;#变量提升（hoisting）&quot; class=&quot;headerlink&quot; title=&quot;变量提升（hoisting）&quot;&gt;&lt;/a&gt;变量提升（hoisting）&lt;/h2&gt;&lt;p&gt;&lt;code&gt;var&lt;/code&gt; 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为&lt;code&gt;undefined&lt;/code&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
     
   </entry>
   

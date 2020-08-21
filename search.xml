@@ -10,6 +10,13 @@
 
     
     <entry>
+      <title><![CDATA[Js 根据一个多维数组查询最大深度问题]]></title>
+      <url>%2F2020%2F08%2F14%2Fjavascript-depth-count%2F</url>
+      <content type="text"><![CDATA[1234567891011121314151617function deep(arr, count = 0, ttt = []) &#123; for (let index in arr) &#123; if (Array.isArray(arr[index])) &#123; count++ deep(arr[index], count, ttt) &#125; else &#123; ttt.push(count) &#125; &#125; //return Math.max.apply(null, ttt) + 1 return Math.max(...ttt) + 1;&#125;let arr = [1, 2, 3, ['n', 'i', ['t', ['nihao']]], ['a', 'b']]console.log(deep(arr)) // 4]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[关于 ECharts canvas 层级太高 导致 tooltip 被遮盖]]></title>
       <url>%2F2020%2F07%2F08%2Fechart-tooltip%2F</url>
       <content type="text"><![CDATA[1234/*核心代码*/canvas &#123; z-index: -1; &#125;]]></content>
