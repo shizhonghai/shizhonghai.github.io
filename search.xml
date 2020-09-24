@@ -3,6 +3,20 @@
   
     
     <entry>
+      <title><![CDATA[Web Api 相关接口]]></title>
+      <url>%2F2020%2F09%2F24%2Fjavascript-html-element%2F</url>
+      <content type="text"><![CDATA[HTMLElementHTMLElement.offsetWidth引自MDN：是一个只读属性，返回一个元素的布局宽度。一个典型的（译者注：各浏览器的offsetWidth可能有所不同）offsetWidth是测量包含元素的边框(border)、水平线上的内边距(padding)、竖直方向滚动条(scrollbar)（如果存在的话）、以及CSS设置的宽度(width)的值。 语法12// 返回元素的宽度（包括元素宽度、内边距和边框，不包括外边距）var offsetWidth = element.offsetWidth; 这个属性将会 round(四舍五入)为一个整数。如果你想要一个fractional(小数)值,请使用 element.getBoundingClientRect() HTMLElement.offsetHeight引自MDN：是一个只读属性，它返回该元素的像素高度，高度包含该元素的垂直内边距和边框，且是一个整数。 语法12// 返回元素的高度（包括元素高度、内边距和边框，不包括外边距）var offsetWidth = element.offsetHeight; 这个属性值会被四舍五入为整数值，如果你需要一个浮点数值，请用 element.getBoundingClientRect() HTMLElement.clientWidth引自MDN：内联元素以及没有 CSS 样式的元素的 clientWidth 属性值为 0。Element.clientWidth 属性表示元素的内部宽度，以像素计。该属性包括内边距 padding，但不包括边框 border、外边距 margin 和垂直滚动条（如果有的话）。 语法12// 返回元素的宽度（包括元素宽度、内边距，不包括边框和外边距）和垂直滚动条（如果有的话）var intElemClientWidth = element.clientWidth; 示例 HTMLElement.clientHeight引自MDN：这个属性是只读属性，对于没有定义CSS或者内联布局盒子的元素为0，否则，它是元素内部的高度(单位像素)，包含内边距，但不包括水平滚动条、边框和外边距。clientHeight 可以通过 CSS height + CSS padding - 水平滚动条高度 (如果存在)来计算. 语法12// 返回元素的高度（包括元素高度、内边距，不包括水平滚动条、边框和外边距）var h = element.clientHeight; 示例]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[JavaScript 中 new 一个对象的过程中发生了什么]]></title>
+      <url>%2F2020%2F09%2F16%2Fjavascript-new-object-happen%2F</url>
+      <content type="text"><![CDATA[我们先创建一个简单的构造函数：123456function Rocker(name)&#123; this.name = name;&#125;;Rocker.prototype.getName = function()&#123; return this.name;&#125; 这是最简单不过的构造函数了，正常情况下，我们要生成他的一个实例，只需要：1var someOne = new Rocker('Max') 这样就实例化了一个对象，但是，实例化的过程是怎样的呢？ 可能很多朋友在网上也看了很多文章，new的过程不就是三步吗？ 开辟一个块内存，创建一个空对象 执行构造函数，对这个空对象进行构造 给这个空对象添加proto属性 Or 创建一个空对象 把该对象关联到原始对象或者是构造函数 把新创建的空对象作为原始对象或者构造函数的上下文 如果原始对象或者构造函数有返回值且为对象，则返回该对象，否则返回新创建的对象 没错，是这三步，但是你真的理解了吗？至少我第一次看挺懵逼的。好吧，最直观的方法就是，把创建一个对象的过程用代码体现出来，这样才能装逼嘛…体验：让我们创建一个函数，来实现上面new操作符的功能： 1234567891011var createObject = function()&#123; var obj = new Object(), //(1) Constructor = [].shift.call(arguments); //(2) obj.__proto__ = Constructor.prototype; //(3) var ret = Constructor.apply(obj, arguments); //(4) return typeof ret === 'object' ? ret : obj; //(5)&#125;;var Freak = createObject(Rocker, 'Freak');console.log(Freak.name); //Freakconsole.log(Freak.getName()); //Freakconsole.log(Object.getPrototypeOf(Freak) === Rocker.prototype); //true 就是上面这几句代码，向你展现了一个实例被new出来的过程。 我们来简单分析一下吧，其实很清晰明了了。 在(1)处，我们创建了一个空对象（准确的说是克隆了Object.prototype对象） 接下来(2)取到构造函数，赋值给Constructor变量，也就是说Rocker构造函数变成Constructor的一个引用了 接着(3)把Constructor.prototype（也就是Rocker.prototype）赋值给(1)刚刚创建的obj的原型链，或者这么说，把obj的原型链指向Constructor的原型 (4)我们用apply改变this的指向，用obj代替Constructor构造函数内部的this，并把arguments作为参数传入（在第2步时已经用shift把第一个参数去除了），此时的ret已经是一个合格的实例了！ 保险起见，我们(5)返回时判断ret是否是对象，如果不是就返回一个空对象（因为很多人真的不会按照规矩传参！！！） 这时候我们再外部调用这个函数试试，实时证明确实能达到new的效果。 再用getPrototypeOf方法测试一下，Freak的原型链真的指向Rocker的原型！ 这就是实例被new出来的过程，你明了吗？ 转载：Rockjins Blog]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Js 算法：两数之和]]></title>
       <url>%2F2020%2F09%2F10%2Fjavascript-algorithm01%2F</url>
       <content type="text"><![CDATA[给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。 示例:1234给定 nums = [2, 7, 11, 15], target = 9因为 nums[0] + nums[1] = 2 + 7 = 9所以返回 [0, 1] 解一：12345678910111213141516/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var twoSum = function (nums, target) &#123; const _arr = []; for (let i = 0; i &lt; nums.length; i++) &#123; for (let j = i + 1; j &lt; nums.length; j++) &#123; if (nums[i] + nums[j] === target) &#123; _arr.push(i, j); &#125; &#125; &#125; return _arr;&#125;; 解二：12345678910111213/** * @param &#123;number[]&#125; nums * @param &#123;number&#125; target * @return &#123;number[]&#125; */var twoSum = function (nums, target) &#123; for (let i = 0; i &lt; nums.length; i++) &#123; let arrIndex = nums.findIndex(v =&gt; v === target - nums[i]) if (arrIndex !== -1 &amp;&amp; arrIndex !== i) &#123; return [i, arrIndex] &#125; &#125;&#125; 转载：https://leetcode-cn.com/problems/two-sum]]></content>

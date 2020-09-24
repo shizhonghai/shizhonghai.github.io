@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/"/>
-  <updated>2020-09-10T11:40:29.828Z</updated>
+  <updated>2020-09-24T07:06:48.989Z</updated>
   <id>https://shizhonghai.github.io/</id>
   
   <author>
@@ -14,6 +14,102 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Web Api 相关接口</title>
+    <link href="https://shizhonghai.github.io/2020/09/24/javascript-html-element/"/>
+    <id>https://shizhonghai.github.io/2020/09/24/javascript-html-element/</id>
+    <published>2020-09-23T16:00:00.000Z</published>
+    <updated>2020-09-24T07:06:48.989Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="HTMLElement"><a href="#HTMLElement" class="headerlink" title="HTMLElement"></a>HTMLElement</h1><h2 id="HTMLElement-offsetWidth"><a href="#HTMLElement-offsetWidth" class="headerlink" title="HTMLElement.offsetWidth"></a><code>HTMLElement.offsetWidth</code></h2><p>引自MDN：是一个只读属性，返回一个元素的布局宽度。一个典型的（译者注：各浏览器的offsetWidth可能有所不同）offsetWidth是测量包含元素的边框(border)、水平线上的内边距(padding)、竖直方向滚动条(scrollbar)（如果存在的话）、以及CSS设置的宽度(width)的值。</p>
+<p>语法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回元素的宽度（包括元素宽度、内边距和边框，不包括外边距）</span></span><br><span class="line"><span class="keyword">var</span> offsetWidth = element.offsetWidth;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这个属性将会 round(四舍五入)为一个整数。如果你想要一个fractional(小数)值,请使用 <code>element.getBoundingClientRect()</code></p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="HTMLElement-offsetHeight"><a href="#HTMLElement-offsetHeight" class="headerlink" title="HTMLElement.offsetHeight"></a><code>HTMLElement.offsetHeight</code></h2><p>引自MDN：是一个只读属性，它返回该元素的像素高度，高度包含该元素的垂直内边距和边框，且是一个整数。</p>
+<p>语法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回元素的高度（包括元素高度、内边距和边框，不包括外边距）</span></span><br><span class="line"><span class="keyword">var</span> offsetWidth = element.offsetHeight;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这个属性值会被四舍五入为整数值，如果你需要一个浮点数值，请用 <code>element.getBoundingClientRect()</code></p>
+</blockquote>
+<hr>
+<h2 id="HTMLElement-clientWidth"><a href="#HTMLElement-clientWidth" class="headerlink" title="HTMLElement.clientWidth"></a><code>HTMLElement.clientWidth</code></h2><p>引自MDN：内联元素以及没有 CSS 样式的元素的 clientWidth 属性值为 0。Element.clientWidth 属性表示元素的内部宽度，以像素计。该属性包括内边距 padding，但不包括边框 border、外边距 margin 和垂直滚动条（如果有的话）。</p>
+<p>语法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回元素的宽度（包括元素宽度、内边距，不包括边框和外边距）和垂直滚动条（如果有的话）</span></span><br><span class="line"><span class="keyword">var</span> intElemClientWidth = element.clientWidth;</span><br></pre></td></tr></table></figure></p>
+<p>示例<br><img src="/images/Dimensions-client.png" alt="Dimensions-client" title="Dimensions-client"></p>
+<hr>
+<h2 id="HTMLElement-clientHeight"><a href="#HTMLElement-clientHeight" class="headerlink" title="HTMLElement.clientHeight"></a><code>HTMLElement.clientHeight</code></h2><p>引自MDN：这个属性是只读属性，对于没有定义CSS或者内联布局盒子的元素为0，否则，它是元素内部的高度(单位像素)，包含内边距，但不包括水平滚动条、边框和外边距。<br>clientHeight 可以通过 CSS height + CSS padding - 水平滚动条高度 (如果存在)来计算.</p>
+<p>语法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回元素的高度（包括元素高度、内边距，不包括水平滚动条、边框和外边距）</span></span><br><span class="line"><span class="keyword">var</span> h = element.clientHeight;</span><br></pre></td></tr></table></figure></p>
+<p>示例<br><img src="/images/Dimensions-client.png" alt="Dimensions-client" title="Dimensions-client"></p>
+<hr>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;HTMLElement&quot;&gt;&lt;a href=&quot;#HTMLElement&quot; class=&quot;headerlink&quot; title=&quot;HTMLElement&quot;&gt;&lt;/a&gt;HTMLElement&lt;/h1&gt;&lt;h2 id=&quot;HTMLElement-offsetWidth&quot;&gt;&lt;a href=&quot;#HTMLElement-offsetWidth&quot; class=&quot;headerlink&quot; title=&quot;HTMLElement.offsetWidth&quot;&gt;&lt;/a&gt;&lt;code&gt;HTMLElement.offsetWidth&lt;/code&gt;&lt;/h2&gt;&lt;p&gt;引自MDN：是一个只读属性，返回一个元素的布局宽度。一个典型的（译者注：各浏览器的offsetWidth可能有所不同）offsetWidth是测量包含元素的边框(border)、水平线上的内边距(padding)、竖直方向滚动条(scrollbar)（如果存在的话）、以及CSS设置的宽度(width)的值。&lt;/p&gt;
+&lt;p&gt;语法&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;// 返回元素的宽度（包括元素宽度、内边距和边框，不包括外边距）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; offsetWidth = element.offsetWidth;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这个属性将会 round(四舍五入)为一个整数。如果你想要一个fractional(小数)值,请使用 &lt;code&gt;element.getBoundingClientRect()&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="HTMLElement" scheme="https://shizhonghai.github.io/tags/HTMLElement/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 中 new 一个对象的过程中发生了什么</title>
+    <link href="https://shizhonghai.github.io/2020/09/16/javascript-new-object-happen/"/>
+    <id>https://shizhonghai.github.io/2020/09/16/javascript-new-object-happen/</id>
+    <published>2020-09-15T16:00:00.000Z</published>
+    <updated>2020-09-16T10:04:30.735Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们先创建一个简单的构造函数：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Rocker</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;;</span><br><span class="line">Rocker.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这是最简单不过的构造函数了，正常情况下，我们要生成他的一个实例，只需要：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> someOne = <span class="keyword">new</span> Rocker(<span class="string">'Max'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>这样就实例化了一个对象，但是，实例化的过程是怎样的呢？</p>
+<p>可能很多朋友在网上也看了很多文章，new的过程不就是三步吗？</p>
+<ol>
+<li>开辟一个块内存，创建一个空对象</li>
+<li>执行构造函数，对这个空对象进行构造</li>
+<li>给这个空对象添加proto属性</li>
+</ol>
+<p>Or </p>
+<ol>
+<li>创建一个空对象</li>
+<li>把该对象关联到原始对象或者是构造函数</li>
+<li>把新创建的空对象作为原始对象或者构造函数的上下文</li>
+<li>如果原始对象或者构造函数有返回值且为对象，则返回该对象，否则返回新创建的对象</li>
+</ol>
+<p>没错，是这三步，但是你真的理解了吗？至少我第一次看挺懵逼的。好吧，最直观的方法就是，把创建一个对象的过程用代码体现出来，这样才能装逼嘛…<br>体验：让我们创建一个函数，来实现上面new操作符的功能：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> createObject = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(),   <span class="comment">//(1)</span></span><br><span class="line">      Constructor = [].shift.call(<span class="built_in">arguments</span>);   <span class="comment">//(2)</span></span><br><span class="line">  obj.__proto__ = Constructor.prototype;    <span class="comment">//(3)</span></span><br><span class="line">  <span class="keyword">var</span> ret = Constructor.apply(obj, <span class="built_in">arguments</span>);    <span class="comment">//(4)</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> ret === <span class="string">'object'</span> ? ret : obj;   <span class="comment">//(5)</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> Freak = createObject(Rocker, <span class="string">'Freak'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Freak.name);  <span class="comment">//Freak</span></span><br><span class="line"><span class="built_in">console</span>.log(Freak.getName());  <span class="comment">//Freak</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getPrototypeOf(Freak) === Rocker.prototype); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>就是上面这几句代码，向你展现了一个实例被new出来的过程。</p>
+<p>我们来简单分析一下吧，其实很清晰明了了。</p>
+<p>在(1)处，我们创建了一个空对象（准确的说是克隆了Object.prototype对象）</p>
+<p>接下来(2)取到构造函数，赋值给Constructor变量，也就是说Rocker构造函数变成Constructor的一个引用了</p>
+<p>接着(3)把Constructor.prototype（也就是Rocker.prototype）赋值给(1)刚刚创建的obj的原型链，或者这么说，把obj的原型链指向Constructor的原型</p>
+<p>(4)我们用apply改变this的指向，用obj代替Constructor构造函数内部的this，并把arguments作为参数传入（在第2步时已经用shift把第一个参数去除了），此时的ret已经是一个合格的实例了！</p>
+<p>保险起见，我们(5)返回时判断ret是否是对象，如果不是就返回一个空对象（因为很多人真的不会按照规矩传参！！！）</p>
+<p>这时候我们再外部调用这个函数试试，实时证明确实能达到new的效果。</p>
+<p>再用getPrototypeOf方法测试一下，Freak的原型链真的指向Rocker的原型！</p>
+<p>这就是实例被new出来的过程，你明了吗？</p>
+<blockquote>
+<p>转载：<a href="https://rockjins.js.org/2017/01/18/2017-01-18-new-object/" target="_blank" rel="noopener">Rockjins Blog</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们先创建一个简单的构造函数：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;li
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>Js 算法：两数之和</title>
@@ -741,85 +837,6 @@
     
     
       <category term="Echarts" scheme="https://shizhonghai.github.io/tags/Echarts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React 生命周期</title>
-    <link href="https://shizhonghai.github.io/2019/08/02/react-component/"/>
-    <id>https://shizhonghai.github.io/2019/08/02/react-component/</id>
-    <published>2019-08-01T16:00:00.000Z</published>
-    <updated>2019-08-02T03:05:34.171Z</updated>
-    
-    <content type="html"><![CDATA[<p>防止自己忘掉 <code>React</code> 的一些生命周期方法，方便自己回忆和查阅。</p>
-<h2 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate()"></a><code>componentDidUpdate()</code></h2><blockquote>
-<p><code>componentDidUpdate(prevProps, prevState, snapshot)</code></p>
-</blockquote>
-<p><code>componentDidUpdate()</code> 会在更新后会被立即调用。首次渲染不会执行此方法。</p>
-<p>当组件更新后，可以在此处对 DOM 进行操作。如果你对更新前后的 props 进行了比较，也可以选择在此处进行网络请求。（例如，当 props 未发生变化时，则不会执行网络请求）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">componentDidUpdate(prevProps) &#123;</span><br><span class="line">  <span class="comment">// 典型用法（不要忘记比较 props）：</span></span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">this</span>.props.userID !== prevProps.userID) &#123;</span><br><span class="line">    <span class="keyword">this</span>.fetchData(<span class="keyword">this</span>.props.userID);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>你也可以在 <code>componentDidUpdate()</code> 中直接调用 <code>setState()</code>，但请注意它必须被包裹在一个条件语件里，正如上述的例子那样进行处理，否则会导致死循环。它还会导致额外的重新渲染，虽然用户不可见，但会影响组件性能。不要将 <code>props</code> “镜像”给 <code>state</code>，请考虑直接使用 <code>props</code>。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;防止自己忘掉 &lt;code&gt;React&lt;/code&gt; 的一些生命周期方法，方便自己回忆和查阅。&lt;/p&gt;
-&lt;h2 id=&quot;componentDidUpdate&quot;&gt;&lt;a href=&quot;#componentDidUpdate&quot; class=&quot;headerlink&quot; title=&quot;co
-    
-    </summary>
-    
-    
-      <category term="React" scheme="https://shizhonghai.github.io/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CSS 技巧</title>
-    <link href="https://shizhonghai.github.io/2019/07/26/CSS-skill/"/>
-    <id>https://shizhonghai.github.io/2019/07/26/CSS-skill/</id>
-    <published>2019-07-25T16:00:00.000Z</published>
-    <updated>2019-08-02T02:59:15.566Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="padding-配合-background-clip-属性，可以制作一些特殊形状："><a href="#padding-配合-background-clip-属性，可以制作一些特殊形状：" class="headerlink" title="padding 配合 background-clip 属性，可以制作一些特殊形状："></a><code>padding</code> 配合 <code>background-clip</code> 属性，可以制作一些特殊形状：</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*三道杠*/</span></span><br><span class="line"><span class="selector-class">.icon1</span> &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">2px</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">2px</span> solid currentColor;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">2px</span> solid currentColor;</span><br><span class="line">  <span class="attribute">background</span>: currentColor; <span class="comment">/*注意如果此处背景颜色属性用缩写的话，需要放到其他背景属性的前面，否则会覆盖前面的属性值（此处为background-clip）为默认值*/</span></span><br><span class="line">  <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*双层圆点*/</span></span><br><span class="line"><span class="selector-class">.icon2</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid currentColor;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: currentColor;</span><br><span class="line">  <span class="attribute">background-clip</span>: content-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<style>
-.icon1 {
-  box-sizing: border-box;
-  display: inline-block;
-  width: 12px;
-  height: 10px;
-  padding: 2px 0;
-  margin-right: 20px;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  background: currentColor;
-  background-clip: content-box;
-}
-
-/*双层圆点*/
-.icon2 {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  padding: 2px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-  background-color: currentColor;
-  background-clip: content-box;
-}
-</style>
-
-<p>实时预览如下：（<code>currentColor</code> 是 <code>css</code> 中为数不多的变量，指当前文字的颜色值，非常好用）</p>
-<div style="text-align: center;"><div class="icon1"></div><div class="icon2"></div></div>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;padding-配合-background-clip-属性，可以制作一些特殊形状：&quot;&gt;&lt;a href=&quot;#padding-配合-background-clip-属性，可以制作一些特殊形状：&quot; class=&quot;headerlink&quot; title=&quot;padding 配合
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="https://shizhonghai.github.io/tags/CSS/"/>
     
   </entry>
   
