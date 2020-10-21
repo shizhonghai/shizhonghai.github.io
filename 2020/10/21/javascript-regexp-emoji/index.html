@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="Echarts">
+  <meta name="keywords" content="JavaScript,RegExp,test">
 
 
 
@@ -86,22 +86,18 @@
 
 
 
-<meta name="description" content="由于项目需求，悬浮框内容较多，会出现悬浮框(tooltip)很长或者很宽的现象，而太长了，就会被 Echarts 溢出隐藏了，所以需要自定义定位需求  需求描述：鼠标悬浮在左侧某一个点时，悬浮框悬停在点的右侧；鼠标悬停在右侧某一个点时，悬浮框悬停在点的左侧。  首先明确一点，我们需要借助 tooltip.position 属性。理想的思路是我们在回调函数中获取鼠标每次悬停的坐标，然后再判断这个坐标">
-<meta name="keywords" content="Echarts">
+<meta name="description" content="记录一些常用的正则到博客中。 12345678// 判断是否含有特殊符号let iconRule1 = /[`~!@#$%^&amp;amp;*()_\-+=&amp;lt;&amp;gt;?:&quot;&amp;#123;&amp;#125;|,.\/;&apos;\\[\]·~！@#￥%……&amp;amp;*（）——\-+=&amp;#123;&amp;#125;|《》？：“”【】、；‘’，。、]/im// 判断是否含有emoji表情let iconRule2 = /[\">
+<meta name="keywords" content="JavaScript,RegExp,test">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自定义 Echarts 图表悬浮框的位置">
-<meta property="og:url" content="https://shizhonghai.github.io/2019/08/12/echarts-tooltip/index.html">
+<meta property="og:title" content="JavaScript 针对输入框输入特殊符号或emoji表情的判断">
+<meta property="og:url" content="https://shizhonghai.github.io/2020/10/21/javascript-regexp-emoji/index.html">
 <meta property="og:site_name" content="我是瘦子">
-<meta property="og:description" content="由于项目需求，悬浮框内容较多，会出现悬浮框(tooltip)很长或者很宽的现象，而太长了，就会被 Echarts 溢出隐藏了，所以需要自定义定位需求  需求描述：鼠标悬浮在左侧某一个点时，悬浮框悬停在点的右侧；鼠标悬停在右侧某一个点时，悬浮框悬停在点的左侧。  首先明确一点，我们需要借助 tooltip.position 属性。理想的思路是我们在回调函数中获取鼠标每次悬停的坐标，然后再判断这个坐标">
+<meta property="og:description" content="记录一些常用的正则到博客中。 12345678// 判断是否含有特殊符号let iconRule1 = /[`~!@#$%^&amp;amp;*()_\-+=&amp;lt;&amp;gt;?:&quot;&amp;#123;&amp;#125;|,.\/;&apos;\\[\]·~！@#￥%……&amp;amp;*（）——\-+=&amp;#123;&amp;#125;|《》？：“”【】、；‘’，。、]/im// 判断是否含有emoji表情let iconRule2 = /[\">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://shizhonghai.github.io/images/echart_01@2x.png">
-<meta property="og:image" content="https://shizhonghai.github.io/images/echart_02@2x.png">
-<meta property="og:image" content="https://shizhonghai.github.io/images/echart_03@2x.png">
-<meta property="og:updated_time" content="2019-08-12T09:54:08.811Z">
+<meta property="og:updated_time" content="2020-10-21T03:53:19.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自定义 Echarts 图表悬浮框的位置">
-<meta name="twitter:description" content="由于项目需求，悬浮框内容较多，会出现悬浮框(tooltip)很长或者很宽的现象，而太长了，就会被 Echarts 溢出隐藏了，所以需要自定义定位需求  需求描述：鼠标悬浮在左侧某一个点时，悬浮框悬停在点的右侧；鼠标悬停在右侧某一个点时，悬浮框悬停在点的左侧。  首先明确一点，我们需要借助 tooltip.position 属性。理想的思路是我们在回调函数中获取鼠标每次悬停的坐标，然后再判断这个坐标">
-<meta name="twitter:image" content="https://shizhonghai.github.io/images/echart_01@2x.png">
+<meta name="twitter:title" content="JavaScript 针对输入框输入特殊符号或emoji表情的判断">
+<meta name="twitter:description" content="记录一些常用的正则到博客中。 12345678// 判断是否含有特殊符号let iconRule1 = /[`~!@#$%^&amp;amp;*()_\-+=&amp;lt;&amp;gt;?:&quot;&amp;#123;&amp;#125;|,.\/;&apos;\\[\]·~！@#￥%……&amp;amp;*（）——\-+=&amp;#123;&amp;#125;|《》？：“”【】、；‘’，。、]/im// 判断是否含有emoji表情let iconRule2 = /[\">
 
 
 
@@ -129,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://shizhonghai.github.io/2019/08/12/echarts-tooltip/">
+  <link rel="canonical" href="https://shizhonghai.github.io/2020/10/21/javascript-regexp-emoji/">
 
 
 
 
 
-  <title> 自定义 Echarts 图表悬浮框的位置 | 我是瘦子 </title>
+  <title> JavaScript 针对输入框输入特殊符号或emoji表情的判断 | 我是瘦子 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -275,7 +271,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2019/08/12/echarts-tooltip/">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2020/10/21/javascript-regexp-emoji/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="I am a thin man">
@@ -299,7 +295,7 @@
             
             
               
-                自定义 Echarts 图表悬浮框的位置
+                JavaScript 针对输入框输入特殊符号或emoji表情的判断
               
             
           </h1>
@@ -312,8 +308,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-12T00:00:00+08:00">
-                2019-08-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-21T00:00:00+08:00">
+                2020-10-21
               </time>
             
 
@@ -332,7 +328,7 @@
 
           
           
-             <span id="/2019/08/12/echarts-tooltip/" class="leancloud_visitors" data-flag-title="自定义 Echarts 图表悬浮框的位置">
+             <span id="/2020/10/21/javascript-regexp-emoji/" class="leancloud_visitors" data-flag-title="JavaScript 针对输入框输入特殊符号或emoji表情的判断">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -362,16 +358,9 @@
       
 
       
-        <p>由于项目需求，悬浮框内容较多，会出现悬浮框(tooltip)很长或者很宽的现象，而太长了，就会被 Echarts 溢出隐藏了，所以需要自定义定位需求</p>
-<blockquote>
-<p>需求描述：鼠标悬浮在左侧某一个点时，悬浮框悬停在点的右侧；鼠标悬停在右侧某一个点时，悬浮框悬停在点的左侧。</p>
-</blockquote>
-<p>首先明确一点，我们需要借助 <code>tooltip.position</code> 属性。理想的思路是我们在回调函数中获取鼠标每次悬停的坐标，然后再判断这个坐标是否处于此容器(也就是这个Echarts图表)的左侧或者右侧；判断命中后我们再改变 <code>tooltip</code> 的位置，并返回给函数。</p>
-<a id="more"></a>
-<p>效果图：【左侧悬浮】<br><img src="/images/echart_01@2x.png" alt="左侧悬浮"></p>
-<p>效果图：【右侧悬浮】<br><img src="/images/echart_02@2x.png" alt="左侧悬浮"></p>
-<p>效果图：【溢出显示】<br><img src="/images/echart_03@2x.png" alt="溢出显示"></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 关健代码</span></span><br><span class="line">tooltip: &#123;</span><br><span class="line">    position: <span class="function"><span class="keyword">function</span> (<span class="params">position</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">'chartDom'</span>);</span><br><span class="line">        <span class="keyword">if</span> (dom) &#123;</span><br><span class="line">            <span class="comment">// 获取容器的宽度</span></span><br><span class="line">            <span class="keyword">let</span> chartsWidth = dom.offsetWidth;</span><br><span class="line">            <span class="comment">// 判断悬停点落在容器的哪测</span></span><br><span class="line">            <span class="keyword">if</span> (position[<span class="number">0</span>] &lt; (chartsWidth / <span class="number">2</span>)) &#123;</span><br><span class="line">                position[<span class="number">0</span>] = position[<span class="number">0</span>];</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                position[<span class="number">0</span>] = position[<span class="number">0</span>] - <span class="number">130</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> [position[<span class="number">0</span>], position[<span class="number">1</span>]];</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>记录一些常用的正则到博客中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断是否含有特殊符号</span></span><br><span class="line"><span class="keyword">let</span> iconRule1 = <span class="regexp">/[`~!@#$%^&amp;*()_\-+=&lt;&gt;?:"&#123;&#125;|,.\/;'\\[\]·~！@#￥%……&amp;*（）——\-+=&#123;&#125;|《》？：“”【】、；‘’，。、]/im</span></span><br><span class="line"><span class="comment">// 判断是否含有emoji表情</span></span><br><span class="line"><span class="keyword">let</span> iconRule2 = <span class="regexp">/[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF][\u200D|\uFE0F]|[\uD83C|\uD83D|\uD83E][\uDC00-\uDFFF]|[0-9|*|#]\uFE0F\u20E3|[0-9|#]\u20E3|[\u203C-\u3299]\uFE0F\u200D|[\u203C-\u3299]\uFE0F|[\u2122-\u2B55]|\u303D|[\A9|\AE]\u3030|\uA9|\uAE|\u3030/ig</span></span><br><span class="line"><span class="comment">// 如果为true，字符串含有emoji表情 ，false不含</span></span><br><span class="line"><span class="built_in">console</span>.log(iconRule2.test(<span class="string">'😺'</span>));   <span class="comment">// true </span></span><br><span class="line"><span class="comment">// 如果为true，字符串含有特殊符号 ，false不含</span></span><br><span class="line"><span class="built_in">console</span>.log(iconRule1.test(<span class="string">'【】'</span>))   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -394,7 +383,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Echarts/" rel="tag"># Echarts</a>
+            <a href="/tags/RegExp/" rel="tag"># RegExp</a>
           
         </div>
       
@@ -403,8 +392,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/02/react-component/" rel="next" title="React 生命周期">
-                <i class="fa fa-chevron-left"></i> React 生命周期
+              <a href="/2020/10/16/javascript-mianshi-01/" rel="next" title="JavaScript 手撕 map 方法">
+                <i class="fa fa-chevron-left"></i> JavaScript 手撕 map 方法
               </a>
             
           </div>
@@ -412,10 +401,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/12/hexo-error-DTraceProviderBindings/" rel="prev" title="解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误">
-                解决 Hexo Cannot find module './build/Release/DTraceProviderBindings' 错误 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
