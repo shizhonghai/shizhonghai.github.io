@@ -271,6 +271,147 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2020/10/27/javascript-XOR/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="I am a thin man">
+    <meta itemprop="description" content>
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="我是瘦子">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2020/10/27/javascript-XOR/" itemprop="url">
+                  JavaScript 只出现一次的数字
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-27T00:00:00+08:00">
+                2020-10-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2020/10/27/javascript-XOR/" class="leancloud_visitors" data-flag-title="JavaScript 只出现一次的数字">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>说明：</p>
+<p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
+<p>示例 1:</p>
+<blockquote>
+<p>输入: [2,2,1]<br>  输出: 1</p>
+</blockquote>
+<p>示例 2:</p>
+<blockquote>
+<p>输入: [4,1,2,1,2]<br>  输出: 4</p>
+<p>来源：力扣（LeetCode）<br>  链接：<a href="https://leetcode-cn.com/problems/single-number" target="_blank" rel="noopener">https://leetcode-cn.com/problems/single-number</a></p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2020/10/27/javascript-XOR/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2020/10/21/javascript-regexp-emoji/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -485,7 +626,7 @@
       
         
           
-            <h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><p><img src="http://image.burongyi.com/blog/16d9901f3d6945e7a563a2cc0dbca67e_tplv-k3u1fbpfcp-zoom-1.jpeg" alt="手撕 map 方法" title="手撕 map 方法"></p>
+            <h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><p><img src="/images/img-map.jpeg" alt="手撕 map 方法" title="手撕 map 方法"></p>
 <p>代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.myMap = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判断输入的第一个参数是不是函数</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(fn + <span class="string">'is not a function...'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取需要处理的数组内容</span></span><br><span class="line">    <span class="keyword">const</span> arr = <span class="keyword">this</span>, len = arr.length;</span><br><span class="line">    <span class="comment">// 创建一个新数组用于装载新的内容</span></span><br><span class="line">    <span class="keyword">const</span> temp = <span class="keyword">new</span> <span class="built_in">Array</span>(len);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对数组中每个值进行处理</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="comment">// 获取第二个参数，改变 this 指向</span></span><br><span class="line">        temp[i] = fn.call(<span class="built_in">arguments</span>[<span class="number">1</span>], arr[i], i, arr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回新的结果</span></span><br><span class="line">    <span class="keyword">return</span> temp</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>].myMap(<span class="function"><span class="params">item</span> =&gt;</span> item * <span class="number">2</span>));     <span class="comment">// --&gt; [2, 6, 8]</span></span><br></pre></td></tr></table></figure></p>
 
           
@@ -618,150 +759,6 @@
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2020/09/30/javascript-algorithm/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://shizhonghai.github.io/2020/09/28/webpack-related-content/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="I am a thin man">
-    <meta itemprop="description" content>
-    <meta itemprop="image" content="/images/avatar.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="我是瘦子">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="我是瘦子" src>
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2020/09/28/webpack-related-content/" itemprop="url">
-                  Webpack 相关内容
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-09-28T00:00:00+08:00">
-                2020-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-             <span id="/2020/09/28/webpack-related-content/" class="leancloud_visitors" data-flag-title="Webpack 相关内容">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="问题一览"><a href="#问题一览" class="headerlink" title="问题一览"></a>问题一览</h1><ol>
-<li>webpack与grunt、gulp的不同？</li>
-<li>与webpack类似的工具还有哪些？谈谈你为什么最终选择（或放弃）使用webpack？</li>
-<li>有哪些常见的Loader？他们是解决什么问题的？</li>
-<li>有哪些常见的Plugin？他们是解决什么问题的？</li>
-<li>Loader和Plugin的不同？</li>
-<li>webpack的构建流程是什么?从读取配置到输出文件这个过程尽量说全</li>
-<li>是否写过Loader和Plugin？描述一下编写loader或plugin的思路？</li>
-<li>webpack的热更新是如何做到的？说明其原理？</li>
-<li>如何利用webpack来优化前端性能？（提高性能和体验）</li>
-<li>如何提高webpack的构建速度？</li>
-<li>怎么配置单页应用？怎么配置多页应用？</li>
-<li>npm打包时需要注意哪些？如何利用webpack来更好的构建？</li>
-<li>如何在vue项目中实现按需加载？</li>
-</ol>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2020/09/28/webpack-related-content/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1659,7 +1656,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

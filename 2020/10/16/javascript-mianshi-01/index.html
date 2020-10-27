@@ -94,12 +94,12 @@
 <meta property="og:site_name" content="我是瘦子">
 <meta property="og:description" content="map 代码如下1234567891011121314151617181920Array.prototype.myMap = function (fn) &amp;#123;    // 判断输入的第一个参数是不是函数    if (typeof fn !== &apos;function&apos;) &amp;#123;        throw new TypeError(fn + &apos;is not a function...&apos;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://image.burongyi.com/blog/16d9901f3d6945e7a563a2cc0dbca67e_tplv-k3u1fbpfcp-zoom-1.jpeg">
-<meta property="og:updated_time" content="2020-10-16T09:37:57.813Z">
+<meta property="og:image" content="https://shizhonghai.github.io/images/img-map.jpeg">
+<meta property="og:updated_time" content="2020-10-27T03:45:06.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 手撕 map 方法">
 <meta name="twitter:description" content="map 代码如下1234567891011121314151617181920Array.prototype.myMap = function (fn) &amp;#123;    // 判断输入的第一个参数是不是函数    if (typeof fn !== &apos;function&apos;) &amp;#123;        throw new TypeError(fn + &apos;is not a function...&apos;">
-<meta name="twitter:image" content="http://image.burongyi.com/blog/16d9901f3d6945e7a563a2cc0dbca67e_tplv-k3u1fbpfcp-zoom-1.jpeg">
+<meta name="twitter:image" content="https://shizhonghai.github.io/images/img-map.jpeg">
 
 
 
@@ -360,7 +360,7 @@
       
 
       
-        <h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><p><img src="http://image.burongyi.com/blog/16d9901f3d6945e7a563a2cc0dbca67e_tplv-k3u1fbpfcp-zoom-1.jpeg" alt="手撕 map 方法" title="手撕 map 方法"></p>
+        <h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><p><img src="/images/img-map.jpeg" alt="手撕 map 方法" title="手撕 map 方法"></p>
 <p>代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.myMap = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判断输入的第一个参数是不是函数</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(fn + <span class="string">'is not a function...'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取需要处理的数组内容</span></span><br><span class="line">    <span class="keyword">const</span> arr = <span class="keyword">this</span>, len = arr.length;</span><br><span class="line">    <span class="comment">// 创建一个新数组用于装载新的内容</span></span><br><span class="line">    <span class="keyword">const</span> temp = <span class="keyword">new</span> <span class="built_in">Array</span>(len);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对数组中每个值进行处理</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="comment">// 获取第二个参数，改变 this 指向</span></span><br><span class="line">        temp[i] = fn.call(<span class="built_in">arguments</span>[<span class="number">1</span>], arr[i], i, arr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回新的结果</span></span><br><span class="line">    <span class="keyword">return</span> temp</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>].myMap(<span class="function"><span class="params">item</span> =&gt;</span> item * <span class="number">2</span>));     <span class="comment">// --&gt; [2, 6, 8]</span></span><br></pre></td></tr></table></figure></p>
 
       
@@ -484,7 +484,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
