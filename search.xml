@@ -4,8 +4,15 @@
     
     <entry>
       <title><![CDATA[LeetCode 最长公共前缀]]></title>
-      <url>%2F2020%2F10%2F28%2Fjavascript-XOR%2F</url>
+      <url>%2F2020%2F10%2F28%2Fjavascript-leetcode-01%2F</url>
       <content type="text"><![CDATA[题目描述编写一个函数来查找字符串数组中的最长公共前缀。如果不存在公共前缀，返回空字符串 “”。 示例 1: 输入: [“flower”,”flow”,”flight”] 输出: “fl” 示例 2: 输入: [“dog”,”racecar”,”car”] 输出: “” 解释: 输入不存在公共前缀。 说明:所有输入只包含小写字母 a-z 。 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/longest-common-prefix/ 代码1234567891011121314151617181920/** * @param &#123;string[]&#125; strs * @return &#123;string&#125; */let longestCommonPrefix = function (strs) &#123; if (strs === null || strs.length === 0) &#123; return ''; &#125; let str = strs[0]; let result = ''; for (let i = 0; i &lt; str.length; i++) &#123; let flag = strs.every(item =&gt; item[i] === str[i]); if (flag) &#123; result += str[i]; &#125; else &#123; return result; &#125; &#125; return result;&#125;]]></content>
+    </entry>
+
+    
+    <entry>
+      <title><![CDATA[JavaScript 只出现一次的数字]]></title>
+      <url>%2F2020%2F10%2F27%2Fjavascript-XOR%2F</url>
+      <content type="text"><![CDATA[题目描述给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。 说明： 你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？ 示例 1: 输入: [2,2,1] 输出: 1 示例 2: 输入: [4,1,2,1,2] 输出: 4 来源：力扣（LeetCode） 链接：https://leetcode-cn.com/problems/single-number 代码12345678/** * @param &#123;number[]&#125; nums * @return &#123;number&#125; */let singleNumber = function(nums) &#123; return nums.reduce((a,b)=&gt;a^b)&#125;;console.log(singleNumber([4,1,2,1,2])) // 4 离散数学的异或运算规则 交换律：a ^ b ^ c =&gt; a ^ c ^ b 任何数于0异或为任何数 0 ^ n =&gt; n 相同的数异或为0: n ^ n =&gt; 0 解题思路 利用异或运算可以找出数组中奇个数的项 示例：[4,1,2,1,2] 解析：4 ^ 1 ^ 2 ^ 1 ^2 等价于 1 ^ 1 ^ 2 ^ 2 ^ 4 =&gt; 0 ^ 0 ^ 4 =&gt; 4]]></content>
     </entry>
 
     
