@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shizhonghai.github.io/"/>
-  <updated>2020-10-28T06:29:15.568Z</updated>
+  <updated>2020-10-27T03:41:39.814Z</updated>
   <id>https://shizhonghai.github.io/</id>
   
   <author>
@@ -14,106 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>LeetCode 最长公共前缀</title>
-    <link href="https://shizhonghai.github.io/2020/10/28/javascript-leetcode-01/"/>
-    <id>https://shizhonghai.github.io/2020/10/28/javascript-leetcode-01/</id>
-    <published>2020-10-27T16:00:00.000Z</published>
-    <updated>2020-10-28T06:29:15.568Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>编写一个函数来查找字符串数组中的最长公共前缀。<br>如果不存在公共前缀，返回空字符串 “”。</p>
-<p>示例 1:</p>
-<blockquote>
-<p>输入: [“flower”,”flow”,”flight”]<br>  输出: “fl”</p>
-</blockquote>
-<p>示例 2:</p>
-<blockquote>
-<p>输入: [“dog”,”racecar”,”car”]<br>  输出: “”<br>  解释: 输入不存在公共前缀。</p>
-</blockquote>
-<p><strong>说明:</strong><br>所有输入只包含小写字母 a-z 。</p>
-<blockquote>
-<p>来源：力扣（LeetCode）<br>  链接：<a href="https://leetcode-cn.com/problems/longest-common-prefix/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/longest-common-prefix/</a></p>
-</blockquote>
-<a id="more"></a>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;string[]&#125; strs</span></span><br><span class="line"><span class="comment"> * @return &#123;string&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> longestCommonPrefix = <span class="function"><span class="keyword">function</span> (<span class="params">strs</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (strs === <span class="literal">null</span> || strs.length === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> str = strs[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">let</span> result = <span class="string">''</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> flag = strs.every(<span class="function"><span class="params">item</span> =&gt;</span> item[i] === str[i]);</span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            result += str[i];</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;编写一个函数来查找字符串数组中的最长公共前缀。&lt;br&gt;如果不存在公共前缀，返回空字符串 “”。&lt;/p&gt;
-&lt;p&gt;示例 1:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入: [“flower”,”flow”,”flight”]&lt;br&gt;  输出: “fl”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;示例 2:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入: [“dog”,”racecar”,”car”]&lt;br&gt;  输出: “”&lt;br&gt;  解释: 输入不存在公共前缀。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;说明:&lt;/strong&gt;&lt;br&gt;所有输入只包含小写字母 a-z 。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;来源：力扣（LeetCode）&lt;br&gt;  链接：&lt;a href=&quot;https://leetcode-cn.com/problems/longest-common-prefix/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-cn.com/problems/longest-common-prefix/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://shizhonghai.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 只出现一次的数字</title>
-    <link href="https://shizhonghai.github.io/2020/10/27/javascript-XOR/"/>
-    <id>https://shizhonghai.github.io/2020/10/27/javascript-XOR/</id>
-    <published>2020-10-26T16:00:00.000Z</published>
-    <updated>2020-10-28T06:29:18.020Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
-<p>说明：</p>
-<p>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>
-<p>示例 1:</p>
-<blockquote>
-<p>输入: [2,2,1]<br>  输出: 1</p>
-</blockquote>
-<p>示例 2:</p>
-<blockquote>
-<p>输入: [4,1,2,1,2]<br>  输出: 4</p>
-<p>来源：力扣（LeetCode）<br>  链接：<a href="https://leetcode-cn.com/problems/single-number" target="_blank" rel="noopener">https://leetcode-cn.com/problems/single-number</a></p>
-</blockquote>
-<a id="more"></a>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * @param &#123;number[]&#125; nums</span></span><br><span class="line"><span class="comment"> * @return &#123;number&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> singleNumber = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> nums.reduce(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a^b)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(singleNumber([<span class="number">4</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>]))      <span class="comment">// 4</span></span><br></pre></td></tr></table></figure>
-<h2 id="离散数学的异或运算规则"><a href="#离散数学的异或运算规则" class="headerlink" title="离散数学的异或运算规则"></a>离散数学的异或运算规则</h2><ul>
-<li>交换律：a ^ b ^ c =&gt; a ^ c ^ b</li>
-<li>任何数于0异或为任何数 0 ^ n =&gt; n</li>
-<li>相同的数异或为0: n ^ n =&gt; 0</li>
-</ul>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><blockquote>
-<p>利用异或运算可以找出数组中奇个数的项<br>  示例：[4,1,2,1,2]<br>  解析：4 ^ 1 ^ 2 ^ 1 ^2 等价于 1 ^ 1 ^ 2 ^ 2 ^ 4 =&gt; 0 ^ 0 ^ 4 =&gt; 4</p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h2&gt;&lt;p&gt;给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。&lt;/p&gt;
-&lt;p&gt;说明：&lt;/p&gt;
-&lt;p&gt;你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？&lt;/p&gt;
-&lt;p&gt;示例 1:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入: [2,2,1]&lt;br&gt;  输出: 1&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;示例 2:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;输入: [4,1,2,1,2]&lt;br&gt;  输出: 4&lt;/p&gt;
-&lt;p&gt;来源：力扣（LeetCode）&lt;br&gt;  链接：&lt;a href=&quot;https://leetcode-cn.com/problems/single-number&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://leetcode-cn.com/problems/single-number&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="异或" scheme="https://shizhonghai.github.io/tags/%E5%BC%82%E6%88%96/"/>
-    
-  </entry>
   
   <entry>
     <title>JavaScript 针对特殊符号或emoji表情的正则判断</title>
@@ -135,28 +35,6 @@
     
     
       <category term="RegExp" scheme="https://shizhonghai.github.io/tags/RegExp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript 手撕 map 方法</title>
-    <link href="https://shizhonghai.github.io/2020/10/16/javascript-mianshi-01/"/>
-    <id>https://shizhonghai.github.io/2020/10/16/javascript-mianshi-01/</id>
-    <published>2020-10-15T16:00:00.000Z</published>
-    <updated>2020-10-27T03:45:06.908Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="map"><a href="#map" class="headerlink" title="map"></a>map</h1><p><img src="/images/img-map.jpeg" alt="手撕 map 方法" title="手撕 map 方法"></p>
-<p>代码如下<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.myMap = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 判断输入的第一个参数是不是函数</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">'function'</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(fn + <span class="string">'is not a function...'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取需要处理的数组内容</span></span><br><span class="line">    <span class="keyword">const</span> arr = <span class="keyword">this</span>, len = arr.length;</span><br><span class="line">    <span class="comment">// 创建一个新数组用于装载新的内容</span></span><br><span class="line">    <span class="keyword">const</span> temp = <span class="keyword">new</span> <span class="built_in">Array</span>(len);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 对数组中每个值进行处理</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="comment">// 获取第二个参数，改变 this 指向</span></span><br><span class="line">        temp[i] = fn.call(<span class="built_in">arguments</span>[<span class="number">1</span>], arr[i], i, arr);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 返回新的结果</span></span><br><span class="line">    <span class="keyword">return</span> temp</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log([<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>].myMap(<span class="function"><span class="params">item</span> =&gt;</span> item * <span class="number">2</span>));     <span class="comment">// --&gt; [2, 6, 8]</span></span><br></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;map&quot;&gt;&lt;a href=&quot;#map&quot; class=&quot;headerlink&quot; title=&quot;map&quot;&gt;&lt;/a&gt;map&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/img-map.jpeg&quot; alt=&quot;手撕 map 方法&quot; title=&quot;手撕 map 方法&quot;&gt;
-    
-    </summary>
-    
-    
-      <category term="map" scheme="https://shizhonghai.github.io/tags/map/"/>
     
   </entry>
   
@@ -866,6 +744,102 @@
     
     
       <category term="lowdb" scheme="https://shizhonghai.github.io/tags/lowdb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于 GitHub 相关技巧</title>
+    <link href="https://shizhonghai.github.io/2020/01/15/github/"/>
+    <id>https://shizhonghai.github.io/2020/01/15/github/</id>
+    <published>2020-01-14T16:00:00.000Z</published>
+    <updated>2020-01-15T08:59:50.405Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="显示-GitHub-Stars-数量-官方文档地址：https-shields-io"><a href="#显示-GitHub-Stars-数量-官方文档地址：https-shields-io" class="headerlink" title="显示 GitHub Stars 数量 (官方文档地址：https://shields.io/)"></a>显示 GitHub Stars 数量 (官方文档地址：<a href="https://shields.io/" target="_blank" rel="noopener">https://shields.io/</a>)</h2><p><a href="https://github.com/louzhedong/blog/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/louzhedong/blog.svg?style=social" alt="GitHub stars"></a></p>
+<p><a href="https://github.com/shizhonghai/shizhonghai.github.io/stargazers" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/shizhonghai/shizhonghai.github.io?style=social" alt="GitHub stars"></a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;显示-GitHub-Stars-数量-官方文档地址：https-shields-io&quot;&gt;&lt;a href=&quot;#显示-GitHub-Stars-数量-官方文档地址：https-shields-io&quot; class=&quot;headerlink&quot; title=&quot;显示 GitHu
+    
+    </summary>
+    
+    
+      <category term="Github" scheme="https://shizhonghai.github.io/tags/Github/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 忽略规则以及 .gitignore 文件不生效解决办法</title>
+    <link href="https://shizhonghai.github.io/2020/01/07/gitignore/"/>
+    <id>https://shizhonghai.github.io/2020/01/07/gitignore/</id>
+    <published>2020-01-06T16:00:00.000Z</published>
+    <updated>2020-01-07T07:50:49.369Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Git-忽略规则"><a href="#Git-忽略规则" class="headerlink" title="Git 忽略规则"></a>Git 忽略规则</h2><p>#此为注释 – 内容被 Git 忽略</p>
+<ul>
+<li>.sample 　　    # 忽略所有 .sample 结尾的文件</li>
+<li>!lib.sample 　　# 但 lib.sample 除外</li>
+<li>/TODO 　　      # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</li>
+<li>build/ 　　     # 忽略 build/ 目录下的所有文件</li>
+<li>doc/.txt 　　   # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</li>
+</ul>
+<h2 id="gitignore-规则不生效的解决办法"><a href="#gitignore-规则不生效的解决办法" class="headerlink" title=".gitignore 规则不生效的解决办法"></a>.gitignore 规则不生效的解决办法</h2><p>把某些目录或文件加入忽略规则，按照上述方法定义后发现并未生效，原因是.gitignore只能忽略那些原来没有被追踪的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。那么解决方法就是先把本地缓存删除（改变成未被追踪状态），然后再提交</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -rf --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;update .gitignore&apos;</span><br></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Git-忽略规则&quot;&gt;&lt;a href=&quot;#Git-忽略规则&quot; class=&quot;headerlink&quot; title=&quot;Git 忽略规则&quot;&gt;&lt;/a&gt;Git 忽略规则&lt;/h2&gt;&lt;p&gt;#此为注释 – 内容被 Git 忽略&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;.sample 　　    
+    
+    </summary>
+    
+    
+      <category term="git" scheme="https://shizhonghai.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一题（2019-10-29）</title>
+    <link href="https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/"/>
+    <id>https://shizhonghai.github.io/2019/12/12/Daily-Interview-Question-2/</id>
+    <published>2019-12-11T16:00:00.000Z</published>
+    <updated>2019-12-12T02:06:34.331Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第-0002-题：Vue-中的-computed-和-watch-的区别在哪里"><a href="#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里" class="headerlink" title="第 0002 题：Vue 中的 computed 和 watch 的区别在哪里"></a>第 0002 题：Vue 中的 computed 和 watch 的区别在哪里</h2><p><code>computed</code>：计算属性</p>
+<ul>
+<li>计算属性是由 <code>data</code> 中的已知值，得到的一个新值。</li>
+<li>这个新值只会根据已知值的变化而变化，其他不相关的数据的变化不会影响该新值。</li>
+<li>计算属性不在 <code>data</code> 中，计算属性新值的相关已知值在 <code>data</code> 中。</li>
+<li>具有缓存性，页面重新渲染值不变化,计算属性会立即返回之前的计算结果，而不必再次执行函数。</li>
+<li>别人变化影响我自己。</li>
+</ul>
+<p><code>watch</code>：监听数据的变化</p>
+<ul>
+<li>监听data中数据的变化。</li>
+<li>监听的数据就是data中的已知值。</li>
+<li>无缓存性，页面重新渲染时值不变化也会执行。</li>
+<li>我的变化影响别人。</li>
+</ul>
+<p>公司：虾皮</p>
+<blockquote>
+<ol>
+<li><code>watch</code> 擅长处理的场景：一个数据影响多个数据</li>
+<li><code>computed</code> 擅长处理的场景：一个数据受多个数据影响</li>
+</ol>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot;&gt;&lt;a href=&quot;#第-0002-题：Vue-中的-computed-和-watch-的区别在哪里&quot; class=&quot;headerlink&quot; title=&quot;第 0002 题：Vue 中
+    
+    </summary>
+    
+    
+      <category term="每日一题" scheme="https://shizhonghai.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
   </entry>
   
